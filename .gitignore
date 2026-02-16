@@ -6,7 +6,7 @@ target/
 .apt_generated
 #.classpath
 .factorypath
-#.project
+.project
 #.settings
 .springBeans
 
@@ -30,3 +30,5 @@ nbdist/
 mvnw
 
 mvnw\.cmd
+
+target/classes/maven.properties
