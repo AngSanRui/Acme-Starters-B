@@ -1,5 +1,5 @@
 
-package acme.entities.campaign;
+package acme.entities.sponsorship;
 
 import java.util.Date;
 
@@ -12,11 +12,12 @@ import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +25,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Campaign extends AbstractEntity {
+public class Sponsorship extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -75,14 +76,14 @@ public class Campaign extends AbstractEntity {
 	private Double				monthsActive;
 
 	@Mandatory
-	@ValidNumber(min = 0)
+	@ValidMoney(min = 0)
 	@Transient
-	private Double				effort;
+	private Money				totalMoney;
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Spokesperson		spokesperson;
+	private Sponsor				sponsor;
 }
