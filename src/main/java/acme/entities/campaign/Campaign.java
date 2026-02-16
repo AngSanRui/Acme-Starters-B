@@ -1,5 +1,5 @@
 
-package acme.entities.strategies;
+package acme.entities.campaign;
 
 import java.util.Date;
 
@@ -8,16 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
-
-import org.springframework.data.annotation.Transient;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.client.components.validation.ValidScore;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Strategy extends AbstractEntity {
+public class Campaign extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -34,14 +33,17 @@ public class Strategy extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	//@ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
+	//@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
+	//@ValidText
 	@Column
 	private String				description;
 
@@ -61,27 +63,26 @@ public class Strategy extends AbstractEntity {
 	private String				moreInfo;
 
 	@Mandatory
-	@Valid
+	// @Valid by default.
 	@Column
-	private Boolean				draftMode;
+	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
 	@Mandatory
 	@Valid
 	@Transient
-	private Double				mothsActive;
+	private Double				monthsActive;
 
 	@Mandatory
-	@ValidScore
+	@ValidNumber(min = 0)
 	@Transient
-	private Double				expectedPercentage;
+	private Double				effort;
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Fundraiser			fundraiser;
-
+	private Spokesperson		spokesperson;
 }
