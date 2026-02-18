@@ -17,7 +17,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.client.components.validation.ValidScore;
+import acme.realms.strategies.Fundraiser;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,14 +34,17 @@ public class Strategy extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	//ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
+	//ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
+	//ValidText
 	@Column
 	private String				description;
 
@@ -67,21 +70,27 @@ public class Strategy extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	@Mandatory
+
+	//@Mandatory
 	@Valid
 	@Transient
-	private Double				mothsActive;
+	private Double getMothsActive() {
+		return null;
+	}
 
-	@Mandatory
-	@ValidScore
+	//@Mandatory
+	//@ValidScore
 	@Transient
-	private Double				expectedPercentage;
+	private Double getExpectedPercentage() {
+		return null;
+	}
 
 	// Relationships ----------------------------------------------------------
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Fundraiser			fundraiser;
+	private Fundraiser fundraiser;
 
 }

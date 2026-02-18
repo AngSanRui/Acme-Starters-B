@@ -24,10 +24,12 @@ public class Tactic extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	//@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
+	//@ValidText
 	@Column
 	private String				notes;
 
