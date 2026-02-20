@@ -1,7 +1,10 @@
 
 package acme.entities.strategies;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,8 +20,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.realms.strategies.Fundraiser;
 import acme.client.components.validation.ValidUrl;
+import acme.realms.strategies.Fundraiser;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -72,17 +75,36 @@ public class Strategy extends AbstractEntity {
 
 
 	//@Mandatory
-	@Valid
+	//@Valid
 	@Transient
 	private Double getMothsActive() {
-		return null;
+
+		Double result = null;
+
+		if (this.startMoment != null && this.endMoment != null) {
+			long startMomentMillisecs = this.startMoment.getTime();
+			long endMomentMillisecs = this.endMoment.getTime();
+
+			long diffInMilliSecs = endMomentMillisecs - startMomentMillisecs;
+			long diffInDays = TimeUnit.MILLISECONDS.toDays(diffInMilliSecs);
+			result = Math.round(diffInDays / 30.0 * 10.0) / 10.0;
+		}
+		return result;
 	}
 
 	//@Mandatory
 	//@ValidScore
 	@Transient
-	private Double getExpectedPercentage() {
-		return null;
+	private double getExpectedPercentage() {
+
+		double result = 0;
+
+		List<Tactic> tactics = new ArrayList<Tactic>();
+
+		if (tactics != null && !tactics.isEmpty())
+			for (Tactic tactic : tactics)
+				result += tactic.getExpectedPercentage();
+		return result;
 	}
 
 	// Relationships ----------------------------------------------------------
