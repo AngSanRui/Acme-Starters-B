@@ -1,6 +1,10 @@
 
 package acme.entities.invention;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,12 +16,10 @@ import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -70,20 +72,35 @@ public class Invention extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	@Mandatory
+
+	//@Mandatory
 	@Valid
 	@Transient
-	private Double				monthsActive;
+	private Double getMothsActive() {
+		if (this.startMoment == null || this.endMoment == null)
+			return null;
 
-	@Mandatory
-	@ValidMoney(min = 0.)
+		LocalDate start = Instant.ofEpochMilli(this.startMoment.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+
+		LocalDate end = Instant.ofEpochMilli(this.endMoment.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+
+		double months = ChronoUnit.MONTHS.between(start, end);
+
+		return months;
+	}
+
+	//@Mandatory
+	//@ValidMoney(min=0.)
 	@Transient
-	private Money				cost;
+	private Double getCost() {
+		return null;
+	}
 
 	// Relationships ----------------------------------------------------------
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Inventor			inventor;
+	private Inventor inventor;
 }

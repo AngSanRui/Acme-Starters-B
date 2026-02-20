@@ -1,5 +1,5 @@
 
-package acme.entities.sponsorship;
+package acme.realms.sponsorship;
 
 public enum DonationKind {
 	ALTRUIST, REWARDED, CELEBRATED

@@ -1,6 +1,10 @@
 
 package acme.entities.strategies;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,7 +21,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.realms.strategies.Fundraiser;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -75,7 +78,16 @@ public class Strategy extends AbstractEntity {
 	@Valid
 	@Transient
 	private Double getMothsActive() {
-		return null;
+		if (this.startMoment == null || this.endMoment == null)
+			return null;
+
+		LocalDate start = Instant.ofEpochMilli(this.startMoment.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+
+		LocalDate end = Instant.ofEpochMilli(this.endMoment.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+
+		double months = (double) ChronoUnit.MONTHS.between(start, end);
+
+		return months;
 	}
 
 	//@Mandatory

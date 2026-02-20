@@ -10,6 +10,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoney;
+import acme.realms.sponsorship.DonationKind;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,7 +33,7 @@ public class Donation extends AbstractEntity {
 	@Mandatory
 	//@ValidText
 	@Column
-	private String				bites;
+	private String				notes;
 
 	@Mandatory
 	@ValidMoney(min = 0)
