@@ -1,5 +1,5 @@
 
-package acme.entities.sponsorship;
+package acme.realms.campaign;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Sponsor extends AbstractRole {
+public class Spokesperson extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -24,15 +24,15 @@ public class Sponsor extends AbstractRole {
 	@Mandatory
 	//@ValidText
 	@Column
-	private String				address;
+	private String				cv;
 
 	@Mandatory
-	//@ValidHeader
+	//@ValidText
 	@Column
-	private String				im;
+	private String				achievements;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				gold;
+	private Boolean				licensed;
 }
