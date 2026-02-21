@@ -18,6 +18,7 @@ import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.validation.Mandatory;
+import acme.constraints.ValidHeader;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,12 +34,12 @@ public class Auditor extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	//@ValidHeader
+	@ValidHeader
 	@Column
 	private String				firm;
 
 	@Mandatory
-	//@ValidHeader
+	@ValidHeader
 	@Column
 	private String				highlights;
 

@@ -20,8 +20,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.realms.strategy.Fundraiser;
 import acme.client.components.validation.ValidUrl;
-import acme.realms.strategies.Fundraiser;
 import lombok.Getter;
 import lombok.Setter;
 
