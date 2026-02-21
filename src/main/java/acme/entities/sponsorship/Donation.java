@@ -32,7 +32,7 @@ public class Donation extends AbstractEntity {
 	@Mandatory
 	//@ValidText
 	@Column
-	private String				bites;
+	private String				notes;
 
 	@Mandatory
 	@ValidMoney(min = 0)

@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidNumber;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,7 +34,7 @@ public class AuditSection extends AbstractEntity {
 	private String				notes;
 
 	@Mandatory
-	//@ValidNumber(positive)
+	@ValidNumber(min = 0)
 	@Column
 	private Integer				hours;
 
