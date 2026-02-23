@@ -1,5 +1,5 @@
 
-package acme.entities.sponsorship;
+package acme.realms.sponsorship;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

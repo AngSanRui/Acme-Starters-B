@@ -1,5 +1,5 @@
 
-package acme.entities.invention;
+package acme.realms.invention;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
