@@ -20,8 +20,10 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.realms.campaign.Spokesperson;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidHeader;
+import acme.constraints.ValidTicker;
+import acme.realms.campaign.Spokesperson;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,12 +39,12 @@ public class Campaign extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	//@ValidTicker
+	@ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
-	//@ValidHeader
+	@ValidHeader
 	@Column
 	private String				name;
 
