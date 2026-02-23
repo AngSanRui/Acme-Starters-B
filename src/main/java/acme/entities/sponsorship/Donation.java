@@ -36,7 +36,7 @@ public class Donation extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoney(min = 0)
-	@Column
+	@Column(columnDefinition = "blob")
 	private Money				money;
 
 	@Mandatory
