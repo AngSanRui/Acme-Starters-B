@@ -1,5 +1,5 @@
 
-package acme.entities.campaign;
+package acme.realms.campaign;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

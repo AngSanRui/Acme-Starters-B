@@ -1,5 +1,5 @@
 
-package acme.entities.strategies;
+package acme.realms.strategy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,10 +22,12 @@ public class Fundraiser extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	//@ValidHeader
 	@Column
 	private String				bank;
 
 	@Mandatory
+	//@ValidText
 	@Column
 	private String				statement;
 
