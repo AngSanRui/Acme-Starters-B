@@ -1,0 +1,30 @@
+key,key:userAccount,bank,statement,agent
+#base role
+fundraiser-00,user-account-auditor-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,FALSE
+#bank- standard variations
+fundraiser-01,user-account-auditor-01,L,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-02,user-account-auditor-02,Lo,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-03,user-account-auditor-03,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-04,user-account-auditor-04,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-05,user-account-auditor-05,โลเร็ม อิปซัม,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-06,user-account-auditor-06,لوريم إيبسوم,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-07,user-account-auditor-07,洛伦·伊普森,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-08,user-account-auditor-08,<marquee>Hacked</marquee>,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-09,user-account-auditor-09,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-10,user-account-auditor-10,' or 'A' = 'A,Lorem ipsum dolor sit amet  consectetu,FALSE
+#bank- no singular values
+#statement- standard variations
+fundraiser-11,user-account-auditor-11,Lorem ipsum dolor sit amet  consectetu,L,FALSE
+fundraiser-12,user-account-auditor-12,Lorem ipsum dolor sit amet  consectetu,Lo,FALSE
+fundraiser-13,user-account-auditor-13,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,FALSE
+fundraiser-14,user-account-auditor-14,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,FALSE
+fundraiser-15,user-account-auditor-15,Lorem ipsum dolor sit amet  consectetu,โลเร็ม อิปซัม,FALSE
+fundraiser-16,user-account-auditor-16,Lorem ipsum dolor sit amet  consectetu,لوريم إيبسوم,FALSE
+fundraiser-17,user-account-auditor-17,Lorem ipsum dolor sit amet  consectetu,洛伦·伊普森,FALSE
+fundraiser-18,user-account-auditor-18,Lorem ipsum dolor sit amet  consectetu,<marquee>Hacked</marquee>,FALSE
+fundraiser-19,user-account-auditor-19,Lorem ipsum dolor sit amet  consectetu,<script>alert(‘Hacked!’);</script>,FALSE
+fundraiser-20,user-account-auditor-20,Lorem ipsum dolor sit amet  consectetu,' or 'A' = 'A,FALSE
+#statement- no singular values
+#agent- standard values
+fundraiser-21,user-account-auditor-21,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,TRUE
+#agent- no singular values
