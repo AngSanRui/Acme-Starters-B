@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
+import acme.client.helpers.MomentHelper;
 import acme.entities.auditReports.AuditReport;
 import acme.entities.auditReports.AuditReportRepository;
 
@@ -35,8 +36,23 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 		if (auditReport == null)
 			result = true;
-		else
+		else {
+			{
+				boolean publishedWithAuditSection;
+
+				publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
+
+				super.state(context, publishedWithAuditSection, "*", "acme.validation.audit-report.published-without-audit-section.message");
+			}
+			{
+				boolean startBeforeEnd;
+
+				startBeforeEnd = MomentHelper.isBeforeOrEqual(auditReport.getStartMoment(), auditReport.getEndMoment());
+
+				super.state(context, startBeforeEnd, "endMoment", "acme.validation.audit-report.start-before-end.message");
+			}
 			result = !super.hasErrors(context);
+		}
 
 		return result;
 	}
