@@ -1,0 +1,35 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:inventor
+
+
+
+#ticker- standard variations
+invention-00,,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+invention-01,AA00-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+invention-02,AA00-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+#ticker- no singular values
+#name- standard variations
+invention-03,AA01-TICKER,,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+invention-04,AA02-TICKER,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum  Curabitur pretium tincidunt lacus Nulla gravida orci a odio Nullam varius turpis et commodo pharetra est eros bibendum elit nec luctus magna felis sollicitudin mauris Integer in mauris eu nibh euismod gravi  Quismodo locandi mollis tenor est  Summun,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+#name- no singular values
+#description- standard variations
+invention-05,AA03-TICKER,Lorem ipsum dolor sit amet  consectetu,,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+invention-06,AA04-TICKER, Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum  Curabitur pretium tincidunt lacus Nulla gravida orci a odio Nullam varius turpis et commodo pharetra est eros bibendum elit nec luctus magna felis sollicitudin mauris Integer in mauris eu nibh euismod gravi  Quismodo locandi mollis tenor est  Summun Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+#description- no singular values
+#startMoment- standard variations
+invention-07,AA05-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+invention-08,AA06-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,1999/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+invention-09,AA07-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2226/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+#startMoment- no singular values
+#endMoment- standard variations
+invention-10,AA08-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,,http://lorem.com/ipsum,FALSE,inventor-00
+invention-11,AA09-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,1999/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+invention-12,AA10-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2226/01/01 23:00,http://lorem.com/ipsum,FALSE,inventor-00
+#endMoment- no singular values
+#moreInfo- standard variations
+invention-14,AA11-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x,FALSE,inventor-00
+invention-15,AA12-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://,FALSE,inventor-00
+invention-16,AA13-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,ftp://,FALSE,inventor-00
+#moreInfo- no singular values
+#draftMode- standard variations
+invention-17,AA14-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,,inventor-00
+#draftMode- no singular values

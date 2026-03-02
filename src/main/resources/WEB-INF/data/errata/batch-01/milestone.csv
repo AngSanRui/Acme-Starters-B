@@ -1,0 +1,20 @@
+key,title,achievements,effort,kind,key:campaign
+#base entity,"","","","","",""
+milestone-00,"","",50.00,,
+#name- standard variations,"","","","",""
+milestone-01,,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.00,TEASER,campaign-00
+milestone-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.00,TEASER,campaign-00
+#name- no singular values,""
+#achievements- standard variations,""
+milestone-11,"",L,50.00,TEASER,campaign-00
+milestone-12,"Lorem ipsum dolor sit amet  consectetur",Lo,50.00,TEASER,campaign-00
+#achievements- no singular values
+#effort-standard variations
+milestone-21,"Lorem ipsum dolor sit amet  consectetu","",0.00,TEASER,campaign-00
+milestone-22,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",0.01,TEASER,campaign-00
+#effort- no singular values,"","","",""
+#kind- standard variations,""
+milestone-25,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.00,,campaign-00
+#kind- no singular values,""
+#campaign standard variations,"","","","","","",""
+milestone-27,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50.00,TEASER,

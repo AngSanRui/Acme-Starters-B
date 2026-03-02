@@ -1,5 +1,7 @@
 logs/
 target/
+target\*
+target\
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -32,3 +34,4 @@ mvnw
 mvnw\.cmd
 
 target/classes/maven.properties
+target\classes\maven.properties

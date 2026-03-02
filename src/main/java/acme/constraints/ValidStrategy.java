@@ -6,17 +6,18 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import javax.validation.Constraint;
 import javax.validation.Payload;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-//@Constraint(validatedBy = StrategyValidator.class)
+@Constraint(validatedBy = StrategyValidator.class)
 
 public @interface ValidStrategy {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "";
+	String message() default "{acme.validation.validStrategy.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
