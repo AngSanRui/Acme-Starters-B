@@ -1,4 +1,6 @@
 key,enabled,identity,password,username
+user-account-administrator-02,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator1,administrator1
+user-account-administrator-03,true,"UserIdentity{name: 'Administrator', surname: 'Acme', email: 'administrator@acme.com'}",administrator2,administrator2
 user-account-consumer-01,true,"UserIdentity{name: 'Peter', surname: 'Consumer', email: 'peter@acme.com'}",consumer1,consumer1
 user-account-consumer-02,true,"UserIdentity{name: 'Mary', surname: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', email: 'mary@acme.com'}",consumer2,consumer2
 user-account-consumer-03,true,"UserIdentity{name: 'Manolo', surname: '之乎路可良 ᏥᏲᏎᎭ', email: 'manolo@acme.com'}",consumer3,consumer3
@@ -27,6 +29,28 @@ user-account-auditor-18,true,"UserIdentity{name: 'Laurel', surname: 'Provider', 
 user-account-auditor-19,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor19,auditor19
 user-account-auditor-20,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor20,auditor20
 user-account-auditor-21,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor21,auditor21
+user-account-fundraiser-00,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser0,fundraiser0
+user-account-fundraiser-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser1,fundraiser1
+user-account-fundraiser-02,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser2,fundraiser2
+user-account-fundraiser-03,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser3,fundraiser3
+user-account-fundraiser-04,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser4,fundraiser4
+user-account-fundraiser-05,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser5,fundraiser5
+user-account-fundraiser-06,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser6,fundraiser6
+user-account-fundraiser-07,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser7,fundraiser7
+user-account-fundraiser-08,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser8,fundraiser8
+user-account-fundraiser-09,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser9,fundraiser9
+user-account-fundraiser-10,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser10,fundraiser10
+user-account-fundraiser-11,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser11,fundraiser11
+user-account-fundraiser-12,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser12,fundraiser12
+user-account-fundraiser-13,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser13,fundraiser13
+user-account-fundraiser-14,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser14,fundraiser14
+user-account-fundraiser-15,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser15,fundraiser15
+user-account-fundraiser-16,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser16,fundraiser16
+user-account-fundraiser-17,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser17,fundraiser17
+user-account-fundraiser-18,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser18,fundraiser18
+user-account-fundraiser-19,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser19,fundraiser19
+user-account-fundraiser-20,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser20,fundraiser20
+user-account-fundraiser-21,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",fundraiser21,fundraiser21
 user-account-sponsor-00,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",sponsor0,sponsor0
 user-account-sponsor-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",sponsor1,sponsor1
 user-account-sponsor-02,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",sponsor2,sponsor2
@@ -49,3 +73,4 @@ user-account-sponsor-18,true,"UserIdentity{name: 'Laurel', surname: 'Provider', 
 user-account-sponsor-19,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",sponsor19,sponsor19
 user-account-sponsor-20,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",sponsor20,sponsor20
 user-account-sponsor-21,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",sponsor21,sponsor21
+

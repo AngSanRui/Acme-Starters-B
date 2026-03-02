@@ -1,0 +1,24 @@
+key,key:userAccount,bank,statement,agent
+#base role
+fundraiser-00,user-account-fundraiser-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,FALSE
+#bank- standard variations
+<<<<<<< HEAD
+fundraiser-01,user-account-fundraiser-01,,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-02,user-account-fundraiser-01,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te i,Lorem ipsum dolor sit amet  consectetu,FALSE
+=======
+fundraiser-01,user-account-auditor-01,,Lorem ipsum dolor sit amet  consectetu,FALSE
+fundraiser-02,user-account-auditor-01,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te i,FALSE
+>>>>>>> e36e93908236feaa7a1368bae2dbcdd29c46b9ce
+#bank- no singular values
+#statement- standard variations
+fundraiser-03,user-account-fundraiser-11,Lorem ipsum dolor sit amet  consectetu,,FALSE
+fundraiser-04,user-account-fundraiser-14,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te i,FALSE
+#statement- no singular values
+<<<<<<< HEAD
+#agent- standard variations
+fundraiser-05,user-account-fundraiser-21,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,
+=======
+#agent- standard values
+fundraiser-05,user-account-auditor-21,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,
+>>>>>>> e36e93908236feaa7a1368bae2dbcdd29c46b9ce
+#agent- no singular values
