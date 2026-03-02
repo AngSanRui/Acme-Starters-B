@@ -1,7 +1,10 @@
 
 package acme.entities.strategies;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +20,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
-import acme.client.components.validation.ValidScore;
+import acme.realms.strategy.Fundraiser;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,14 +37,17 @@ public class Strategy extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	//ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
+	//ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
+	//ValidText
 	@Column
 	private String				description;
 
@@ -67,21 +73,46 @@ public class Strategy extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-	@Mandatory
-	@Valid
-	@Transient
-	private Double				mothsActive;
 
-	@Mandatory
-	@ValidScore
+	//@Mandatory
+	//@Valid
 	@Transient
-	private Double				expectedPercentage;
+	private Double getMothsActive() {
+
+		Double result = null;
+
+		if (this.startMoment != null && this.endMoment != null) {
+			long startMomentMillisecs = this.startMoment.getTime();
+			long endMomentMillisecs = this.endMoment.getTime();
+
+			long diffInMilliSecs = endMomentMillisecs - startMomentMillisecs;
+			long diffInDays = TimeUnit.MILLISECONDS.toDays(diffInMilliSecs);
+			result = Math.round(diffInDays / 30.0 * 10.0) / 10.0;
+		}
+		return result;
+	}
+
+	//@Mandatory
+	//@ValidScore
+	@Transient
+	private double getExpectedPercentage() {
+
+		double result = 0;
+
+		List<Tactic> tactics = new ArrayList<Tactic>();
+
+		if (tactics != null && !tactics.isEmpty())
+			for (Tactic tactic : tactics)
+				result += tactic.getExpectedPercentage();
+		return result;
+	}
 
 	// Relationships ----------------------------------------------------------
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Fundraiser			fundraiser;
+	private Fundraiser fundraiser;
 
 }

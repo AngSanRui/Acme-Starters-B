@@ -1,5 +1,5 @@
 
-package acme.entities.strategies;
+package acme.realms.invention;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Fundraiser extends AbstractRole {
+public class Inventor extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -22,19 +22,18 @@ public class Fundraiser extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
+	//@ValidText
 	@Column
-	private String				bank;
+	private String				bio;
 
 	@Mandatory
+	//@ValidText
 	@Column
-	private String				statement;
+	private String				keyWords;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				agent;
+	private Boolean				licensed;
 
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
 }

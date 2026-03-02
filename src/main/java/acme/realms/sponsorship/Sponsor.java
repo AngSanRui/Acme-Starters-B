@@ -1,5 +1,5 @@
 
-package acme.entities.invention;
+package acme.realms.sponsorship;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,13 +7,15 @@ import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.validation.Mandatory;
+import acme.constraints.ValidHeader;
+import acme.constraints.ValidText;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Inventor extends AbstractRole {
+public class Sponsor extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -22,18 +24,17 @@ public class Inventor extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	//@ValidText
+	@ValidText
 	@Column
-	private String				bio;
+	private String				address;
 
 	@Mandatory
-	//@ValidText
+	@ValidHeader
 	@Column
-	private String				keyWords;
+	private String				im;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				licensed;
-
+	private Boolean				gold;
 }
