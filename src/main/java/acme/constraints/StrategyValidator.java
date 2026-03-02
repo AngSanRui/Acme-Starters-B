@@ -28,9 +28,35 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 
 		if (strategy == null)
 			result = true;
-		else
-			result = false;
+		else {
 
+			//Validate: Strategies cannot be published unless they have at least one tactic
+
+			{
+				boolean hasTactic;
+				Integer tacticsPerStrategy;
+
+				tacticsPerStrategy = this.repository.tacticsPerStrategy(strategy.getId());
+				hasTactic = tacticsPerStrategy >= 1;
+
+				//super.state(context, hasTactic, "*", "acme.validation.strategy.no-tactics.message");
+			}
+
+			//Validate: startMoment and endMoment must be a valid time interval in the future
+
+			{
+				boolean validTimeInterval;
+
+				if (strategy.getStartMoment() != null && strategy.getEndMoment() != null)
+					validTimeInterval = strategy.getStartMoment().before(strategy.getEndMoment());
+				else
+					validTimeInterval = true;
+				//super.state(context, validTimeInterval, "endMoment", "acme.validation.strategy.invalid-time-in.message");
+
+			}
+
+			result = !super.hasErrors(context);
+		}
 		return result;
 	}
 
