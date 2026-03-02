@@ -38,11 +38,13 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 			result = true;
 		else {
 			{	//check if its published that it has audit section
-				boolean publishedWithAuditSection;
+				if (auditReport.getDraftMode() != null) {
+					boolean publishedWithAuditSection;
 
-				publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
+					publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
 
-				super.state(context, publishedWithAuditSection, "*", "acme.validation.audit-report.published-without-audit-section.message");
+					super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.audit-report.published-without-audit-section.message");
+				}
 			}
 			{	//check that the startMoment is before the endMoment (only triggers if not null both)
 				if (auditReport.getStartMoment() != null && auditReport.getEndMoment() != null) {
@@ -54,12 +56,17 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 				}
 			}
 			{	//check that ticker is unique
-				boolean tickerIsUnique;
+				if (auditReport.getTicker() != null) {
+					boolean tickerIsUnique;
 
-				tickerIsUnique = this.repository.isTickerUnique(auditReport.getTicker());
+					AuditReport arMismoTicker = this.repository.isTickerUnique(auditReport.getTicker());
+					if (arMismoTicker == null || arMismoTicker.getId() == auditReport.getId())
+						tickerIsUnique = true;
+					else
+						tickerIsUnique = false;
 
-				super.state(context, tickerIsUnique, "ticker", "acme.validation.audit-report.ticker-not-unique.message");
-
+					super.state(context, tickerIsUnique, "ticker", "acme.validation.audit-report.ticker-not-unique.message");
+				}
 			}
 			result = !super.hasErrors(context);
 		}

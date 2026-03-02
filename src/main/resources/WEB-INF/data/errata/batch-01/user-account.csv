@@ -7,12 +7,14 @@ user-account-consumer-03,true,"UserIdentity{name: 'Manolo', surname: '之乎路�
 user-account-provider-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",provider1,
 user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза თხა', email: 'martina@acme.com'}",,provider2
 user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטיח Æløzå', email: 'antonia@acme.com'}",provider3,
-user-account-auditor-00,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",,auditor0
-user-account-auditor-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor1,
-user-account-auditor-02,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",,auditor2
-user-account-auditor-03,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor3,
-user-account-auditor-04,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",,auditor4
-user-account-auditor-05,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor5,
+#cuentas auditor correctas para probar errores de otras partes
+user-account-auditor-00,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor0,auditor0
+user-account-auditor-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor1,auditor1
+user-account-auditor-02,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor2,auditor2
+user-account-auditor-03,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor3,auditor3
+user-account-auditor-04,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor4,auditor4
+user-account-auditor-05,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor5,auditor5
+#fin cuentas auditor correctas para probar errores de otras partes
 user-account-auditor-06,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",,auditor6
 user-account-auditor-07,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",auditor7,
 user-account-auditor-08,true,"UserIdentity{name: 'Laurel', surname: 'Provider', email: 'laurel@acme.com'}",,auditor8
