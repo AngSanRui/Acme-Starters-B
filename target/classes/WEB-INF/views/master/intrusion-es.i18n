@@ -25,6 +25,5 @@ master.intrusion.text = \
 	fines de seguridad y prueba. Los intentos de acceso no autorizado no serán tolerados. Nos \
 	reservamos todos los derechos para ejercer acciones legales en la máxima medida permitida \
 	por la ley.
-
 acme.intrusion.hacked-attribute = El atributo ''{0}'' fue hackeado.
 acme.intrusion.hacked-csrf = Token CSRF hackeado.

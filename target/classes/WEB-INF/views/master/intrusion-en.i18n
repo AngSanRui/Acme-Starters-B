@@ -10,7 +10,7 @@
 
 master.intrusion.title = Intrusion alert
 master.intrusion.text = \
-	Please be advised that any attempt to compromise, interfere with, or gain unauthorised \
+	Please, be advised that any attempt to compromise, interfere with, or gain unauthorised \
 	access to this system is strictly prohibited under applicable legislation and constitutes \
 	a serious breach of security protocols. Such conduct may amount to criminal activity under \
 	Computer Misuse Acts or statutory provisions. This incident has been duly recorded and \
@@ -24,7 +24,5 @@ master.intrusion.text = \
 	with this system, you acknowledge that all actions are monitored and logged for security and \
 	evidentiary purposes.  Unauthorised access attempts will not be tolerated. We reserve all \
 	rights to pursue legal remedies to the fullest extent permitted by law.
-
-	
 acme.intrusion.hacked-attribute = Attribute ''{0}'' was hacked.
 acme.intrusion.hacked-csrf = CSRF token was hacked.
