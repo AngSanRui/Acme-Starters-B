@@ -97,6 +97,7 @@ public class Invention extends AbstractEntity {
 	//@ValidMoney(min=0.)
 	@Transient
 	private Double getCost() {
+		//TODO: calcular el coste total a traves del repositorio
 		return null;
 	}
 
