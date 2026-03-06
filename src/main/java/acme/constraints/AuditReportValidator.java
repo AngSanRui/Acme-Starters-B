@@ -37,19 +37,36 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 		if (auditReport == null)
 			result = true;
 		else {
-			{
-				boolean publishedWithAuditSection;
+			{	//check if its published that it has audit section
+				if (auditReport.getDraftMode() != null) {
+					boolean publishedWithAuditSection;
 
-				publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
+					publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
 
-				super.state(context, publishedWithAuditSection, "*", "acme.validation.audit-report.published-without-audit-section.message");
+					super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.audit-report.published-without-audit-section.message");
+				}
 			}
-			{
-				boolean startBeforeEnd;
+			{	//check that the startMoment is before the endMoment (only triggers if not null both)
+				if (auditReport.getStartMoment() != null && auditReport.getEndMoment() != null) {
+					boolean startBeforeEnd;
 
-				startBeforeEnd = MomentHelper.isBeforeOrEqual(auditReport.getStartMoment(), auditReport.getEndMoment());
+					startBeforeEnd = MomentHelper.isBeforeOrEqual(auditReport.getStartMoment(), auditReport.getEndMoment());
 
-				super.state(context, startBeforeEnd, "endMoment", "acme.validation.audit-report.start-before-end.message");
+					super.state(context, startBeforeEnd, "endMoment", "acme.validation.audit-report.start-after-end.message");
+				}
+			}
+			{	//check that ticker is unique
+				if (auditReport.getTicker() != null) {
+					boolean tickerIsUnique;
+
+					AuditReport arMismoTicker = this.repository.isTickerUnique(auditReport.getTicker());
+					if (arMismoTicker == null || arMismoTicker.getId() == auditReport.getId())
+						tickerIsUnique = true;
+					else
+						tickerIsUnique = false;
+
+					super.state(context, tickerIsUnique, "ticker", "acme.validation.audit-report.ticker-not-unique.message");
+				}
 			}
 			result = !super.hasErrors(context);
 		}

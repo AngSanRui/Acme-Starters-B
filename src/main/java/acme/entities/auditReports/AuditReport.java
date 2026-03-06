@@ -1,7 +1,7 @@
 
 package acme.entities.auditReports;
 
-import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -19,6 +19,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidAuditReport;
@@ -83,19 +84,27 @@ public class AuditReport extends AbstractEntity {
 	private AuditReportRepository	repository;
 
 
+	@Mandatory
+	@ValidNumber //PREGUNTAR, en el uml pone que ponga Valid a secas ?
 	@Transient
 	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
 			return null;
 
-		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		double months = duration.toHours() / 720.0;
+		double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+
+		//esto sirve para redondear a 2 decimas
+		months = Math.round(months * 100.0) / 100.0;
 		return months;
 	}
 
+	@Mandatory
+	@ValidNumber(min = 0)
 	@Transient
 	public Integer getHours() {
 		Integer hours = this.repository.calculateAuditReportHours(this.getId());
+		if (hours == null)
+			return 0;
 		return hours;
 	}
 
