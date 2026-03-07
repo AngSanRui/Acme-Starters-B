@@ -24,7 +24,7 @@ import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
-import acme.realms.invention.Inventor;
+import acme.realms.inventor.Inventor;
 import lombok.Getter;
 import lombok.Setter;
 

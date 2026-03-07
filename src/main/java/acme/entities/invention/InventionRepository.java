@@ -1,10 +1,18 @@
 
 package acme.entities.invention;
 
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+
 import acme.client.repositories.AbstractRepository;
 
 public interface InventionRepository extends AbstractRepository {
 
-	//TODO: hacer consultas JPQL
+	@Query("select part from Part part where part.invention.id = :arId")
+	Collection<Part> getParts(int arId);
 
+	//Puede dar error en errata (ángel)
+	//@Query("select in from Invention in where in.ticker = :ticker")
+	//Invention isTickerUnique(String ticker);
 }
