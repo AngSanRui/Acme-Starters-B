@@ -10,7 +10,7 @@
 
 any.audit-report.list.title = Listado de informes de auditoria
 
-any.audit-report.list.label.author = Autor
+any.audit-report.list.label.auditor = Auditor
 any.audit-report.list.label.ticker = Referencia
 any.audit-report.list.label.name = Nombre
 any.audit-report.list.label.description = Descripcion
