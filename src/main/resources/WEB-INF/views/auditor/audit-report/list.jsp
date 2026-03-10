@@ -16,9 +16,10 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="any.audit-report.list.label.ticker" path="ticker" width="20%"/>
-	<acme:list-column code="any.audit-report.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="any.audit-report.list.label.startMoment" path="startMoment" width="30%"/>
-	<acme:list-column code="any.audit-report.list.label.endMoment" path="endMoment" width="30%"/>
+	<acme:list-column code="auditor.audit-report.list.label.ticker" path="ticker" width="20%"/>
+	<acme:list-column code="auditor.audit-report.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="auditor.audit-report.list.label.startMoment" path="startMoment" width="25%"/>
+	<acme:list-column code="auditor.audit-report.list.label.endMoment" path="endMoment" width="25%"/>
+	<acme:list-column code="auditor.audit-report.list.label.draftMode" path="draftMode" width="10%"/>
 </acme:list>
 

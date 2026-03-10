@@ -1,22 +1,22 @@
 
-package acme.features.any.auditReport;
+package acme.features.auditor.auditReport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.auditReports.AuditReport;
+import acme.realms.auditors.Auditor;
 
 @Service
-public class AnyAuditReportShowService extends AbstractService<Any, AuditReport> {
+public class AuditorAuditReportShowService extends AbstractService<Auditor, AuditReport> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyAuditReportRepository	repository;
+	private AuditorAuditReportRepository	repository;
 
-	private AuditReport					auditReport;
+	private AuditReport						auditReport;
 
 	// AbstractService interface -------------------------------------------
 
@@ -33,8 +33,8 @@ public class AnyAuditReportShowService extends AbstractService<Any, AuditReport>
 	public void authorise() {
 		boolean status;
 
-		//que esté publicado
-		status = this.auditReport != null && !this.auditReport.getDraftMode();
+		//que sea del auditor de la sesión iniciada
+		status = this.auditReport != null && this.auditReport.getAuditor().isPrincipal();
 
 		super.setAuthorised(status);
 	}

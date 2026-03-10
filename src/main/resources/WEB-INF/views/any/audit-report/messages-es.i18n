@@ -13,7 +13,8 @@ any.audit-report.list.title = Listado de informes de auditoria
 any.audit-report.list.label.auditor = Auditor
 any.audit-report.list.label.ticker = Referencia
 any.audit-report.list.label.name = Nombre
-any.audit-report.list.label.description = Descripcion
+any.audit-report.list.label.startMoment = Momento de inicio
+any.audit-report.list.label.endMoment = Momento de acabado
 
 any.audit-report.form.title = Formulario de informe de auditoria
 
