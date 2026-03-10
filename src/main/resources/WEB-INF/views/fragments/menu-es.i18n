@@ -14,6 +14,8 @@ master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.list-audit-reports = Listar informes de auditoria
 master.menu.anonymous.list-inventions = Listar invenciones
+master.menu.anonymous.list-sponsorships = Listar sponsorships
+master.menu.anonymous.list-campaigns = Lista de campañas
 
 # master.menu.administrator ###################################################
 
