@@ -28,5 +28,5 @@ authenticated.invention.form.label.draft-mode = Draft mode:
 authenticated.invention.form.label.months-active = Months active:
 authenticated.invention.form.label.hours = Cost:
 
-# authenticated.invention.form.button.parts = List parts
-# authenticated.invention.form.button.inventor = Show inventor account
+authenticated.invention.form.button.parts = List parts
+

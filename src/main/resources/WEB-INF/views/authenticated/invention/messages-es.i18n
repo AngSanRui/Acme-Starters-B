@@ -18,5 +18,5 @@ authenticated.invention.form.label.draft-mode = Modo borrador:
 authenticated.invention.form.label.months-active = Meses activo:
 authenticated.invention.form.label.costs = Coste:
 
-# authenticated.invention.form.button.parts = Listar partes de invención
-# authenticated.invention.form.button.inventor = Mostrar cuenta del inventor
+authenticated.invention.form.button.parts = Listar partes de invención
+

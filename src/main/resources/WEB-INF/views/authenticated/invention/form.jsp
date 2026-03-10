@@ -19,8 +19,6 @@
 	<acme:form-integer 	code="any.invention.form.label.cost" path="cost"/>
 	--%>
 	
-	<%--
-	<acme:button code="authenticated.invention.form.button.parts" action="/any/part/list?inventionId=${id}"/>
-	<acme:button code="authenticated.invention.form.button.inventor" action="/any/inventor/show?inventorId=${inventor.id}"/>
-	--%>
+	<acme:button code="authenticated.invention.form.button.parts" action="/authenticated/part/list?inventionId=${id}"/>
+
 </acme:form>
