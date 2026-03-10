@@ -13,6 +13,6 @@ public interface InventionRepository extends AbstractRepository {
 	Collection<Part> getParts(int arId);
 
 	//Puede dar error en errata (ángel)
-	//@Query("select in from Invention in where in.ticker = :ticker")
-	//Invention isTickerUnique(String ticker);
+	@Query("select inv from Invention inv where inv.ticker = :ticker")
+	Invention isTickerUnique(String ticker);
 }

@@ -56,19 +56,19 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 					super.state(context, startBeforeEnd, "endMoment", "acme.validation.invention.start-after-end.message");
 				}
 			}
-			//			{	//check that ticker is unique
-			//				if (invention.getTicker() != null) {
-			//					boolean tickerIsUnique;
-			//
-			//					Invention arMismoTicker = this.repository.isTickerUnique(invention.getTicker());
-			//					if (arMismoTicker == null || arMismoTicker.getId() == invention.getId())
-			//						tickerIsUnique = true;
-			//					else
-			//						tickerIsUnique = false;
-			//
-			//					super.state(context, tickerIsUnique, "ticker", "acme.validation.invention.ticker-not-unique.message");
-			//				}
-			//			}
+			{	//check that ticker is unique
+				if (invention.getTicker() != null) {
+					boolean tickerIsUnique;
+
+					Invention arMismoTicker = this.repository.isTickerUnique(invention.getTicker());
+					if (arMismoTicker == null || arMismoTicker.getId() == invention.getId())
+						tickerIsUnique = true;
+					else
+						tickerIsUnique = false;
+
+					super.state(context, tickerIsUnique, "ticker", "acme.validation.invention.ticker-not-unique.message");
+				}
+			}
 			result = !super.hasErrors(context);
 		}
 
