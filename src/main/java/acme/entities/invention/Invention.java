@@ -24,7 +24,7 @@ import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
-import acme.realms.invention.Inventor;
+import acme.realms.inventor.Inventor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -97,6 +97,7 @@ public class Invention extends AbstractEntity {
 	//@ValidMoney(min=0.)
 	@Transient
 	private Double getCost() {
+		//TODO: calcular el coste total a traves del repositorio
 		return null;
 	}
 

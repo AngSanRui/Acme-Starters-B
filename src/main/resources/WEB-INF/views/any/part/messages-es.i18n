@@ -1,0 +1,17 @@
+
+
+any.part.list.title = Listado de partes
+
+any.part.list.label.name = Nombre
+any.part.list.label.description = Descripción
+any.part.list.label.cost = Coste
+any.part.list.label.kind = Tipo
+
+any.part.form.title = Formulario de parte de invención
+
+any.part.form.label.name = Nombre:
+any.part.form.label.description = Descripción:
+any.part.form.label.cost = Coste:
+any.part.form.label.kind = Tipo:
+
+
