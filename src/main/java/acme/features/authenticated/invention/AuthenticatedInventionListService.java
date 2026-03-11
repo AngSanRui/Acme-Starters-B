@@ -43,6 +43,6 @@ public class AuthenticatedInventionListService extends AbstractService<Authentic
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.inventions, "inventor", "ticker", "name", "description");
+		super.unbindObjects(this.inventions, "ticker", "name", "startMoment", "endMoment");
 	}
 }

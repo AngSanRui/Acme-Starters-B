@@ -12,7 +12,6 @@ public interface InventionRepository extends AbstractRepository {
 	@Query("select part from Part part where part.invention.id = :arId")
 	Collection<Part> getParts(int arId);
 
-	//Puede dar error en errata (ángel)
 	@Query("select inv from Invention inv where inv.ticker = :ticker")
 	Invention isTickerUnique(String ticker);
 }

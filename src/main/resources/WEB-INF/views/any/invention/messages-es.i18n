@@ -10,10 +10,10 @@
 
 any.invention.list.title = Listado de informes de invenciones
 
-any.invention.list.label.inventor = Inventor
 any.invention.list.label.ticker = Referencia
 any.invention.list.label.name = Nombre
-any.invention.list.label.description = Descripcion
+any.invention.form.label.start-moment = Momento de inicio
+any.invention.form.label.end-moment = Momento de acabado
 
 any.invention.form.title = Formulario de informe de invención
 

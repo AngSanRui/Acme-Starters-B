@@ -1,9 +1,9 @@
 authenticated.invention.list.title = Listado de informes de invenciones
 
-authenticated.invention.list.label.inventor = Inventor
 authenticated.invention.list.label.ticker = Referencia
 authenticated.invention.list.label.name = Nombre
-authenticated.invention.list.label.description = Descripcion
+authenticated.invention.form.label.start-moment = Momento de inicio
+authenticated.invention.form.label.end-moment = Momento de acabado
 
 authenticated.invention.form.title = Formulario de informe de invención
 

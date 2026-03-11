@@ -14,10 +14,8 @@
 	<acme:form-moment 	code="authenticated.invention.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="authenticated.invention.form.label.more-info" path="moreInfo"/>
 	<acme:form-checkbox	code="authenticated.invention.form.label.draft-mode" path="draftMode"/>
-	<%--
 	<acme:form-double 	code="any.invention.form.label.months-active" path="monthsActive"/>
 	<acme:form-integer 	code="any.invention.form.label.cost" path="cost"/>
-	--%>
 	
 	<acme:button code="authenticated.invention.form.button.parts" action="/authenticated/part/list?inventionId=${id}"/>
 

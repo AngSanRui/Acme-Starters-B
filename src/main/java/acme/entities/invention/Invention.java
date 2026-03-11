@@ -1,10 +1,8 @@
 
 package acme.entities.invention;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,12 +13,18 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidMoney;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
@@ -76,29 +80,35 @@ public class Invention extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
-	//@Mandatory
-	@Valid
 	@Transient
-	private Double getMothsActive() {
+	@Autowired
+	private InventionRepository	repository;
+
+
+	@Mandatory
+	@ValidNumber
+	@Transient
+	private Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
 			return null;
 
-		LocalDate start = Instant.ofEpochMilli(this.startMoment.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
-
-		LocalDate end = Instant.ofEpochMilli(this.endMoment.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
-
-		double months = ChronoUnit.MONTHS.between(start, end);
-
+		double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+		months = Math.round(months * 100.0) / 100.0;
 		return months;
 	}
 
-	//@Mandatory
-	//@ValidMoney(min=0.)
+	@Mandatory
+	@ValidMoney(min = 0.)
 	@Transient
-	private Double getCost() {
-		//TODO: calcular el coste total a traves del repositorio
-		return null;
+	private Money getCost() {
+		Money res = new Money();
+		Double aux = 0.;
+		Collection<Part> parts = this.repository.getParts(this.getId());
+		if (!parts.isEmpty())
+			aux = parts.stream().mapToDouble(p -> p.getCost().getAmount()).sum();
+		res.setCurrency("EUR");
+		res.setAmount(aux);
+		return res;
 	}
 
 	// Relationships ----------------------------------------------------------

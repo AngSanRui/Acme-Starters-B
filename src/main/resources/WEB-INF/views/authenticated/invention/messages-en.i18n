@@ -10,10 +10,10 @@
 
 authenticated.invention.list.title = Listing of inventions
 
-authenticated.invention.list.label.inventor = Inventor
 authenticated.invention.list.label.ticker = Ticker
 authenticated.invention.list.label.name = Name
-authenticated.invention.list.label.description = Description
+authenticated.invention.form.label.start-moment = Start moment
+authenticated.invention.form.label.end-moment = End moment
 
 authenticated.invention.form.title = Invention form
 
