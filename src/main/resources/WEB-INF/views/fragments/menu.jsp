@@ -20,7 +20,7 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.anonymous.list-strategies" action="/any/strategy/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-audit-reports" action="/any/audit-report/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-inventions" action="/any/invention/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-sponsorships" action="/any/sponsorship/list"/>
