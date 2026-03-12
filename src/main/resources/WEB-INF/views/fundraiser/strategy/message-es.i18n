@@ -1,0 +1,22 @@
+fundraiser.strategy.list.title = Listado de estrategias
+
+fundraiser.strategy.list.label.fundraiser = Recaudador de fondos
+fundraiser.strategy.list.label.ticker = Referencia
+fundraiser.strategy.list.label.name = Nombre
+fundraiser.strategy.list.label.description = Descripcion
+
+fundraiser.strategy.form.title = Formulario de estrategias
+
+fundraiser.strategy.form.label.fundraiser = Recaudador de fondos:
+fundraiser.strategy.form.label.ticker = Referencia:
+fundraiser.strategy.form.label.name = Nombre:
+fundraiser.strategy.form.label.description = Descripcion:
+fundraiser.strategy.form.label.start-moment = Momento de inicio:
+fundraiser.strategy.form.label.end-moment = Momento de acabado:
+fundraiser.strategy.form.label.more-info = Mas informacion:
+fundraiser.strategy.form.label.draft-mode = Modo borrador:
+fundraiser.strategy.form.label.months-active = Meses activo:
+fundraiser.strategy.form.label.hours = Horas:
+
+fundraiser.strategy.form.button.tactics = Listar tácticas
+fundraiser.strategy.form.button.fundraiser = Mostrar cuenta del recaudador de fondos

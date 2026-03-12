@@ -35,12 +35,12 @@ public class AnyStrategyShowService extends AbstractService<Any, Strategy> {
 
 		status = this.strategy != null && !this.strategy.getDraftMode();
 
-		super.setAuthorised(true);
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.strategy, "fundraiser", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		super.unbindObject(this.strategy, "fundraiser", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "expectedPercentage");
 
 	}
 }

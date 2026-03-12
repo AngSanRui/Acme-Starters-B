@@ -3,6 +3,7 @@ package acme.features.any.fundraiser;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.client.components.models.Tuple;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.realms.strategy.Fundraiser;
@@ -33,12 +34,15 @@ public class AnyFundraiserShowService extends AbstractService<Any, Fundraiser> {
 
 		status = this.fundraiser != null;
 
-		super.setAuthorised(true);
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.fundraiser, "bank", "statement", "agent");
+		Tuple tuple;
+
+		tuple = super.unbindObject(this.fundraiser, "bank", "statement", "agent");
+		tuple.put("userName", this.fundraiser.getUserAccount().getUsername());
 
 	}
 

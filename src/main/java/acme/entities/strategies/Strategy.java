@@ -19,6 +19,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
@@ -83,8 +84,8 @@ public class Strategy extends AbstractEntity {
 	private StrategyRepository	repository;
 
 
-	//@Mandatory
-	//@Valid
+	@Mandatory
+	@Valid
 	@Transient
 	private Double getMothsActive() {
 
@@ -93,7 +94,7 @@ public class Strategy extends AbstractEntity {
 	}
 
 	//@Mandatory
-	//@ValidScore
+	@ValidScore
 	@Transient
 	public double getExpectedPercentage() {
 

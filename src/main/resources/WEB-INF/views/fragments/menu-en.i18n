@@ -40,6 +40,11 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.inventor = Inventor
 master.menu.inventor.list-my-inventions = List my inventions
 
+# master.menu.fundraiser ###################################################
+
+master.menu.fundraiser = Fundraiser
+master.menu.inventor.list-my-strategies = List my strategies
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

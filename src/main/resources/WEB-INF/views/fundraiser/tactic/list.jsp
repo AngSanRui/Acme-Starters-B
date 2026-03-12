@@ -1,11 +1,11 @@
-%--
-- form.jsp
+<%--
+- list.jsp
 -
 - Copyright (C) 2012-2026 Rafael Corchuelo.
 -
 - In keeping with the traditional purpose of furthering education and research, it is
 - the policy of the copyright owner to permit non-commercial use and redistribution of
-- this artefact. It has been tested carefully, but it is not guaranteed for any particular
+- this software. It has been tested carefully, but it is not guaranteed for any particular
 - purposes.  The copyright owner does not offer any warranties or representations, nor do
 - they accept any liabilities with respect to them.
 --%>
@@ -15,9 +15,10 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
-<acme:form>
-	<acme:form-textbox 	code="any.fundraiser.form.label.bank" path="bank"/>
-	<acme:form-textbox 	code="any.fundraiser.form.label.statement" path="statement"/>
-	<acme:form-checkbox	code="any.fundraiser.form.label.agent" path="agent"/>
-	<acme:form-checkbox	code="any.fundraiser.form.label.name" path="userName"/>
-</acme:form>
+<acme:list>
+	<acme:list-column code="any.tactic.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="any.tactic.list.label.notes" path="notes" width="40%"/>
+	<acme:list-column code="any.tactic.list.label.expectedPercentage" path="expectedPercentage" width="20%"/>
+	<acme:list-column code="any.tactic.list.label.kind" path="kind" width="20%"/>
+</acme:list>
+
