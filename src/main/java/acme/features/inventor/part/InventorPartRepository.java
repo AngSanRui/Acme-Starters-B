@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.part;
+package acme.features.inventor.part;
 
 import java.util.Collection;
 
@@ -9,7 +9,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.invention.Invention;
 import acme.entities.invention.Part;
 
-public interface AuthenticatedPartRepository extends AbstractRepository {
+public interface InventorPartRepository extends AbstractRepository {
 
 	@Query("select inv from Invention inv where inv.id = :id")
 	Invention findInventionById(int id);

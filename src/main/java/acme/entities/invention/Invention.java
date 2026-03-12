@@ -88,7 +88,7 @@ public class Invention extends AbstractEntity {
 	@Mandatory
 	@ValidNumber
 	@Transient
-	private Double getMonthsActive() {
+	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
 			return null;
 
@@ -100,9 +100,9 @@ public class Invention extends AbstractEntity {
 	@Mandatory
 	@ValidMoney(min = 0.)
 	@Transient
-	private Money getCost() {
+	public Money getCost() {
 		Money res = new Money();
-		Double aux = 0.;
+		double aux = 0.;
 		Collection<Part> parts = this.repository.getParts(this.getId());
 		if (!parts.isEmpty())
 			aux = parts.stream().mapToDouble(p -> p.getCost().getAmount()).sum();

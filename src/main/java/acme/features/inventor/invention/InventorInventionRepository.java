@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.invention;
+package acme.features.inventor.invention;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.invention.Invention;
 
 @Repository
-public interface AuthenticatedInventionRepository extends AbstractRepository {
+public interface InventorInventionRepository extends AbstractRepository {
 
 	@Query("select inv from Invention inv where inv.inventor.id = :id")
 	Collection<Invention> findInventionsByInventorId(int id);

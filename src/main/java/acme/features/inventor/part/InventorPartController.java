@@ -1,17 +1,17 @@
 
-package acme.features.authenticated.part;
+package acme.features.inventor.part;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.controllers.AbstractController;
 import acme.entities.invention.Part;
+import acme.realms.inventor.Inventor;
 
 @Controller
-public class AuthenticatedPartController extends AbstractController<Authenticated, Part> {
+public class InventorPartController extends AbstractController<Inventor, Part> {
 
 	// Constructors -----------------------------------------------------------
 
@@ -19,7 +19,7 @@ public class AuthenticatedPartController extends AbstractController<Authenticate
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AuthenticatedPartListService.class);
-		super.addBasicCommand("show", AuthenticatedPartShowService.class);
+		super.addBasicCommand("list", InventorPartListService.class);
+		super.addBasicCommand("show", InventorPartShowService.class);
 	}
 }

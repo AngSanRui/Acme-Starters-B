@@ -1,25 +1,24 @@
 
-package acme.features.authenticated.invention;
+package acme.features.inventor.invention;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.invention.Invention;
 import acme.realms.inventor.Inventor;
 
 @Service
-public class AuthenticatedInventionListService extends AbstractService<Authenticated, Invention> {
+public class InventorInventionListService extends AbstractService<Inventor, Invention> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedInventionRepository	repository;
+	private InventorInventionRepository	repository;
 
-	private Collection<Invention>				inventions;
+	private Collection<Invention>		inventions;
 
 	// AbstractService interface -------------------------------------------
 

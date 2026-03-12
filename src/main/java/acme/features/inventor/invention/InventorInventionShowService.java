@@ -1,23 +1,22 @@
 
-package acme.features.authenticated.invention;
+package acme.features.inventor.invention;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.invention.Invention;
 import acme.realms.inventor.Inventor;
 
 @Service
-public class AuthenticatedInventionShowService extends AbstractService<Authenticated, Invention> {
+public class InventorInventionShowService extends AbstractService<Inventor, Invention> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedInventionRepository	repository;
+	private InventorInventionRepository	repository;
 
-	private Invention							invention;
+	private Invention					invention;
 
 	// AbstractService interface -------------------------------------------
 
@@ -41,6 +40,6 @@ public class AuthenticatedInventionShowService extends AbstractService<Authentic
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.invention, "inventor", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		super.unbindObject(this.invention, "inventor", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "cost");
 	}
 }
