@@ -14,9 +14,8 @@ any.strategy.form.label.description = Descripcion:
 any.strategy.form.label.start-moment = Momento de inicio:
 any.strategy.form.label.end-moment = Momento de acabado:
 any.strategy.form.label.more-info = Mas informacion:
-any.strategy.form.label.draft-mode = Modo borrador:
 any.strategy.form.label.months-active = Meses activo:
-any.strategy.form.label.hours = Horas:
+any.strategy.form.label.expected-percentage = Porcentaje esperado:
 
 any.strategy.form.button.tactics = Listar tácticas
 any.strategy.form.button.fundraiser = Mostrar cuenta del recaudador de fondos

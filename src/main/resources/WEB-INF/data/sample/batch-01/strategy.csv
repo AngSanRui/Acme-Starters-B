@@ -35,11 +35,11 @@ strategy-25,AA25-TICKER,Lorem ipsum dolor sit amet  consectetu,' or 'A' = 'A,202
 #startMoment- standard variations
 strategy-26,AA26-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/08 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,fundraiser-00
 strategy-27,AA27-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/08 00:01,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,fundraiser-00
-strategy-28,AA28-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2200/12/31 23:59,2200/12/31 23:59,http://lorem.com/ipsum,FALSE,fundraiser-00
+strategy-28,AA28-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2200/12/31 23:58,2200/12/31 23:59,http://lorem.com/ipsum,FALSE,fundraiser-00
 #startMoment- no singular values
 #endMoment- standard variations
-strategy-29,AA29-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/08 00:00,2025/01/08 00:00,http://lorem.com/ipsum,FALSE,fundraiser-00
-strategy-30,AA30-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/08 00:00,2025/01/08 00:01,http://lorem.com/ipsum,FALSE,fundraiser-00
+strategy-29,AA29-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/08 00:00,2025/01/08 00:01,http://lorem.com/ipsum,FALSE,fundraiser-00
+strategy-30,AA30-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/08 00:59,2025/01/08 01:00,http://lorem.com/ipsum,FALSE,fundraiser-00
 strategy-31,AA31-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/08 00:00,2200/12/31 23:59,http://lorem.com/ipsum,FALSE,fundraiser-00
 #endMoment- no singular values
 #moreInfo- no standard variations

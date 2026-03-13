@@ -1,7 +1,7 @@
 
 package acme.entities.strategies;
 
-import java.time.temporal.ChronoUnit;
+import java.time.Duration;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,6 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -87,26 +88,28 @@ public class Strategy extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Transient
-	private Double getMothsActive() {
+	public Double getMonthsActive() {
 
-		double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
-		return months;
+		Double result = null;
+		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
+		result = duration.toDays() / 30.0;
+		return result;
 	}
 
-	//@Mandatory
+	@Mandatory
 	@ValidScore
 	@Transient
 	public double getExpectedPercentage() {
 
 		double result;
-		result = this.repository.getExpectedPercentage(this.getId());
+		result = this.repository == null ? 0.0 : this.repository.getExpectedPercentage(this.getId());
 		return result;
 	}
 
 	// Relationships ----------------------------------------------------------
 
 
-	@Mandatory
+	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Fundraiser fundraiser;

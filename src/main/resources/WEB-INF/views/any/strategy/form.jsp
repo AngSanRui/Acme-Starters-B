@@ -25,7 +25,8 @@
 	<acme:form-moment 	code="any.strategy.form.label.start-moment" path="startMoment"/>
 	<acme:form-moment 	code="any.strategy.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="any.strategy.form.label.more-info" path="moreInfo"/>
-	<acme:form-checkbox	code="any.strategy.form.label.draft-mode" path="draftMode"/>
+	<acme:form-double code="any.strategy.form.label.months-active" path="monthsActive"/>
+	<acme:form-double code="any.strategy.form.label.expected-percentage" path="expectedPercentage"/>
 	
 	<acme:button code="any.strategy.form.button.tactics" action="/any/tactic/list?strategyId=${id}"/>
 	<acme:button code="any.strategy.form.button.fundraiser" action="/any/fundraiser/show?fundraiserId=${fundraiser.id}"/>
