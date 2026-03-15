@@ -16,12 +16,9 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<%--
-	<acme:list-column code="any.audit-report.list.label.auditor" path="auditor" width="20%"/>
-	--%>
-	<acme:list-column code="any.sponsorship.list.label.ticker" path="ticker" width="20%"/>
-	<acme:list-column code="any.sponsorship.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="any.sponsorship.list.label.start-moment" path="startMoment" width="30%"/>
-	<acme:list-column code="any.sponsorship.list.label.end-moment" path="endMoment" width="30%"/>
+	<acme:list-column code="authenticated.donation.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="authenticated.donation.list.label.notes" path="notes" width="40%"/>
+	<acme:list-column code="authenticated.donation.list.label.money" path="money" width="20%"/>
+	<acme:list-column code="authenticated.donation.list.label.kind" path="kind" width="20%"/>
 </acme:list>
 

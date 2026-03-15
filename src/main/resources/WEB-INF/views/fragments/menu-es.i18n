@@ -43,9 +43,17 @@ master.menu.inventor.list-my-inventions = Lista mis invenciones
 
 # master.menu.user-account ####################################################
 
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-my-sponsorships = Lista mis sponsorships
+master.menu.sponsor.list-sponsorships = Lista las sponsorships publicadas
+
 master.menu.user-account = Cuenta
 master.menu.user-account.general-profile = Perfil general
 master.menu.user-account.become-provider = Hacerse proveedor
 master.menu.user-account.provider-profile = Perfil de proveedor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
+master.menu.user-account.become-sponsor = Hacerse sponsor
+master.menu.user-account.sponsor-profile = Perfil de sponsor

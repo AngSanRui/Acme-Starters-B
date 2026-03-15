@@ -1,22 +1,23 @@
 
-package acme.features.any.sponsorship;
+package acme.features.authenticated.sponsorship;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Any;
+import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorship.Sponsorship;
+import acme.realms.sponsorship.Sponsor;
 
 @Service
-public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship> {
+public class AuthenticatedSponsorshipShowService extends AbstractService<Authenticated, Sponsorship> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnySponsorshipRepository	repository;
+	private AuthenticatedSponsorshipRepository	repository;
 
-	private Sponsorship					sponsorship;
+	private Sponsorship							sponsorship;
 
 	// AbstractService interface -------------------------------------------
 
@@ -32,8 +33,8 @@ public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship>
 	@Override
 	public void authorise() {
 		boolean status;
-
-		status = this.sponsorship != null && !this.sponsorship.getDraftMode();
+		int sponsorId = this.repository.findSponsorByAccountId(super.getRequest().getPrincipal().getAccountId());
+		status = this.sponsorship != null && super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class) && this.sponsorship.getSponsor().getId() == sponsorId;
 		super.setAuthorised(status);
 	}
 

@@ -19,9 +19,10 @@
 	<%--
 	<acme:list-column code="any.audit-report.list.label.auditor" path="auditor" width="20%"/>
 	--%>
-	<acme:list-column code="any.sponsorship.list.label.ticker" path="ticker" width="20%"/>
-	<acme:list-column code="any.sponsorship.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="any.sponsorship.list.label.start-moment" path="startMoment" width="30%"/>
-	<acme:list-column code="any.sponsorship.list.label.end-moment" path="endMoment" width="30%"/>
+	<acme:list-column code="authenticated.sponsorship.list.label.ticker" path="ticker" width="10%"/>
+	<acme:list-column code="authenticated.sponsorship.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="authenticated.sponsorship.list.label.start-moment" path="startMoment" width="30%"/>
+	<acme:list-column code="authenticated.sponsorship.list.label.end-moment" path="endMoment" width="30%"/>
+	<acme:list-column code="authenticated.sponsorship.list.label.draft-mode" path="draftMode" width="10%"/>
 </acme:list>
 
