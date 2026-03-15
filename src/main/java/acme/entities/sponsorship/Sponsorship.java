@@ -85,10 +85,10 @@ public class Sponsorship extends AbstractEntity {
 	private SponsorshipRepository	repository;
 
 
-	//@Mandatory
+	@Mandatory
 	@Valid
 	@Transient
-	private Double getMothsActive() {
+	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
 			return null;
 
@@ -98,10 +98,10 @@ public class Sponsorship extends AbstractEntity {
 		return months;
 	}
 
-	//@Mandatory
+	@Mandatory
 	@ValidMoney(min = 0)
 	@Transient
-	private Money getTotalMoney() {
+	public Money getTotalMoney() {
 		Double amount = this.repository.calculateSponsorshipMoney(this.getId());
 		Money money = new Money();
 		money.setAmount(amount);
