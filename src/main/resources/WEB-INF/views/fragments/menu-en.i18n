@@ -34,6 +34,12 @@ master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################
 
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-my-sponsorships = List my sponsorships
+master.menu.sponsor.list-sponsorships = List published sponsorships
+
 master.menu.user-account = Account
 master.menu.user-account.general-profile = General profile
 master.menu.user-account.become-provider = Become a provider

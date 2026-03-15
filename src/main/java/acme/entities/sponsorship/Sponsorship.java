@@ -104,7 +104,7 @@ public class Sponsorship extends AbstractEntity {
 	public Money getTotalMoney() {
 		Double amount = this.repository.calculateSponsorshipMoney(this.getId());
 		Money money = new Money();
-		money.setAmount(amount);
+		money.setAmount(amount == null ? 0.0 : amount);
 		money.setCurrency("EUR");
 		return money;
 	}
