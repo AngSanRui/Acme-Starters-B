@@ -26,8 +26,8 @@ any.campaign.form.label.start-moment = Start moment:
 any.campaign.form.label.end-moment = End moment:
 any.campaign.form.label.more-info = More info:
 any.campaign.form.label.draft-mode = Draft mode
-any.campaign.form.label.months-active = Months active:
-any.campaign.form.label.hours = Hours:
+any.campaign.form.label.monthsActive = Months active:
+any.campaign.form.label.effort = Effort:
 
 any.campaign.form.button.milestones = List milestones
 any.campaign.form.button.spokesperson = Show spokesperson account

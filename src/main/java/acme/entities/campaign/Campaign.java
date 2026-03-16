@@ -15,6 +15,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -41,6 +43,10 @@ public class Campaign extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
+	@Transient
+	@Autowired
+	private CampaignRepository	repository;
 
 	@Mandatory
 	@ValidTicker
@@ -83,7 +89,7 @@ public class Campaign extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Transient
-	private Double getMothsActive() {
+	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)
 			return null;
 
@@ -95,11 +101,13 @@ public class Campaign extends AbstractEntity {
 
 		return months;
 	}
+
 	@Mandatory
 	@ValidNumber(min = 0)
 	@Transient
-	private Double getEffort() {
-		return null;
+	public Double getEffort() {
+
+		return this.repository.getTotalEffort(this.getId()).orElse(0.0);
 	}
 
 	// Relationships ----------------------------------------------------------
