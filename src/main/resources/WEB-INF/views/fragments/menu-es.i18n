@@ -47,6 +47,7 @@ master.menu.inventor.list-my-inventions = Lista mis invenciones
 
 master.menu.sponsor = Sponsor
 master.menu.sponsor.list-my-sponsorships = Lista mis sponsorships
+master.menu.sponsor.list-my-sponsorships = Administrar mis sponsorships
 master.menu.sponsor.list-sponsorships = Lista las sponsorships publicadas
 
 master.menu.user-account = Cuenta
