@@ -1,25 +1,25 @@
 
-package acme.features.authenticated.milestone;
+package acme.features.spokesperson.milestone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
-import acme.client.components.principals.Authenticated;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.campaign.Milestone;
 import acme.entities.campaign.MilestoneKind;
+import acme.realms.campaign.Spokesperson;
 
 @Service
-public class AuthenticatedMilestoneShowService extends AbstractService<Authenticated, Milestone> {
+public class SpokespersonMilestoneShowService extends AbstractService<Spokesperson, Milestone> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedMilestoneRepository	repository;
+	private SpokespersonMilestoneRepository	repository;
 
-	private Milestone							milestone;
+	private Milestone						milestone;
 
 	// AbstractService interface -------------------------------------------
 

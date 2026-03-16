@@ -1,33 +1,36 @@
 
-package acme.features.authenticated.campaign;
+package acme.features.spokesperson.milestone;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.campaign.Campaign;
+import acme.entities.campaign.Milestone;
 import acme.realms.campaign.Spokesperson;
 
 @Service
-public class AuthenticatedCampaignShowService extends AbstractService<Authenticated, Campaign> {
+public class SpokespersonMilestoneListService extends AbstractService<Spokesperson, Milestone> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedCampaignRepository	repository;
-
+	private SpokespersonMilestoneRepository	repository;
 	private Campaign						campaign;
+	private Collection<Milestone>			milestones;
 
 	// AbstractService interface -------------------------------------------
 
 
 	@Override
 	public void load() {
-		int id;
+		int campaignId;
 
-		id = super.getRequest().getData("id", int.class);
-		this.campaign = this.repository.findCampaignById(id);
+		campaignId = super.getRequest().getData("campaignId", int.class);
+		this.campaign = this.repository.findCampaignById(campaignId);
+		this.milestones = this.repository.findMilestoneByCampaignId(campaignId);
 	}
 
 	@Override
@@ -45,7 +48,7 @@ public class AuthenticatedCampaignShowService extends AbstractService<Authentica
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.campaign, "spokesperson", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
-	}
+		super.unbindObjects(this.milestones, "title", "achievements", "effort", "kind");
 
+	}
 }

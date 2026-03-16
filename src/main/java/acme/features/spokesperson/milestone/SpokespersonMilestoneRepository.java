@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.milestone;
+package acme.features.spokesperson.milestone;
 
 import java.util.Collection;
 
@@ -11,7 +11,7 @@ import acme.entities.campaign.Campaign;
 import acme.entities.campaign.Milestone;
 
 @Repository
-public interface AuthenticatedMilestoneRepository extends AbstractRepository {
+public interface SpokespersonMilestoneRepository extends AbstractRepository {
 
 	@Query("select campaign from Campaign campaign where campaign.id = :id")
 	Campaign findCampaignById(int id);

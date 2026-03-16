@@ -49,7 +49,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
-			<acme:menu-suboption code="master.menu.spokesperson.list-my-campaigns" action="/authenticated/campaign/list"/>
+			<acme:menu-suboption code="master.menu.spokesperson.list-my-campaigns" action="/spokesperson/campaign/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

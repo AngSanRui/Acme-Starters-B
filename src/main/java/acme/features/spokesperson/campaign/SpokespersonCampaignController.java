@@ -1,17 +1,17 @@
 
-package acme.features.authenticated.campaign;
+package acme.features.spokesperson.campaign;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.controllers.AbstractController;
 import acme.entities.campaign.Campaign;
+import acme.realms.campaign.Spokesperson;
 
 @Controller
-public class AuthenticatedCampaignController extends AbstractController<Authenticated, Campaign> {
+public class SpokespersonCampaignController extends AbstractController<Spokesperson, Campaign> {
 
 	// Constructors -----------------------------------------------------------
 
@@ -19,8 +19,8 @@ public class AuthenticatedCampaignController extends AbstractController<Authenti
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AuthenticatedCampaignListService.class);
-		super.addBasicCommand("show", AuthenticatedCampaignShowService.class);
+		super.addBasicCommand("list", SpokespersonCampaignListService.class);
+		super.addBasicCommand("show", SpokespersonCampaignShowService.class);
 	}
 
 }

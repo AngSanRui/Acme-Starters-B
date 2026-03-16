@@ -1,23 +1,22 @@
 
-package acme.features.authenticated.campaign;
+package acme.features.spokesperson.campaign;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.campaign.Campaign;
 import acme.realms.campaign.Spokesperson;
 
 @Service
-public class AuthenticatedCampaignListService extends AbstractService<Authenticated, Campaign> {
+public class SpokespersonCampaignListService extends AbstractService<Spokesperson, Campaign> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedCampaignRepository	repository;
+	private SpokespersonCampaignRepository	repository;
 
 	private Collection<Campaign>			campaigns;
 

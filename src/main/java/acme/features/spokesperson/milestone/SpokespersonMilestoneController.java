@@ -1,17 +1,17 @@
 
-package acme.features.authenticated.milestone;
+package acme.features.spokesperson.milestone;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.controllers.AbstractController;
 import acme.entities.campaign.Milestone;
+import acme.realms.campaign.Spokesperson;
 
 @Controller
-public class AuthenticatedMilestoneController extends AbstractController<Authenticated, Milestone> {
+public class SpokespersonMilestoneController extends AbstractController<Spokesperson, Milestone> {
 
 	// Constructors -----------------------------------------------------------
 
@@ -19,8 +19,8 @@ public class AuthenticatedMilestoneController extends AbstractController<Authent
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AuthenticatedMilestoneListService.class);
-		super.addBasicCommand("show", AuthenticatedMilestoneShowService.class);
+		super.addBasicCommand("list", SpokespersonMilestoneListService.class);
+		super.addBasicCommand("show", SpokespersonMilestoneShowService.class);
 	}
 
 }

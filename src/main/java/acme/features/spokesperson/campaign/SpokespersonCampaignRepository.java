@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.campaign;
+package acme.features.spokesperson.campaign;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.campaign.Campaign;
 
 @Repository
-public interface AuthenticatedCampaignRepository extends AbstractRepository {
+public interface SpokespersonCampaignRepository extends AbstractRepository {
 
 	@Query("select campaign from Campaign campaign where campaign.spokesperson.id = :id")
 	Collection<Campaign> findCampaignsBySpokespersonId(int id);
