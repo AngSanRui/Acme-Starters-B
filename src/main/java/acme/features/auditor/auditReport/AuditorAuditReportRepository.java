@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.auditSection;
+package acme.features.auditor.auditReport;
 
 import java.util.Collection;
 
@@ -19,18 +19,17 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.auditReports.AuditReport;
-import acme.entities.auditReports.AuditSection;
 
 @Repository
-public interface AnyAuditSectionRepository extends AbstractRepository {
+public interface AuditorAuditReportRepository extends AbstractRepository {
+
+	@Query("select ar from AuditReport ar where ar.draftMode = false")
+	Collection<AuditReport> findAllPublishedAuditReports();
+
+	@Query("select ar from AuditReport ar where ar.auditor.id = :id")
+	Collection<AuditReport> findAllAuditReportsByAuditorId(int id);
 
 	@Query("select ar from AuditReport ar where ar.id = :id")
 	AuditReport findAuditReportById(int id);
-
-	@Query("select asec from AuditSection asec where asec.auditReport.id = :auditReportId")
-	Collection<AuditSection> findAuditSectionsByAuditReportId(int auditReportId);
-
-	@Query("select asec from AuditSection asec where asec.id = :id")
-	AuditSection findAuditSectionById(int id);
 
 }

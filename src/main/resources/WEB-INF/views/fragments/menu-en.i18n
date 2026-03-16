@@ -36,6 +36,12 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.list-audit-reports = List audit reports
+
 # master.menu.inventor ###################################################
 master.menu.inventor = Inventor
 master.menu.inventor.list-my-inventions = List my inventions
