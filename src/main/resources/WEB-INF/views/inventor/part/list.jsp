@@ -9,3 +9,7 @@
 	<acme:list-column code="inventor.part.list.label.cost" path="cost" width="20%"/>
 	<acme:list-column code="inventor.part.list.label.kind" path="kind" width="20%"/>
 </acme:list>
+
+<jstl:if test="${showCreate}">
+	<acme:button code="inventor.part.list.button.create" action="/inventor/part/create?inventionId=${inventionId}"/>
+</jstl:if>

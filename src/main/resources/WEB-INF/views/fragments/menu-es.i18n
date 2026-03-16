@@ -11,11 +11,18 @@
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.list-inventions = Listar invenciones
 master.menu.anonymous.list-audit-reports = Listar informes de auditoria
 master.menu.anonymous.list-sponsorships = Listar sponsorships
 master.menu.anonymous.list-campaigns = Lista de campañas
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autentificado
+master.menu.authenticated.list-inventions = Listar invenciones
+master.menu.authenticated.list-audit-reports = Listar informes de auditoria
+master.menu.authenticated.list-sponsorships = Listar sponsorships
+master.menu.authenticated.list-campaigns = Lista de campañas
 
 # master.menu.administrator ###################################################
 
@@ -48,3 +55,5 @@ master.menu.user-account.become-provider = Hacerse proveedor
 master.menu.user-account.provider-profile = Perfil de proveedor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
+master.menu.user-account.become-inventor = Hazte inventor
+master.menu.user-account.inventor-profile = Perfil de inventor

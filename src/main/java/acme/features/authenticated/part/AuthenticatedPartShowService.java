@@ -1,25 +1,25 @@
 
-package acme.features.inventor.part;
+package acme.features.authenticated.part;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.principals.Authenticated;
 import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.invention.Part;
 import acme.entities.invention.PartKind;
-import acme.realms.inventor.Inventor;
 
 @Service
-public class InventorPartShowService extends AbstractService<Inventor, Part> {
+public class AuthenticatedPartShowService extends AbstractService<Authenticated, Part> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private InventorPartRepository	repository;
+	private AuthenticatedPartRepository	repository;
 
-	private Part					part;
+	private Part						part;
 
 	// AbstractService interface -------------------------------------------
 
@@ -36,7 +36,8 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 	public void authorise() {
 		boolean status;
 
-		status = this.part != null && this.part.getInvention().getInventor().getId() == this.repository.findInventorByAccountId(super.getRequest().getPrincipal().getAccountId());
+		status = this.part != null && !this.part.getInvention().getDraftMode() && this.getRequest().getPrincipal().isAuthenticated();
+
 		super.setAuthorised(status);
 	}
 
@@ -47,8 +48,8 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 
 		choices = SelectChoices.from(PartKind.class, this.part.getKind());
 		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind");
-		tuple.put("inventionId", this.part.getInvention().getId());
-		tuple.put("draftMode", this.part.getInvention().getDraftMode());
-		tuple.put("kinds", choices);
+
+		tuple.put("statuses", choices);
 	}
+
 }

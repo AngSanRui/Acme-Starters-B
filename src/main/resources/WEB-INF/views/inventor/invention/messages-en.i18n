@@ -19,4 +19,10 @@ inventor.invention.form.label.months-active = Months active:
 inventor.invention.form.label.cost = Cost:
 
 inventor.invention.form.button.parts = List parts
+inventor.invention.form.button.create = Create
+
+inventor.invention.form.button.parts = parts
+inventor.invention.form.button.update = update
+inventor.invention.form.button.delete = delete
+inventor.invention.form.button.publish = publish
 

@@ -11,9 +11,21 @@
 	<acme:form-moment 	code="inventor.invention.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="inventor.invention.form.label.more-info" path="moreInfo"/>
 	<acme:form-checkbox	code="inventor.invention.form.label.draft-mode" path="draftMode"/>
-	<acme:form-double 	code="inventor.invention.form.label.months-active" path="monthsActive"/>
-	<acme:form-money 	code="inventor.invention.form.label.cost" path="cost"/>
-	
-	<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
+	<acme:form-double readonly="true" code="inventor.invention.form.label.months-active" path="monthsActive"/>
+	<acme:form-money readonly="true" code="inventor.invention.form.label.cost" path="cost"/>
 
+	<jstl:choose>	 
+		<jstl:when test="${_command == 'show' && draftMode == false}">
+			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>			
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
+			<acme:submit code="inventor.invention.form.button.update" action="/inventor/invention/update"/>
+			<acme:submit code="inventor.invention.form.button.delete" action="/inventor/invention/delete"/>
+			<acme:submit code="inventor.invention.form.button.publish" action="/inventor/invention/publish"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="inventor.invention.form.button.create" action="/inventor/invention/create"/>
+		</jstl:when>		
+	</jstl:choose>
 </acme:form>

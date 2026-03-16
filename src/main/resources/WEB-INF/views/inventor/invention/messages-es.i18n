@@ -19,4 +19,9 @@ inventor.invention.form.label.months-active = Meses activo:
 inventor.invention.form.label.cost = Coste:
 
 inventor.invention.form.button.parts = Listar partes de invención
+inventor.invention.form.button.create = Crear
 
+inventor.invention.form.button.parts = Partes
+inventor.invention.form.button.update = Actualizar
+inventor.invention.form.button.delete = Eliminar
+inventor.invention.form.button.publish = Publicar
