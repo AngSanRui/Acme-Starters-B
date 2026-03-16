@@ -16,11 +16,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<%--
-	preguntar si esto cuenta como mostrar el perfil
-	<acme:list-column code="any.invention.list.label.inventor" path="inventor" width="20%"/>
-	--%>
 	<acme:list-column code="any.invention.list.label.ticker" path="ticker" width="20%"/>
 	<acme:list-column code="any.invention.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="any.invention.list.label.description" path="description" width="30%"/>
+	<acme:list-column code="any.invention.list.label.startMoment" path="startMoment" width="30%"/>
+	<acme:list-column code="any.invention.list.label.endMoment" path="endMoment" width="30%"/>
 </acme:list>

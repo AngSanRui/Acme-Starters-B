@@ -27,8 +27,6 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 		assert annotation != null;
 	}
 
-	//TODO: hacer validador (cuadro rojo del uml)
-
 	@Override
 	public boolean isValid(final Invention invention, final ConstraintValidatorContext context) {
 		assert context != null;
@@ -38,13 +36,13 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 		if (invention == null)
 			result = true;
 		else {
-			{	//check if its published that it has audit section
+			{	//check if its published that it has part
 				if (invention.getDraftMode() != null) {
-					boolean publishedWithAuditSection;
+					boolean publishedWithPart;
 
-					publishedWithAuditSection = invention.getDraftMode() || this.repository.getParts(invention.getId()).size() >= 1;
+					publishedWithPart = invention.getDraftMode() || this.repository.getParts(invention.getId()).size() >= 1;
 
-					super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.invention.published-without-audit-section.message");
+					super.state(context, publishedWithPart, "draftMode", "acme.validation.invention.published-without-part.message");
 				}
 			}
 			{	//check that the startMoment is before the endMoment (only triggers if not null both)
@@ -60,8 +58,8 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 				if (invention.getTicker() != null) {
 					boolean tickerIsUnique;
 
-					Invention arMismoTicker = this.repository.isTickerUnique(invention.getTicker());
-					if (arMismoTicker == null || arMismoTicker.getId() == invention.getId())
+					Invention inMismoTicker = this.repository.isTickerUnique(invention.getTicker());
+					if (inMismoTicker == null || inMismoTicker.getId() == invention.getId())
 						tickerIsUnique = true;
 					else
 						tickerIsUnique = false;
