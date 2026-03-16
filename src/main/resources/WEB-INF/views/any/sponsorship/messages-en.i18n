@@ -13,7 +13,8 @@ any.sponsorship.list.title = Listing of sponsorships
 any.sponsorship.list.label.sponsor = Sponsor
 any.sponsorship.list.label.ticker = Ticker
 any.sponsorship.list.label.name = Name
-any.sponsorship.list.label.description = Description
+any.sponsorship.list.label.start-moment = Start moment
+any.sponsorship.list.label.end-moment = End moment
 
 any.sponsorship.form.title = Sponsorship form
 
@@ -25,6 +26,7 @@ any.sponsorship.form.label.start-moment = Start moment:
 any.sponsorship.form.label.end-moment = End moment:
 any.sponsorship.form.label.more-info = More info:
 any.sponsorship.form.label.draft-mode = Draft mode:
+any.sponsorship.form.label.total-money = Total money:
 any.sponsorship.form.label.months-active = Months active:
 any.sponsorship.form.label.hours = Hours:
 

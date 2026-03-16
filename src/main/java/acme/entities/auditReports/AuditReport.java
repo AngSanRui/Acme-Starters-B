@@ -85,7 +85,7 @@ public class AuditReport extends AbstractEntity {
 
 
 	@Mandatory
-	@ValidNumber //PREGUNTAR, en el uml pone que ponga Valid a secas ?
+	@ValidNumber
 	@Transient
 	public Double getMonthsActive() {
 		if (this.startMoment == null || this.endMoment == null)

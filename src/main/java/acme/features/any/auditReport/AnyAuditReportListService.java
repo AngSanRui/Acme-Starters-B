@@ -35,7 +35,7 @@ public class AnyAuditReportListService extends AbstractService<Any, AuditReport>
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.auditReports, "auditor", "ticker", "name", "description");
+		super.unbindObjects(this.auditReports, "ticker", "name", "startMoment", "endMoment");
 	}
 
 }

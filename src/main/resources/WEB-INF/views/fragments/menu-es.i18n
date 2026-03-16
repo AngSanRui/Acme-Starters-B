@@ -11,6 +11,7 @@
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
+master.menu.anonymous.list-strategies = Listar estrategias
 master.menu.anonymous.list-inventions = Listar invenciones
 master.menu.anonymous.list-audit-reports = Listar informes de auditoria
 master.menu.anonymous.list-sponsorships = Listar sponsorships
@@ -42,12 +43,25 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.list-audit-reports = Listar informes de auditoria
+
 # master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
 master.menu.inventor.list-my-inventions = Lista mis invenciones
 
+
 # master.menu.user-account ####################################################
+
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-my-sponsorships = Lista mis sponsorships
+master.menu.sponsor.list-sponsorships = Lista las sponsorships publicadas
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-profile = Perfil general
@@ -57,3 +71,5 @@ master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
 master.menu.user-account.become-inventor = Hazte inventor
 master.menu.user-account.inventor-profile = Perfil de inventor
+master.menu.user-account.become-sponsor = Hacerse sponsor
+master.menu.user-account.sponsor-profile = Perfil de sponsor

@@ -21,6 +21,7 @@
 	--%>
 	<acme:list-column code="any.sponsorship.list.label.ticker" path="ticker" width="20%"/>
 	<acme:list-column code="any.sponsorship.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="any.sponsorship.list.label.description" path="description" width="30%"/>
+	<acme:list-column code="any.sponsorship.list.label.start-moment" path="startMoment" width="30%"/>
+	<acme:list-column code="any.sponsorship.list.label.end-moment" path="endMoment" width="30%"/>
 </acme:list>
 
