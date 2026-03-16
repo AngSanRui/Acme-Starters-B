@@ -20,4 +20,19 @@
 	<acme:form-textarea code="any.tactic.form.label.notes" path="notes"/>
 	<acme:form-integer 	code="any.tactic.form.label.expectedPercentage" path="expectedPercentage"/>
 	<acme:form-textbox 	code="any.tactic.form.label.kind" path="kind"/>
+	
+<jstl:choose>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="fundraiser.tactic.form.button.create"
+				action="/fundraiser/tactic/create?strategyId=${strategyId}"/>
+		</jstl:when>
+
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
+			<jstl:if test="${!readonly}">
+				<acme:submit code="fundraiser.tactic.form.button.update" action="/fundraiser/tactic/update"/>
+				<acme:submit code="fundraiser.tactic.form.button.delete" action="/fundraiser/tactic/delete"/>
+			</jstl:if>
+		</jstl:when>
+	</jstl:choose>
+
 </acme:form>

@@ -2,6 +2,7 @@
 package acme.features.fundraiser.tactic;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
 import acme.client.components.views.SelectChoices;
@@ -11,6 +12,7 @@ import acme.entities.strategies.TacticKind;
 import acme.features.any.tactic.AnyTacticRepository;
 import acme.realms.strategy.Fundraiser;
 
+@Service
 public class FundraiserTacticShowService extends AbstractService<Fundraiser, Tactic> {
 
 	// Internal state ---------------------------------------------------------

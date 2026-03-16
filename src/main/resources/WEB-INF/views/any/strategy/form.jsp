@@ -17,7 +17,7 @@
 
 <acme:form>
 <%--
-	<acme:form-textbox 	code="any.strategy.form.label.fundraiser" path="undrasier"/>
+	<acme:form-textbox 	code="any.strategy.form.label.fundraiser" path="fundrasier"/>
 	--%>
 	<acme:form-textbox 	code="any.strategy.form.label.ticker" path="ticker"/>
 	<acme:form-textbox 	code="any.strategy.form.label.name" path="name"/>

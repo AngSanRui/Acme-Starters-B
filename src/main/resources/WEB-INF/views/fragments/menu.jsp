@@ -49,7 +49,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
-			<acme:menu-suboption code="master.menu.inventor.list-my-strategies" action="/authenticated/strategy/list"/>
+			<acme:menu-suboption code="master.menu.fundraiser.list-my-strategies" action="/authenticated/strategy/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

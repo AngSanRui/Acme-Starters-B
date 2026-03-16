@@ -4,11 +4,13 @@ package acme.features.fundraiser.strategy;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
 import acme.realms.strategy.Fundraiser;
 
+@Service
 public class FundraiserStrategyListService extends AbstractService<Fundraiser, Strategy> {
 
 	// Internal state ---------------------------------------------------------

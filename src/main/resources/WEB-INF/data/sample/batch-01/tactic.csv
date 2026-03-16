@@ -1,42 +1,45 @@
-key,name,notes,expectedPercentage,kind,key:strategy
+key,name,notes,expectedPercentage,kind,draftMode,key:strategy
 #base entity
-tactic-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-00
+tactic-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-00
 #name- standard variations
-tactic-01,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-01
-tactic-02,Lo,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-02
-tactic-03,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-03
-tactic-04,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-04
-tactic-05,โลเร็ม อิปซัม,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-05
-tactic-06,لوريم إيبسوم,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-06
-tactic-07,洛伦·伊普森,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-07
-tactic-08,<marquee>Hacked</marquee>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-08
-tactic-09,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-09
-tactic-10,' or 'A' = 'A,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-10
+tactic-01,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-01
+tactic-02,Lo,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-02
+tactic-03,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-03
+tactic-04,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-04
+tactic-05,โลเร็ม อิปซัม,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-05
+tactic-06,لوريم إيبسوم,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-06
+tactic-07,洛伦·伊普森,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-07
+tactic-08,<marquee>Hacked</marquee>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-08
+tactic-09,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-09
+tactic-10,' or 'A' = 'A,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-10
 #name- no singular values
 #notes- standard variations
-tactic-11,Lorem ipsum dolor sit amet  consectetu,L,50,SUBTLE,strategy-11
-tactic-12,Lorem ipsum dolor sit amet  consectetu,Lo,50,SUBTLE,strategy-12
-tactic-13,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,50,SUBTLE,strategy-13
-tactic-14,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,50,SUBTLE,strategy-14
-tactic-15,Lorem ipsum dolor sit amet  consectetu,โลเร็ม อิปซัม,50,SUBTLE,strategy-15
-tactic-16,Lorem ipsum dolor sit amet  consectetu,لوريم إيبسوم,50,SUBTLE,strategy-16
-tactic-17,Lorem ipsum dolor sit amet  consectetu,洛伦·伊普森,50,SUBTLE,strategy-17
-tactic-18,Lorem ipsum dolor sit amet  consectetu,<marquee>Hacked</marquee>,50,SUBTLE,strategy-18
-tactic-19,Lorem ipsum dolor sit amet  consectetu,<script>alert(‘Hacked!’);</script>,50,SUBTLE,strategy-19
-tactic-20,Lorem ipsum dolor sit amet  consectetu,' or 'A' = 'A,50,SUBTLE,strategy-20
+tactic-11,Lorem ipsum dolor sit amet  consectetu,L,50,SUBTLE,FALSE,strategy-11
+tactic-12,Lorem ipsum dolor sit amet  consectetu,Lo,50,SUBTLE,FALSE,strategy-12
+tactic-13,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,50,SUBTLE,FALSE,strategy-13
+tactic-14,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,50,SUBTLE,FALSE,strategy-14
+tactic-15,Lorem ipsum dolor sit amet  consectetu,โลเร็ม อิปซัม,50,SUBTLE,FALSE,strategy-15
+tactic-16,Lorem ipsum dolor sit amet  consectetu,لوريم إيبسوم,50,SUBTLE,FALSE,strategy-16
+tactic-17,Lorem ipsum dolor sit amet  consectetu,洛伦·伊普森,50,SUBTLE,FALSE,strategy-17
+tactic-18,Lorem ipsum dolor sit amet  consectetu,<marquee>Hacked</marquee>,50,SUBTLE,FALSE,strategy-18
+tactic-19,Lorem ipsum dolor sit amet  consectetu,<script>alert(‘Hacked!’);</script>,50,SUBTLE,FALSE,strategy-19
+tactic-20,Lorem ipsum dolor sit amet  consectetu,' or 'A' = 'A,50,SUBTLE,FALSE,strategy-20
 #notes- no singular values
 #expectedPercentage- standard variations
-tactic-21,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,0,SUBTLE,strategy-21
-tactic-22,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,1,SUBTLE,strategy-22
-tactic-23,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,99,SUBTLE,strategy-23
-tactic-24,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,100,SUBTLE,strategy-24
+tactic-21,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,0,SUBTLE,FALSE,strategy-21
+tactic-22,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,1,SUBTLE,FALSE,strategy-22
+tactic-23,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,99,SUBTLE,FALSE,strategy-23
+tactic-24,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,100,SUBTLE,FALSE,strategy-24
 #expectedPercentage- no singular values
 #kind- standard variations
-tactic-25,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,AGGRESSIVE,strategy-25
-tactic-26,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,TENDER,strategy-26
+tactic-25,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,AGGRESSIVE,FALSE,strategy-25
+tactic-26,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,TENDER,FALSE,strategy-26
 #kind- no singular values
+#draftMode- standard variations
+tactic-27,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,TRUE,strategy-00
+#draftMode- no singular values
 #strategy- standard variations
-tactic-27,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-27
-tactic-28,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-28
-tactic-29,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,strategy-29
+tactic-28,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-27
+tactic-29,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-28
+tactic-30,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,FALSE,strategy-29
 #strategy- no singular values

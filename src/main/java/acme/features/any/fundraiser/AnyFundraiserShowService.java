@@ -2,12 +2,13 @@
 package acme.features.any.fundraiser;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import acme.client.components.models.Tuple;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.realms.strategy.Fundraiser;
 
+@Service
 public class AnyFundraiserShowService extends AbstractService<Any, Fundraiser> {
 
 	// Internal state ---------------------------------------------------------
@@ -39,11 +40,7 @@ public class AnyFundraiserShowService extends AbstractService<Any, Fundraiser> {
 
 	@Override
 	public void unbind() {
-		Tuple tuple;
-
-		tuple = super.unbindObject(this.fundraiser, "bank", "statement", "agent");
-		tuple.put("userName", this.fundraiser.getUserAccount().getUsername());
-
+		super.unbindObject(this.fundraiser, "bank", "statement", "agent");
 	}
 
 }

@@ -4,6 +4,9 @@ any.tactic.list.label.name = Nombre
 any.tactic.list.label.notes = Notas
 any.tactic.list.label.expectedPercentage = Porcentaje esperado
 any.tactic.list.label.kind = Tipo
+fundraiser.tactic.list.label.draft-mode = Borrador
+
+fundraiser.tactic.list.button.create = Create
 
 any.tactic.form.title = Formulario de tácticas
 
@@ -11,3 +14,8 @@ any.tactic.form.label.name = Nombre:
 any.tactic.form.label.notes = Notas:
 any.tactic.form.label.expectedPercentage = Porcentaje esperado:
 any.tactic.form.label.kind = Tipo:
+
+fundraiser.tactic.form.button.create = Crear
+fundraiser.tactic.form.button.update = Actualizar
+fundraiser.tactic.form.button.delete = Borrar
+fundraiser.tactic.form.button.return = Volver

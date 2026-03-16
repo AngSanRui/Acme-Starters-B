@@ -45,6 +45,11 @@ public class Tactic extends AbstractEntity {
 	@Column
 	private TacticKind			kind;
 
+	@Mandatory
+	@Valid
+	@Column
+	private Boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

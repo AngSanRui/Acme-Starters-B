@@ -43,7 +43,7 @@ master.menu.inventor.list-my-inventions = List my inventions
 # master.menu.fundraiser ###################################################
 
 master.menu.fundraiser = Fundraiser
-master.menu.inventor.list-my-strategies = List my strategies
+master.menu.fundraiser.list-my-strategies = List my strategies
 
 # master.menu.user-account ####################################################
 

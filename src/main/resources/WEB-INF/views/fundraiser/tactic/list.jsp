@@ -20,5 +20,6 @@
 	<acme:list-column code="any.tactic.list.label.notes" path="notes" width="40%"/>
 	<acme:list-column code="any.tactic.list.label.expectedPercentage" path="expectedPercentage" width="20%"/>
 	<acme:list-column code="any.tactic.list.label.kind" path="kind" width="20%"/>
+	<acme:list-column code="fundraiser.tactic.list.label.draft-mode" path="draftMode"/>
 </acme:list>
 
