@@ -20,8 +20,11 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidCampaign;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
 import acme.realms.campaign.Spokesperson;
 import lombok.Getter;
@@ -30,6 +33,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidCampaign
 public class Campaign extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -49,7 +53,7 @@ public class Campaign extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
-	//@ValidText
+	@ValidText
 	@Column
 	private String				description;
 
@@ -76,7 +80,7 @@ public class Campaign extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 
-	//@Mandatory
+	@Mandatory
 	@Valid
 	@Transient
 	private Double getMothsActive() {
@@ -91,8 +95,8 @@ public class Campaign extends AbstractEntity {
 
 		return months;
 	}
-	//@Mandatory
-	//@ValidNumber(min = 0)
+	@Mandatory
+	@ValidNumber(min = 0)
 	@Transient
 	private Double getEffort() {
 		return null;
