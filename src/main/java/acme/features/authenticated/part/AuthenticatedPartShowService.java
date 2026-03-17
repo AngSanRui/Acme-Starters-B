@@ -36,7 +36,8 @@ public class AuthenticatedPartShowService extends AbstractService<Authenticated,
 	public void authorise() {
 		boolean status;
 
-		status = this.part != null && this.part.getInvention().getInventor().getId() == this.repository.findInventorByAccountId(super.getRequest().getPrincipal().getAccountId());
+		status = this.part != null && !this.part.getInvention().getDraftMode() && this.getRequest().getPrincipal().isAuthenticated();
+
 		super.setAuthorised(status);
 	}
 
@@ -50,4 +51,5 @@ public class AuthenticatedPartShowService extends AbstractService<Authenticated,
 
 		tuple.put("statuses", choices);
 	}
+
 }

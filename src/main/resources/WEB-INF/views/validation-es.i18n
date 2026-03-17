@@ -13,7 +13,19 @@ acme.validation.text.message   		= Debe tener de 1 a 255 caracteres
 
 acme.validation.ticker.message		= La referencia debe seguir el patrón: 2 letras mayúsculas, 2 dígitos, un -, y de 5 a 10 caracteres (alfanuméricos o _)
 
-#campaign
+
 acme.validation.hasMilestones.message = La campaña debe de tener al menos un objetivo para poder ser publicado
 acme.validation.campaign.start-after-end.message = El momento de acabado debe de ser posterior al de inicio
 acme.validation.campaign.ticker-not-unique.message = La referencia debe de ser única
+acme.validation.sponsorship.ticker-not-unique.message 	= Ya existe ese ticker en la base de datos
+acme.validation.sponsorship.start-after-end.message 	= La fecha de inicio debe ser anterior a la de final
+acme.validation.numberOfDonations.message	= Un sponsorship debe tener al menos una donación para ser publicada
+acme.validation.donation.currency-not-supported.message = La única moneda aceptada es el EUR
+acme.validation.Donation.message = La donacion tiene errores:
+acme.validation.invention.hasParts.message = La invención debe tener alguna part asociada para publicarse
+
+
+acme.validation.notAnyAuditSections.message = Este informe de auditoría no puede ser publicado porque no tiene ninguna sección de auditoría enlazada
+acme.validation.startMomentIsNotFuture.message = El momento de inicio debe ser en el futuro respecto al momento actual de publicación
+acme.validation.endMomentIsNotFuture.message = El momento de acabado debe ser en el futuro respecto al momento actual de publicación
+

@@ -22,5 +22,4 @@ public class AuthenticatedInventionController extends AbstractController<Authent
 		super.addBasicCommand("list", AuthenticatedInventionListService.class);
 		super.addBasicCommand("show", AuthenticatedInventionShowService.class);
 	}
-
 }

@@ -1,3 +1,5 @@
+
+
 authenticated.part.list.title = Listing of parts
 
 authenticated.part.list.label.name = Name
@@ -11,4 +13,5 @@ authenticated.part.form.label.name = Name:
 authenticated.part.form.label.description = Description:
 authenticated.part.form.label.cost = Cost:
 authenticated.part.form.label.kind = Kind:
+
 

@@ -43,7 +43,7 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 
 					publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
 
-					super.state(context, publishedWithAuditSection, "draftMode", "acme.validation.audit-report.published-without-audit-section.message");
+					super.state(context, publishedWithAuditSection, "*", "acme.validation.audit-report.published-without-audit-section.message");
 				}
 			}
 			{	//check that the startMoment is before the endMoment (only triggers if not null both)
