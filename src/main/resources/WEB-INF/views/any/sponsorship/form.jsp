@@ -26,6 +26,8 @@
 	<acme:form-moment 	code="any.sponsorship.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="any.sponsorship.form.label.more-info" path="moreInfo"/>
 	<acme:form-checkbox	code="any.sponsorship.form.label.draft-mode" path="draftMode"/>
+	<acme:form-double 	code="any.sponsorship.form.label.months-active" path="monthsActive"/>
+	<acme:form-money 	code="any.sponsorship.form.label.total-money" path="totalMoney"/>
 	
 	<acme:button code="any.sponsorship.form.button.donations" action="/any/donation/list?sponsorshipId=${id}"/>
 	<acme:button code="any.sponsorship.form.button.sponsor" action="/any/sponsor/show?sponsorId=${sponsor.id}"/>

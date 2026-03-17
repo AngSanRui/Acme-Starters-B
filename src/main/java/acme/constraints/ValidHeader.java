@@ -36,7 +36,7 @@ public @interface ValidHeader {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validations.header.message}";
+	String message() default "{acme.validation.header.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};

@@ -7,13 +7,11 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.invention.Invention;
-import acme.realms.inventor.Inventor;
 
 @Service
 public class AuthenticatedInventionShowService extends AbstractService<Authenticated, Invention> {
 
 	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private AuthenticatedInventionRepository	repository;
 
@@ -24,23 +22,23 @@ public class AuthenticatedInventionShowService extends AbstractService<Authentic
 
 	@Override
 	public void load() {
-		int inventionId;
+		int id;
 
-		inventionId = super.getRequest().getData("id", int.class);
-		this.invention = this.repository.findInventionsById(inventionId);
+		id = super.getRequest().getData("id", int.class);
+		this.invention = this.repository.findInventionById(id);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		int inventorId = this.repository.findInventorByAccountId(super.getRequest().getPrincipal().getAccountId());
-		status = super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && this.invention.getInventor().getId() == inventorId;
+		status = this.invention != null && !this.invention.getDraftMode() && this.getRequest().getPrincipal().isAuthenticated();
+
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.invention, "inventor", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		super.unbindObject(this.invention, "inventor", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "cost");
 	}
 }

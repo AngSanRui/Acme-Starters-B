@@ -13,3 +13,5 @@ authenticated.part.form.label.name = Nombre:
 authenticated.part.form.label.description = Descripción:
 authenticated.part.form.label.cost = Coste:
 authenticated.part.form.label.kind = Tipo:
+
+

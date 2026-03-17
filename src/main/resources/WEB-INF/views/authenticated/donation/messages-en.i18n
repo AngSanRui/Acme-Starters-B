@@ -1,0 +1,17 @@
+
+
+authenticated.donation.list.title = Listing of donations
+
+authenticated.donation.list.label.name = Name
+authenticated.donation.list.label.notes = Notes
+authenticated.donation.list.label.money = Money
+authenticated.donation.list.label.kind = Kind
+
+authenticated.donation.form.title = Donation form
+
+authenticated.donation.form.label.name = Name:
+authenticated.donation.form.label.notes = Notes:
+authenticated.donation.form.label.money = Money:
+authenticated.donation.form.label.kind = Kind:
+
+

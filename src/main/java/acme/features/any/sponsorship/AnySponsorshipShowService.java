@@ -34,12 +34,11 @@ public class AnySponsorshipShowService extends AbstractService<Any, Sponsorship>
 		boolean status;
 
 		status = this.sponsorship != null && !this.sponsorship.getDraftMode();
-
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.sponsorship, "sponsor", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		super.unbindObject(this.sponsorship, "sponsor", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "totalMoney", "monthsActive");
 	}
 }

@@ -26,10 +26,8 @@
 	<acme:form-moment 	code="any.audit-report.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="any.audit-report.form.label.more-info" path="moreInfo"/>
 	<acme:form-checkbox	code="any.audit-report.form.label.draft-mode" path="draftMode"/>
-	<%--
 	<acme:form-double 	code="any.audit-report.form.label.months-active" path="monthsActive"/>
 	<acme:form-integer 	code="any.audit-report.form.label.hours" path="hours"/>
-	--%>
 	<acme:button code="any.audit-report.form.button.audit-sections" action="/any/audit-section/list?auditReportId=${id}"/>
 	<acme:button code="any.audit-report.form.button.auditor" action="/any/auditor/show?auditorId=${auditor.id}"/>
 </acme:form>

@@ -38,7 +38,7 @@ public class AuthenticatedPartListService extends AbstractService<Authenticated,
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null && this.invention.getInventor().getId() == this.repository.findInventorByAccountId(super.getRequest().getPrincipal().getAccountId());
+		status = this.invention != null && !this.invention.getDraftMode() && this.getRequest().getPrincipal().isAuthenticated();
 
 		super.setAuthorised(status);
 	}
