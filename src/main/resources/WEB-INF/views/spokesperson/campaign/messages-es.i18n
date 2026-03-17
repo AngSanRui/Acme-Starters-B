@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-spokesperson.campaign.list.title = Listado de campaigns
+spokesperson.campaign.list.title = Listado de campañas
 
 spokesperson.campaign.list.label.spokesperson = Portavoz
 spokesperson.campaign.list.label.ticker = Referencia
@@ -16,7 +16,7 @@ spokesperson.campaign.list.label.name = Nombre
 spokesperson.campaign.list.label.startMoment = Momento de inicio
 spokesperson.campaign.list.label.endMoment = Momento de acabado
 
-spokesperson.campaign.form.title = Formulario de campañas
+spokesperson.campaign.form.title = Formulario de campaña
 
 spokesperson.campaign.form.label.spokesperson = Portavoz:
 spokesperson.campaign.form.label.ticker = Referencia:
