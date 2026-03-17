@@ -24,7 +24,6 @@ public class DonationValidator extends AbstractValidator<ValidDonation, Donation
 		assert context != null;
 
 		boolean result;
-		result = true;
 
 		if (donation == null)
 			result = true;
@@ -32,7 +31,7 @@ public class DonationValidator extends AbstractValidator<ValidDonation, Donation
 			boolean noNullValues;
 			boolean supportedCurrency;
 			noNullValues = !(donation.getName().isBlank() || donation.getNotes().isBlank() || donation.getMoney() == null || donation.getKind() == null);
-			supportedCurrency = donation.getMoney().getCurrency().equalsIgnoreCase("EUR");
+			supportedCurrency = donation.getMoney() == null ? false : donation.getMoney().getCurrency().equalsIgnoreCase("EUR");
 			result = noNullValues && supportedCurrency;
 			super.state(context, supportedCurrency, "money", "acme.validation.donation.currency-not-supported.message");
 		}
