@@ -1,3 +1,14 @@
+/*
+ * AuditorAuditSectionDeleteService.java
+ *
+ * Copyright (C) 2012-2026 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
 
 package acme.features.auditor.auditSection;
 
@@ -12,7 +23,7 @@ import acme.entities.auditReports.SectionKind;
 import acme.realms.auditors.Auditor;
 
 @Service
-public class AuditorAuditSectionShowService extends AbstractService<Auditor, AuditSection> {
+public class AuditorAuditSectionDeleteService extends AbstractService<Auditor, AuditSection> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -36,9 +47,27 @@ public class AuditorAuditSectionShowService extends AbstractService<Auditor, Aud
 	public void authorise() {
 		boolean status;
 
-		status = this.auditSection != null && this.auditSection.getAuditReport().getAuditor().isPrincipal();
+		status = this.auditSection != null && // no es null
+			this.auditSection.getAuditReport().getDraftMode() && // su auditreport no está publicado
+			this.auditSection.getAuditReport().getAuditor().isPrincipal(); // el principal es el auditor del auditReport
 
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		//Creo que es innecesario
+		;
+	}
+
+	@Override
+	public void validate() {
+		;
+	}
+
+	@Override
+	public void execute() {
+		this.repository.delete(this.auditSection);
 	}
 
 	@Override
@@ -51,4 +80,5 @@ public class AuditorAuditSectionShowService extends AbstractService<Auditor, Aud
 		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
 		tuple.put("kind", choices);
 	}
+
 }

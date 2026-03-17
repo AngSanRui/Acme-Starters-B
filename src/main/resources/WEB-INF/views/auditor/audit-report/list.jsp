@@ -23,3 +23,4 @@
 	<acme:list-column code="auditor.audit-report.list.label.draftMode" path="draftMode" width="10%"/>
 </acme:list>
 
+<acme:button code="auditor.audit-report.list.button.create" action="/auditor/audit-report/create"/>

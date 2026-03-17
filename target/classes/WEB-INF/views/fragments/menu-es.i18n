@@ -64,3 +64,5 @@ master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
 master.menu.user-account.become-sponsor = Hacerse sponsor
 master.menu.user-account.sponsor-profile = Perfil de sponsor
+master.menu.user-account.become-auditor = Hacerse auditor
+master.menu.user-account.auditor-profile = Perfil del auditor

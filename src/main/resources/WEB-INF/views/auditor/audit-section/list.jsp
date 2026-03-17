@@ -22,3 +22,6 @@
 	<acme:list-column code="auditor.audit-section.list.label.kind" path="kind" width="20%"/>
 </acme:list>
 
+<jstl:if test="${showCreate}">
+	<acme:button code="auditor.audit-section.list.button.create" action="/auditor/audit-section/create?auditReportId=${auditReportId}"/>
+</jstl:if>

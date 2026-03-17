@@ -31,3 +31,9 @@ auditor.audit-report.form.label.months-active = Months active:
 auditor.audit-report.form.label.hours = Hours:
 
 auditor.audit-report.form.button.audit-sections = List audit sections
+
+auditor.audit-report.list.button.create = Create new audit report
+auditor.audit-report.form.button.update = Update
+auditor.audit-report.form.button.delete = Delete
+auditor.audit-report.form.button.publish = Publish
+auditor.audit-report.form.button.create = Create
