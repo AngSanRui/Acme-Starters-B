@@ -20,6 +20,9 @@
 	<acme:form-textbox code="authenticated.auditor.form.label.highlights" path="highlights"/>
 	<acme:form-checkbox code="authenticated.auditor.form.label.solicitor" path="solicitor"/>
 	
+	<jstl:if test="${_command == 'show'}">
+		<acme:form-textbox	code="authenticated.auditor.form.label.name" path="userName"/>
+	</jstl:if>	
 	<jstl:if test="${_command == 'create'}">
 		<acme:submit code="authenticated.auditor.form.button.create" action="/authenticated/auditor/create"/>
 	</jstl:if>

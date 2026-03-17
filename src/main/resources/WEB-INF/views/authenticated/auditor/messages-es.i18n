@@ -13,6 +13,7 @@ authenticated.auditor.form.title = Datos del auditor
 authenticated.auditor.form.label.firm = Firma: 
 authenticated.auditor.form.label.highlights = Destacados:
 authenticated.auditor.form.label.solicitor = Abogado:
+authenticated.auditor.form.label.name = Nombre de usuario:
 
 authenticated.auditor.form.button.create = Registrar
 authenticated.auditor.form.button.update = Actualizar

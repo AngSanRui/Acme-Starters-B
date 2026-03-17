@@ -17,4 +17,7 @@ public interface AuthenticatedAuditorRepository extends AbstractRepository {
 	@Query("select ua from UserAccount ua where ua.id = :id")
 	UserAccount findOneUserAccountById(int id);
 
+	@Query("select auditor from Auditor auditor where auditor.id = :id")
+	Auditor findAuditorById(int id);
+
 }

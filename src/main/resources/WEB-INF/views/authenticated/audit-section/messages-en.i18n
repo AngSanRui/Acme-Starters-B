@@ -1,0 +1,17 @@
+
+
+authenticated.audit-section.list.title = Listing of audit sections
+
+authenticated.audit-section.list.label.name = Name
+authenticated.audit-section.list.label.notes = Notes
+authenticated.audit-section.list.label.hours = Hours
+authenticated.audit-section.list.label.kind = Kind
+
+authenticated.audit-section.form.title = Audit section form
+
+authenticated.audit-section.form.label.name = Name:
+authenticated.audit-section.form.label.notes = Notes:
+authenticated.audit-section.form.label.hours = Hours:
+authenticated.audit-section.form.label.kind = Kind:
+
+

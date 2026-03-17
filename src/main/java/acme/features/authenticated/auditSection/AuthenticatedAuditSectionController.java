@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.auditor;
+package acme.features.authenticated.auditSection;
 
 import javax.annotation.PostConstruct;
 
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Controller;
 
 import acme.client.components.principals.Authenticated;
 import acme.client.controllers.AbstractController;
-import acme.realms.auditors.Auditor;
+import acme.entities.auditReports.AuditSection;
 
 @Controller
-public class AuthenticatedAuditorController extends AbstractController<Authenticated, Auditor> {
+public class AuthenticatedAuditSectionController extends AbstractController<Authenticated, AuditSection> {
 
 	// Constructors -----------------------------------------------------------
 
@@ -19,9 +19,8 @@ public class AuthenticatedAuditorController extends AbstractController<Authentic
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("create", AuthenticatedAuditorCreateService.class);
-		super.addBasicCommand("update", AuthenticatedAuditorUpdateService.class);
-		super.addBasicCommand("show", AuthenticatedAuditorShowService.class);
+		super.addBasicCommand("list", AuthenticatedAuditSectionListService.class);
+		super.addBasicCommand("show", AuthenticatedAuditSectionShowService.class);
 	}
 
 }

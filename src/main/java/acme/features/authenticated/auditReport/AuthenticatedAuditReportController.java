@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAuditSectionController.java
+ * AuditorAuditSectionController.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,19 +10,19 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.sponsorship;
+package acme.features.authenticated.auditReport;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 
-import acme.client.components.principals.Any;
+import acme.client.components.principals.Authenticated;
 import acme.client.controllers.AbstractController;
-import acme.entities.sponsorship.Sponsorship;
+import acme.entities.auditReports.AuditReport;
 
 @Controller
-public class AnySponsorshipController extends AbstractController<Any, Sponsorship> {
+public class AuthenticatedAuditReportController extends AbstractController<Authenticated, AuditReport> {
 
 	// Constructors -----------------------------------------------------------
 
@@ -30,8 +30,8 @@ public class AnySponsorshipController extends AbstractController<Any, Sponsorshi
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AnySponsorshipListService.class);
-		super.addBasicCommand("show", AnySponsorshipShowService.class);
+		super.addBasicCommand("list", AuthenticatedAuditReportListService.class);
+		super.addBasicCommand("show", AuthenticatedAuditReportShowService.class);
 	}
 
 }
