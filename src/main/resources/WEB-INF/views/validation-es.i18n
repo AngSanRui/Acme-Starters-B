@@ -12,3 +12,7 @@ acme.validation.header.message  	= Debe tener de 1 a 75 caracteres
 acme.validation.text.message   		= Debe tener de 1 a 255 caracteres
 
 acme.validation.ticker.message		= La referencia debe seguir el patrón: 2 letras mayúsculas, 2 dígitos, un -, y de 5 a 10 caracteres (alfanuméricos o _)
+
+acme.validation.notAnyAuditSections.message = Este informe de auditoría no puede ser publicado porque no tiene ninguna sección de auditoría enlazada
+acme.validation.startMomentIsNotFuture.message = El momento de inicio debe ser en el futuro respecto al momento actual de publicación
+acme.validation.endMomentIsNotFuture.message = El momento de acabado debe ser en el futuro respecto al momento actual de publicación

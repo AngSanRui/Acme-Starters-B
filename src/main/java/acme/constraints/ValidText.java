@@ -36,7 +36,7 @@ public @interface ValidText {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validations.text.message}"; // TODO poner mensajes de error en i18n
+	String message() default "{acme.validation.text.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
