@@ -10,9 +10,9 @@
 	<acme:form-moment 	code="any.campaign.form.label.start-moment" path="startMoment"/>
 	<acme:form-moment 	code="any.campaign.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="any.campaign.form.label.more-info" path="moreInfo"/>
-	<acme:form-checkbox	code="any.campaign.form.label.draft-mode" path="draftMode"/>
-	<acme:form-double 	code="any.campaign.form.label.monthsActive" path="monthsActive"/>
-	<acme:form-integer 	code="any.campaign.form.label.effort" path="effort"/>
+	<acme:form-checkbox	code="any.campaign.form.label.draft-mode" path="draftMode" readonly="true"/>
+	<acme:form-double 	code="any.campaign.form.label.monthsActive" path="monthsActive" readonly="true"/>
+	<acme:form-integer 	code="any.campaign.form.label.effort" path="effort" readonly="true"/>
 
 	
 	<acme:button code="any.campaign.form.button.milestones" action="/any/milestone/list?campaignId=${id}"/>
