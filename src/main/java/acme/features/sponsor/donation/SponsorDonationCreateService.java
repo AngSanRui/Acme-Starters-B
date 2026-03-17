@@ -16,8 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorship.Donation;
+import acme.entities.sponsorship.DonationKind;
 import acme.entities.sponsorship.Sponsorship;
 import acme.realms.sponsorship.Sponsor;
 
@@ -78,10 +80,13 @@ public class SponsorDonationCreateService extends AbstractService<Sponsor, Donat
 
 	@Override
 	public void unbind() {
+		SelectChoices choices;
+		choices = SelectChoices.from(DonationKind.class, this.donation.getKind());
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.donation, "name", "notes", "money", "kind");
 		tuple.put("sponsorshipId", super.getRequest().getData("sponsorshipId", int.class));
 		tuple.put("draftMode", this.donation.getSponsorship().getDraftMode());
+		tuple.put("kind", choices);
 	}
 }
