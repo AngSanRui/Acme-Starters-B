@@ -12,3 +12,8 @@ acme.validation.header.message  	= Debe tener de 1 a 75 caracteres
 acme.validation.text.message   		= Debe tener de 1 a 255 caracteres
 
 acme.validation.ticker.message		= La referencia debe seguir el patrón: 2 letras mayúsculas, 2 dígitos, un -, y de 5 a 10 caracteres (alfanuméricos o _)
+
+#campaign
+acme.validation.hasMilestones.message = La campaña debe de tener al menos un objetivo para poder ser publicado
+acme.validation.campaign.start-after-end.message = El momento de acabado debe de ser posterior al de inicio
+acme.validation.campaign.ticker-not-unique.message = La referencia debe de ser única
