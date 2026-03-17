@@ -12,4 +12,9 @@ acme.validation.header.message  	= Debe tener de 1 a 75 caracteres
 acme.validation.text.message   		= Debe tener de 1 a 255 caracteres
 
 acme.validation.ticker.message		= La referencia debe seguir el patrón: 2 letras mayúsculas, 2 dígitos, un -, y de 5 a 10 caracteres (alfanuméricos o _)
+acme.validation.sponsorship.ticker-not-unique.message 	= Ya existe ese ticker en la base de datos
+acme.validation.sponsorship.start-after-end.message 	= La fecha de inicio debe ser anterior a la de final
+acme.validation.numberOfDonations.message	= Un sponsorship debe tener al menos una donación para ser publicada
+acme.validation.donation.currency-not-supported.message = La única moneda aceptada es el EUR
+acme.validation.Donation.message = La donacion tiene errores:
 acme.validation.invention.hasParts.message = La invención debe tener alguna part asociada para publicarse

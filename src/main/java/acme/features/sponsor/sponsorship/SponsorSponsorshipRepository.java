@@ -1,5 +1,5 @@
 /*
- * AnyAuditSectionRepository.java
+ * EmployerJobRepository.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.sponsorship;
+package acme.features.sponsor.sponsorship;
 
 import java.util.Collection;
 
@@ -18,20 +18,21 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.sponsorship.Donation;
 import acme.entities.sponsorship.Sponsorship;
 
 @Repository
-public interface AuthenticatedSponsorshipRepository extends AbstractRepository {
+public interface SponsorSponsorshipRepository extends AbstractRepository {
 
-	@Query("select sponsorship from Sponsorship sponsorship where sponsorship.draftMode = false")
-	Collection<Sponsorship> findAllPublishedSponsorships();
-
-	@Query("select sponsorship from Sponsorship sponsorship where sponsorship.sponsor.id = :id")
-	Collection<Sponsorship> findSponsorshipsBySponsorId(int id);
-
-	@Query("select sponsorship from Sponsorship sponsorship where sponsorship.id = :id")
+	@Query("select s from Sponsorship s where s.id = :id")
 	Sponsorship findSponsorshipById(int id);
 
-	@Query("select sponsor.id from Sponsor sponsor where sponsor.userAccount.id =:id")
-	int findSponsorByAccountId(int id);
+	@Query("select s from Sponsorship s where s.sponsor.id = :id")
+	Collection<Sponsorship> findSponsorshipsBySponsorId(int id);
+
+	@Query("select d from Donation d where d.sponsorship.id = :id")
+	Collection<Donation> findDonationsBySponsorshipId(int id);
+
+	@Query("select COUNT(s) from Donation s WHERE s.sponsorship.id = :id")
+	Integer getNumberOfDonationsBySponsorshipId(int id);
 }

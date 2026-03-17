@@ -59,7 +59,7 @@ master.menu.inventor.list-my-inventions = List my inventions
 # master.menu.sponsor ##########################################################
 
 master.menu.sponsor = Sponsor
-master.menu.sponsor.list-my-sponsorships = List my sponsorships
+master.menu.sponsor.manage-my-sponsorships = Manage my sponsorships
 master.menu.sponsor.list-sponsorships = List published sponsorships
 
 master.menu.user-account = Account

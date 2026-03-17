@@ -1,5 +1,5 @@
 /*
- * AnyAuditSectionRepository.java
+ * EmployerJobRepository.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.donation;
+package acme.features.sponsor.donation;
 
 import java.util.Collection;
 
@@ -22,21 +22,15 @@ import acme.entities.sponsorship.Donation;
 import acme.entities.sponsorship.Sponsorship;
 
 @Repository
-public interface AuthenticatedDonationRepository extends AbstractRepository {
+public interface SponsorDonationRepository extends AbstractRepository {
 
-	@Query("select sponsorship from Sponsorship sponsorship where sponsorship.id = :id")
+	@Query("select s from Sponsorship s where s.id = :id")
 	Sponsorship findSponsorshipById(int id);
 
-	@Query("select sponsorship from Sponsorship sponsorship where sponsorship.sponsor.id = :id")
-	Sponsorship findSponsorshipBySponsorId(int id);
-
-	@Query("select donation from Donation donation where donation.sponsorship.id = :sponsorshipId")
-	Collection<Donation> findDonationsBySponsorshipId(int sponsorshipId);
-
-	@Query("select donation from Donation donation where donation.id = :id")
+	@Query("select d from Donation d where d.id = :id")
 	Donation findDonationById(int id);
 
-	@Query("select sponsor.id from Sponsor sponsor where sponsor.userAccount.id =:id")
-	int findSponsorByAccountId(int id);
+	@Query("select d from Donation d where d.sponsorship.id = :id")
+	Collection<Donation> findDonationsBySponsorshipId(int id);
 
 }

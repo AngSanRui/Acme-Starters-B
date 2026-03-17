@@ -1,5 +1,5 @@
 /*
- * AnyAuditSectionController.java
+ * EmployerJobController.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,19 +10,19 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.donation;
+package acme.features.sponsor.sponsorship;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 
-import acme.client.components.principals.Authenticated;
 import acme.client.controllers.AbstractController;
-import acme.entities.sponsorship.Donation;
+import acme.entities.sponsorship.Sponsorship;
+import acme.realms.sponsorship.Sponsor;
 
 @Controller
-public class AuthenticatedDonationController extends AbstractController<Authenticated, Donation> {
+public class SponsorSponsorshipController extends AbstractController<Sponsor, Sponsorship> {
 
 	// Constructors -----------------------------------------------------------
 
@@ -30,8 +30,13 @@ public class AuthenticatedDonationController extends AbstractController<Authenti
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AuthenticatedDonationListService.class);
-		super.addBasicCommand("show", AuthenticatedDonationShowService.class);
+		super.addBasicCommand("list", SponsorSponsorshipListService.class);
+		super.addBasicCommand("show", SponsorSponsorshipShowService.class);
+		super.addBasicCommand("create", SponsorSponsorshipCreateService.class);
+		super.addBasicCommand("update", SponsorSponsorshipUpdateService.class);
+		super.addBasicCommand("delete", SponsorSponsorshipDeleteService.class);
+
+		super.addCustomCommand("publish", "update", SponsorSponsorshipPublishService.class);
 	}
 
 }
