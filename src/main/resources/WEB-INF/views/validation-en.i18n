@@ -15,3 +15,5 @@ acme.validation.ticker.message		= The ticker must follow the pattern: 2 uppercas
 acme.validation.sponsorship.ticker-not-unique.message = 	The ticker already exists in the database
 acme.validation.sponsorship.start-after-end.message 	= The end date must be after the start date
 acme.validation.numberOfDonations.message	= A sponsorship must have at least one donation to be published
+acme.validation.donation.currency-not-supported.message = The only currently supported currency is EUR
+acme.validation.Donation.message = The donation has errors: 
