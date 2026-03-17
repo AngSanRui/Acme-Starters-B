@@ -28,24 +28,15 @@ public class FundraiserStrategyDeleteService extends AbstractService<Fundraiser,
 
 	@Override
 	public void authorise() {
-		boolean status = false;
+		boolean status;
 
-		if (this.strategy != null) {
-			int userAccountId;
-			Fundraiser fundraiser;
-
-			userAccountId = super.getRequest().getPrincipal().getAccountId();
-			fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
-
-			status = this.strategy.getDraftMode() && this.strategy.getFundraiser().getId() == fundraiser.getId();
-		}
+		status = this.strategy != null && this.strategy.getDraftMode() && this.strategy.getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void bind() {
-
 	}
 
 	@Override
@@ -57,7 +48,6 @@ public class FundraiserStrategyDeleteService extends AbstractService<Fundraiser,
 	public void execute() {
 		Collection<Tactic> tactics = this.repository.findAllTacticsByStrategyId(this.strategy.getId());
 		this.repository.deleteAll(tactics);
-
 		this.repository.delete(this.strategy);
 	}
 

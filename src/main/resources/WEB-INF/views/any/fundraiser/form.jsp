@@ -1,4 +1,4 @@
-%--
+<%--
 - form.jsp
 -
 - Copyright (C) 2012-2026 Rafael Corchuelo.
@@ -18,5 +18,5 @@
 <acme:form>
 	<acme:form-textbox 	code="any.fundraiser.form.label.bank" path="bank"/>
 	<acme:form-textbox 	code="any.fundraiser.form.label.statement" path="statement"/>
-	<acme:form-checkbox	code="any.fundraiser.form.label.agent" path="agent"/>
+	<acme:form-textbox	code="any.fundraiser.form.label.agent" path="agent"/>
 </acme:form>

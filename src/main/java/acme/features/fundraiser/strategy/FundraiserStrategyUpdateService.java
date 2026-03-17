@@ -28,14 +28,9 @@ public class FundraiserStrategyUpdateService extends AbstractService<Fundraiser,
 
 	@Override
 	public void authorise() {
-		boolean status = false;
+		boolean status;
 
-		if (this.strategy != null) {
-			int userAccountId = super.getRequest().getPrincipal().getAccountId();
-			Fundraiser fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
-
-			status = this.strategy.getDraftMode() && this.strategy.getFundraiser().getId() == fundraiser.getId();
-		}
+		status = this.strategy != null && this.strategy.getDraftMode() && this.strategy.getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -48,7 +43,6 @@ public class FundraiserStrategyUpdateService extends AbstractService<Fundraiser,
 	@Override
 	public void validate() {
 		super.validateObject(this.strategy);
-
 		if (!super.getResponse().getErrors().hasErrors("startMoment") && !super.getResponse().getErrors().hasErrors("endMoment")) {
 			Date start = this.strategy.getStartMoment();
 			Date end = this.strategy.getEndMoment();

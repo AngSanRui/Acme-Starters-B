@@ -1,8 +1,6 @@
 
 package acme.features.fundraiser.strategy;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,19 +20,23 @@ public class FundraiserStrategyCreateService extends AbstractService<Fundraiser,
 
 	@Override
 	public void load() {
-		int userAccountId;
+		Fundraiser fundraiser;
 
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
-		Fundraiser fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
+		fundraiser = (Fundraiser) super.getRequest().getPrincipal().getActiveRealm();
 
-		this.strategy = new Strategy();
-		this.strategy.setFundraiser(fundraiser);
+		this.strategy = super.newObject(Strategy.class);
 		this.strategy.setDraftMode(true);
+		this.strategy.setFundraiser(fundraiser);
+
 	}
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status;
+
+		status = this.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
+
+		super.setAuthorised(status);
 	}
 
 	@Override
@@ -45,14 +47,6 @@ public class FundraiserStrategyCreateService extends AbstractService<Fundraiser,
 	@Override
 	public void validate() {
 		super.validateObject(this.strategy);
-
-		if (!super.getResponse().getErrors().hasErrors("startMoment") && !super.getResponse().getErrors().hasErrors("endMoment")) {
-			Date startMoment = this.strategy.getStartMoment();
-			Date endMoment = this.strategy.getEndMoment();
-
-			if (startMoment != null && endMoment != null && !startMoment.before(endMoment))
-				super.state(false, "endMoment", "fundraiser.strategy.error.start-before-end");
-		}
 	}
 
 	@Override
@@ -62,10 +56,9 @@ public class FundraiserStrategyCreateService extends AbstractService<Fundraiser,
 
 	@Override
 	public void unbind() {
-		Tuple tuple;
-
-		tuple = super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		Tuple tuple = super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
 		tuple.put("draftMode", true);
+		tuple.put("readonly", !this.strategy.getDraftMode());
 	}
 
 }

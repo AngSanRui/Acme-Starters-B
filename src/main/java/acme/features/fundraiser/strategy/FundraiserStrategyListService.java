@@ -36,15 +36,14 @@ public class FundraiserStrategyListService extends AbstractService<Fundraiser, S
 	public void authorise() {
 		boolean status;
 
-		status = true;
-		//super.getRequest().getPrincipal().hasRealm(this.whine.getCustomer());
+		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.strategies, "ticker", "name", "description");
+		super.unbindObjects(this.strategies, "ticker", "name", "description", "draftMode");
 
 	}
 

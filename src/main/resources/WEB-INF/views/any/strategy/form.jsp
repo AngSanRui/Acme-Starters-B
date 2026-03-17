@@ -17,7 +17,7 @@
 
 <acme:form>
 <%--
-	<acme:form-textbox 	code="any.strategy.form.label.fundraiser" path="fundrasier"/>
+	<acme:form-textbox 	code="any.strategy.form.label.fundraiser" path="fundraiser"/>
 	--%>
 	<acme:form-textbox 	code="any.strategy.form.label.ticker" path="ticker"/>
 	<acme:form-textbox 	code="any.strategy.form.label.name" path="name"/>
@@ -29,5 +29,5 @@
 	<acme:form-double code="any.strategy.form.label.expected-percentage" path="expectedPercentage"/>
 	
 	<acme:button code="any.strategy.form.button.tactics" action="/any/tactic/list?strategyId=${id}"/>
-	<acme:button code="any.strategy.form.button.fundraiser" action="/any/fundraiser/show?fundraiserId=${fundraiser.id}"/>
+	<acme:button code="any.strategy.form.button.fundraiser" action="/any/fundraiser/show?fundraiserId=${fundraiserId}"/>
 </acme:form>

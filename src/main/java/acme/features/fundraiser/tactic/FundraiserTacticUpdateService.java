@@ -28,14 +28,9 @@ public class FundraiserTacticUpdateService extends AbstractService<Fundraiser, T
 
 	@Override
 	public void authorise() {
-		boolean status = false;
+		boolean status;
 
-		if (this.tactic != null) {
-			int userAccountId = super.getRequest().getPrincipal().getAccountId();
-			Fundraiser fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
-
-			status = fundraiser != null && this.tactic.getDraftMode() && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().getId() == fundraiser.getId();
-		}
+		status = this.tactic != null && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -61,12 +56,10 @@ public class FundraiserTacticUpdateService extends AbstractService<Fundraiser, T
 		Tuple tuple;
 
 		choices = SelectChoices.from(TacticKind.class, this.tactic.getKind());
-
 		tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "draftMode");
-		tuple.put("kind", choices.getSelected().getKey());
-		tuple.put("kinds", choices);
 
 		tuple.put("strategyId", this.tactic.getStrategy().getId());
-		tuple.put("readonly", false);
+		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
+		tuple.put("kind", choices);
 	}
 }

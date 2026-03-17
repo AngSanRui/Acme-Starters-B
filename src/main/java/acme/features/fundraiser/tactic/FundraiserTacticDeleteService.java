@@ -4,6 +4,7 @@ package acme.features.fundraiser.tactic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Tactic;
 import acme.realms.strategy.Fundraiser;
@@ -25,25 +26,21 @@ public class FundraiserTacticDeleteService extends AbstractService<Fundraiser, T
 
 	@Override
 	public void authorise() {
-		boolean status = false;
+		boolean status;
 
-		if (this.tactic != null) {
-			int userAccountId = super.getRequest().getPrincipal().getAccountId();
-			Fundraiser fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
-
-			status = fundraiser != null && this.tactic.getDraftMode() && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().getId() == fundraiser.getId();
-		}
+		status = this.tactic != null && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void bind() {
-
+		super.bindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
 	}
 
 	@Override
 	public void validate() {
+		super.validateObject(this.tactic);
 
 	}
 
@@ -54,6 +51,12 @@ public class FundraiserTacticDeleteService extends AbstractService<Fundraiser, T
 
 	@Override
 	public void unbind() {
+		Tuple tuple;
+
+		tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "draftMode");
+
+		tuple.put("strategyId", this.tactic.getStrategy().getId());
+		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
 
 	}
 }

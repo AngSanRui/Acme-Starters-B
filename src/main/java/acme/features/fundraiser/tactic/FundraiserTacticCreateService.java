@@ -18,31 +18,27 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 	@Autowired
 	private FundraiserTacticRepository	repository;
 
-	private Strategy					strategy;
 	private Tactic						tactic;
 
 
 	@Override
 	public void load() {
+
 		int strategyId = super.getRequest().getData("strategyId", int.class);
+		Strategy strategy = this.repository.findStrategyById(strategyId);
 
-		this.strategy = this.repository.findStrategyById(strategyId);
-
-		this.tactic = new Tactic();
-		this.tactic.setStrategy(this.strategy);
-		this.tactic.setDraftMode(true);
+		this.tactic = super.newObject(Tactic.class);
+		this.tactic.setStrategy(strategy);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status = false;
+		boolean status;
 
-		if (this.strategy != null) {
-			int userAccountId = super.getRequest().getPrincipal().getAccountId();
-			Fundraiser fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
+		int strategyId = super.getRequest().getData("strategyId", int.class);
+		Strategy strategy = this.repository.findStrategyById(strategyId);
 
-			status = fundraiser != null && this.strategy.getDraftMode() && this.strategy.getFundraiser().getId() == fundraiser.getId();
-		}
+		status = this.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && strategy != null && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -64,11 +60,12 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 
 	@Override
 	public void unbind() {
-		SelectChoices kinds = SelectChoices.from(TacticKind.class, this.tactic.getKind());
-		Tuple tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind", "draftMode");
+		SelectChoices choices;
+		choices = SelectChoices.from(TacticKind.class, this.tactic.getKind());
+		Tuple tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
 
-		tuple.put("kinds", kinds);
-		tuple.put("strategyId", this.strategy.getId());
-		tuple.put("readonly", false);
+		tuple.put("strategyId", super.getRequest().getData("strategyId", int.class));
+		tuple.put("draftMode", true);
+		tuple.put("kind", choices);
 	}
 }

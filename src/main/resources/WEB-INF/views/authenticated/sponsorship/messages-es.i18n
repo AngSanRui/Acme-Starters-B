@@ -1,0 +1,32 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for authenticated particular
+# purposes.  The copyright owner does not offer authenticated warranties or representations, nor do
+# they accept authenticated liabilities with respect to them.
+
+authenticated.sponsorship.list.title = Listado de sponsorships
+
+authenticated.sponsorship.list.label.sponsor = Sponsor
+authenticated.sponsorship.list.label.ticker = Referencia
+authenticated.sponsorship.list.label.name = Nombre
+authenticated.sponsorship.list.label.description = Descripcion
+
+authenticated.sponsorship.form.title = Formulario de sponsorship
+
+authenticated.sponsorship.form.label.sponsor = Sponsor:
+authenticated.sponsorship.form.label.ticker = Referencia:
+authenticated.sponsorship.form.label.name = Nombre:
+authenticated.sponsorship.form.label.description = Descripcion:
+authenticated.sponsorship.form.label.start-moment = Momento de inicio:
+authenticated.sponsorship.form.label.end-moment = Momento de acabado:
+authenticated.sponsorship.form.label.more-info = Mas informacion:
+authenticated.sponsorship.form.label.draft-mode = Modo borrador:
+authenticated.sponsorship.form.label.months-active = Meses activo:
+authenticated.sponsorship.form.label.hours = Horas:
+
+authenticated.sponsorship.form.button.donations = Listar donaciones
+authenticated.sponsorship.form.button.sponsor = Mostrar cuenta del sponsor

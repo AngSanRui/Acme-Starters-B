@@ -26,7 +26,7 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 	public void load() {
 		int fundraiserId;
 
-		fundraiserId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		fundraiserId = super.getRequest().getData("id", int.class);
 		this.strategy = this.repository.findStrategyById(fundraiserId);
 	}
 
@@ -34,8 +34,7 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 	public void authorise() {
 		boolean status;
 
-		status = true;
-		//super.getRequest().getPrincipal().hasRealm(this.whine.getCustomer());
+		status = this.strategy != null && this.strategy.getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -53,7 +52,7 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 		tuple.put("expectedPercentage", expectedPercentage);
 		tuple.put("monthsActive", monthsActive);
 		tuple.put("fundraiserId", this.strategy.getFundraiser().getId());
-		tuple.put("readonly", true);
+		tuple.put("readonly", !this.strategy.getDraftMode());
 
 	}
 

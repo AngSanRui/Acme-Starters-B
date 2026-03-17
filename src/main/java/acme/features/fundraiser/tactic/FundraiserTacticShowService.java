@@ -9,7 +9,6 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Tactic;
 import acme.entities.strategies.TacticKind;
-import acme.features.any.tactic.AnyTacticRepository;
 import acme.realms.strategy.Fundraiser;
 
 @Service
@@ -18,9 +17,9 @@ public class FundraiserTacticShowService extends AbstractService<Fundraiser, Tac
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyTacticRepository	repository;
+	private FundraiserTacticRepository	repository;
 
-	private Tactic				tactic;
+	private Tactic						tactic;
 
 	// AbstractService interface -------------------------------------------
 
@@ -37,7 +36,7 @@ public class FundraiserTacticShowService extends AbstractService<Fundraiser, Tac
 	public void authorise() {
 		boolean status;
 
-		status = this.tactic != null && !this.tactic.getStrategy().getFundraiser().isPrincipal();
+		status = this.tactic != null && this.tactic.getStrategy().getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -50,7 +49,10 @@ public class FundraiserTacticShowService extends AbstractService<Fundraiser, Tac
 		choices = SelectChoices.from(TacticKind.class, this.tactic.getKind());
 		tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
 
-		tuple.put("statuses", choices);
+		tuple.put("strategyId", this.tactic.getStrategy().getId());
+		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
+		tuple.put("kind", choices);
+
 	}
 
 }

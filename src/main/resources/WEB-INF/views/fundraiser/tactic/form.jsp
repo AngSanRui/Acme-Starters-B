@@ -16,10 +16,10 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox 	code="any.tactic.form.label.name" path="name"/>
-	<acme:form-textarea code="any.tactic.form.label.notes" path="notes"/>
-	<acme:form-integer 	code="any.tactic.form.label.expectedPercentage" path="expectedPercentage"/>
-	<acme:form-textbox 	code="any.tactic.form.label.kind" path="kind"/>
+	<acme:form-textbox 	code="fundraiser.tactic.form.label.name" path="name"/>
+	<acme:form-textarea code="fundraiser.tactic.form.label.notes" path="notes"/>
+	<acme:form-integer 	code="fundraiser.tactic.form.label.expectedPercentage" path="expectedPercentage"/>
+	<acme:form-select code="fundraiser.tactic.form.label.kind" path="kind" choices="${kind}"/>
 	
 <jstl:choose>
 		<jstl:when test="${_command == 'create'}">
@@ -27,11 +27,9 @@
 				action="/fundraiser/tactic/create?strategyId=${strategyId}"/>
 		</jstl:when>
 
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
-			<jstl:if test="${!readonly}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
 				<acme:submit code="fundraiser.tactic.form.button.update" action="/fundraiser/tactic/update"/>
 				<acme:submit code="fundraiser.tactic.form.button.delete" action="/fundraiser/tactic/delete"/>
-			</jstl:if>
 		</jstl:when>
 	</jstl:choose>
 
