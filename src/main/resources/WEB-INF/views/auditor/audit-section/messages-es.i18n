@@ -1,0 +1,17 @@
+
+
+auditor.audit-section.list.title = Listing of audit sections
+
+auditor.audit-section.list.label.name = Nombre
+auditor.audit-section.list.label.notes = Notas
+auditor.audit-section.list.label.hours = Horas
+auditor.audit-section.list.label.kind = Tipo
+
+auditor.audit-section.form.title = Formulario de seccion de auditoria
+
+auditor.audit-section.form.label.name = Nombre:
+auditor.audit-section.form.label.notes = Notas:
+auditor.audit-section.form.label.hours = Horas:
+auditor.audit-section.form.label.kind = Tipo:
+
+

@@ -17,3 +17,4 @@ acme.validation.sponsorship.start-after-end.message 	= La fecha de inicio debe s
 acme.validation.numberOfDonations.message	= Un sponsorship debe tener al menos una donación para ser publicada
 acme.validation.donation.currency-not-supported.message = La única moneda aceptada es el EUR
 acme.validation.Donation.message = La donacion tiene errores:
+acme.validation.invention.hasParts.message = La invención debe tener alguna part asociada para publicarse
