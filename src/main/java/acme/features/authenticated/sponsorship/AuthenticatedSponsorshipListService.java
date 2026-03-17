@@ -37,7 +37,7 @@ public class AuthenticatedSponsorshipListService extends AbstractService<Authent
 		int sponsorId;
 		userId = super.getRequest().getPrincipal().getAccountId();
 		sponsorId = this.repository.findSponsorByAccountId(userId);
-		this.sponsorships = this.repository.findSponsorshipsBySponsorId(sponsorId);
+		this.sponsorships = this.repository.findAllPublishedSponsorships();
 	}
 
 	@Override

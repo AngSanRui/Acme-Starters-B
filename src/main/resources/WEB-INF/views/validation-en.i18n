@@ -13,6 +13,14 @@ acme.validation.text.message   		= Must have from 1 to 255 characters
 
 acme.validation.ticker.message		= The ticker must follow the pattern: 2 uppercase letters, 2 digits, a -, and from 5 to 10 characters (alphanumeric or _)
 
+acme.validation.sponsorship.ticker-not-unique.message = 	The ticker already exists in the database
+acme.validation.sponsorship.start-after-end.message 	= The end date must be after the start date
+acme.validation.numberOfDonations.message	= A sponsorship must have at least one donation to be published
+acme.validation.donation.currency-not-supported.message = The only currently supported currency is EUR
+acme.validation.Donation.message = The donation has errors: 
+acme.validation.invention.hasParts.message =The invention must have any part before publish 
+
+
 acme.validation.notAnyAuditSections.message = This audit report can not be published because it has not got any audit sections linked
 acme.validation.startMomentIsNotFuture.message = The start moment must be in the future regarding the actual moment when publishing
 acme.validation.endMomentIsNotFuture.message = The end moment must be in the future regarding the actual moment when publishing
@@ -20,3 +28,4 @@ acme.validation.endMomentIsNotFuture.message = The end moment must be in the fut
 acme.validation.audit-report.published-without-audit-section.message = This audit report can not be published because it has not got any audit sections linked
 acme.validation.audit-report.start-after-end.message = The endMoment must be after the startMoment
 acme.validation.audit-report.ticker-not-unique.message = This ticker is not unique
+
