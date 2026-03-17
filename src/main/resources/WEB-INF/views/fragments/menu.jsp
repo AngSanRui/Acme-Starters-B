@@ -52,11 +52,11 @@
 		
 		<acme:menu-option code="master.menu.auditor" access="hasRealm('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.list-audit-reports" action="/auditor/audit-report/list"/>
-    </acme:menu-option>
+    	</acme:menu-option>
 		
-    <acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
-			<acme:menu-suboption code="master.menu.sponsor.list-sponsorships" action="/any/sponsorship/list"/>
+    	<acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.manage-my-sponsorships" action="/sponsor/sponsorship/list"/>
+			<acme:menu-suboption code="master.menu.sponsor.list-sponsorships" action="/authenticated/sponsorship/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRealm('Inventor')">
