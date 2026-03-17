@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAuditSectionRepository.java
+ * AuditorAuditSectionRepository.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.donation;
+package acme.features.authenticated.auditSection;
 
 import java.util.Collection;
 
@@ -18,19 +18,19 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.entities.sponsorship.Donation;
-import acme.entities.sponsorship.Sponsorship;
+import acme.entities.auditReports.AuditReport;
+import acme.entities.auditReports.AuditSection;
 
 @Repository
-public interface AnyDonationRepository extends AbstractRepository {
+public interface AuthenticatedAuditSectionRepository extends AbstractRepository {
 
-	@Query("select sponsorship from Sponsorship sponsorship where sponsorship.id = :id")
-	Sponsorship findSponsorshipById(int id);
+	@Query("select ar from AuditReport ar where ar.id = :id")
+	AuditReport findAuditReportById(int id);
 
-	@Query("select donation from Donation donation where donation.sponsorship.id = :sponsorshipId")
-	Collection<Donation> findDonationsBySponsorshipId(int sponsorshipId);
+	@Query("select asec from AuditSection asec where asec.auditReport.id = :auditReportId")
+	Collection<AuditSection> findAuditSectionsByAuditReportId(int auditReportId);
 
-	@Query("select donation from Donation donation where donation.id = :id")
-	Donation findDonationById(int id);
+	@Query("select asec from AuditSection asec where asec.id = :id")
+	AuditSection findAuditSectionById(int id);
 
 }

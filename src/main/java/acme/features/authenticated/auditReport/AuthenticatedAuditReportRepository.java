@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAuditSectionRepository.java
+ * AuditorAuditSectionRepository.java
  *
  * Copyright (C) 2012-2026 Rafael Corchuelo.
  *
@@ -10,18 +10,23 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.sponsor;
+package acme.features.authenticated.auditReport;
+
+import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.realms.sponsorship.Sponsor;
+import acme.entities.auditReports.AuditReport;
 
 @Repository
-public interface AnySponsorRepository extends AbstractRepository {
+public interface AuthenticatedAuditReportRepository extends AbstractRepository {
 
-	@Query("select sponsor from Sponsor sponsor where sponsor.id = :id")
-	Sponsor findSponsorById(int id);
+	@Query("select ar from AuditReport ar where ar.draftMode = false")
+	Collection<AuditReport> findAllPublishedAuditReports();
+
+	@Query("select ar from AuditReport ar where ar.id = :id")
+	AuditReport findAuditReportById(int id);
 
 }
