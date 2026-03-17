@@ -11,5 +11,5 @@
 </acme:list>
 
 <jstl:if test="${showCreate}">
-	<acme:button code="spokesperson.milestone.list.button.create" action="/spokesperson/milestone/create?milestoneId=${milestoneId}"/>
+	<acme:button code="spokesperson.milestone.list.button.create" action="/spokesperson/milestone/create?campaignId=${campaignId}"/>
 </jstl:if>

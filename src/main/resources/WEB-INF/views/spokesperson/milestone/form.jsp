@@ -15,7 +15,7 @@
 			<acme:submit code="spokesperson.milestone.form.button.delete" action="/spokesperson/milestone/delete"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="spokesperson.milestone.form.button.create" action="/spokesperson/milestone/create?inventionId=${inventionId}"/>
+			<acme:submit code="spokesperson.milestone.form.button.create" action="/spokesperson/milestone/create?campaignId=${campaignId}"/>
 		</jstl:when>		
 	</jstl:choose>	
 </acme:form>

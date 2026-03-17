@@ -26,10 +26,10 @@ public class SpokespersonMilestoneUpdateService extends AbstractService<Spokespe
 
 	@Override
 	public void load() {
-		int milestoneId;
+		int id;
 
-		milestoneId = super.getRequest().getData("id", int.class);
-		this.milestone = this.repository.findMilestoneById(milestoneId);
+		id = super.getRequest().getData("id", int.class);
+		this.milestone = this.repository.findMilestoneById(id);
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class SpokespersonMilestoneUpdateService extends AbstractService<Spokespe
 
 	@Override
 	public void execute() {
-		this.repository.delete(this.milestone);
+		this.repository.save(this.milestone);
 	}
 
 	@Override

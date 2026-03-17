@@ -73,7 +73,7 @@ public class SpokespersonMilestoneCreateService extends AbstractService<Spokespe
 
 		kinds = SelectChoices.from(MilestoneKind.class, MilestoneKind.CONVERSION);
 
-		tuple.put("campaignId", super.getRequest().getData("sponsorshipId", int.class));
+		tuple.put("campaignId", super.getRequest().getData("campaignId", int.class));
 		tuple.put("draftMode", this.milestone.getCampaign().getDraftMode());
 		tuple.put("kinds", kinds);
 	}

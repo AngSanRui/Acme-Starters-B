@@ -12,7 +12,8 @@ spokesperson.milestone.form.label.achievements = Logros:
 spokesperson.milestone.form.label.effort = Esfuerzo:
 spokesperson.milestone.form.label.kind = Tipo:
 
-spokesperson.milestone.form.button.create = Crear
+spokesperson.milestone.list.button.create = Crear
+spokesperson.milestone.list.button.create = Crear
 spokesperson.milestone.form.button.update = Actualizar
 spokesperson.milestone.form.button.delete = Eliminar
 spokesperson.milestone.form.button.publish = Publicar

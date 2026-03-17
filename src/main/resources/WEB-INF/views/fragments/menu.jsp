@@ -30,7 +30,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-audit-reports" action="/authenticated/audit-report/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-inventions" action="/authenticated/invention/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-sponsorships" action="/authenticated/sponsorship/list"/>
-			<acme:menu-suboption code="master.menu.authenticated.list-campaigns" action="/authenticated/campaign/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-campaigns" action="/any/campaign/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
