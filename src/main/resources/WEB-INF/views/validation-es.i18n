@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-acme.validation.header.message  	= Debe tener de 1 a 75 caracteres
-acme.validation.text.message   		= Debe tener de 1 a 255 caracteres
+acme.validations.header.message  	= Debe tener de 1 a 75 caracteres
+acme.validations.text.message   		= Debe tener de 1 a 255 caracteres
 
 acme.validation.ticker.message		= La referencia debe seguir el patrón: 2 letras mayúsculas, 2 dígitos, un -, y de 5 a 10 caracteres (alfanuméricos o _)
 

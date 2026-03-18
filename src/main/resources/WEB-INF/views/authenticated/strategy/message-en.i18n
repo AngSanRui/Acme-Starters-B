@@ -1,0 +1,21 @@
+authenticated.strategy.list.title = Listing of strategies
+
+authenticated.strategy.list.label.fundraiser = Fundraiser
+authenticated.strategy.list.label.ticker = Ticker
+authenticated.strategy.list.label.name = Name
+authenticated.strategy.list.label.description = Description
+
+authenticated.strategy.form.title = Strategies form
+
+authenticated.strategy.form.label.fundraiser = Fundraiser:
+authenticated.strategy.form.label.ticker = Ticker:
+authenticated.strategy.form.label.name = Name:
+authenticated.strategy.form.label.description = Description:
+authenticated.strategy.form.label.start-moment = Start moment:
+authenticated.strategy.form.label.end-moment = End moment:
+authenticated.strategy.form.label.more-info = More info:
+authenticated.strategy.form.label.months-active = Months active:
+authenticated.strategy.form.label.expected-percentage = Expected percentage:
+
+authenticated.strategy.form.button.tactics = List tactics
+authenticated.strategy.form.button.fundraiser = Show fundraiser account

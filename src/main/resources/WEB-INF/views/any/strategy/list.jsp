@@ -16,9 +16,6 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<%--
-	<acme:list-column code="any.audit-report.list.label.auditor" path="auditor" width="20%"/>
-	--%>
 	<acme:list-column code="any.strategy.list.label.ticker" path="ticker" width="25%"/>
 	<acme:list-column code="any.strategy.list.label.name" path="name" width="25%"/>
 	<acme:list-column code="any.strategy.list.label.description" path="description" width="50%"/>

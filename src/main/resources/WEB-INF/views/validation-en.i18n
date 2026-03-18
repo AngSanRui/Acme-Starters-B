@@ -8,10 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-acme.validation.header.message  	= Must have from 1 to 75 characters
-acme.validation.text.message   		= Must have from 1 to 255 characters
+acme.validations.header.message  	= Must have from 1 to 75 characters
+acme.validations.text.message   		= Must have from 1 to 255 characters
 
-acme.validation.ticker.message		= The ticker must follow the pattern: 2 uppercase letters, 2 digits, a -, and from 5 to 10 characters (alphanumeric or _)
+acme.validations.ticker.message		= The ticker must follow the pattern: 2 uppercase letters, 2 digits, a -, and from 5 to 10 characters (alphanumeric or _)
 
 acme.validation.sponsorship.ticker-not-unique.message = 	The ticker already exists in the database
 acme.validation.sponsorship.start-after-end.message 	= The end date must be after the start date
@@ -28,4 +28,3 @@ acme.validation.endMomentIsNotFuture.message = The end moment must be in the fut
 acme.validation.audit-report.published-without-audit-section.message = This audit report can not be published because it has not got any audit sections linked
 acme.validation.audit-report.start-after-end.message = The endMoment must be after the startMoment
 acme.validation.audit-report.ticker-not-unique.message = This ticker is not unique
-

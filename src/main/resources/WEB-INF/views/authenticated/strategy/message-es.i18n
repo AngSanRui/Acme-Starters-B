@@ -1,0 +1,21 @@
+authenticated.strategy.list.title = Listado de estrategias
+
+authenticated.strategy.list.label.fundraiser = Recaudador de fondos
+authenticated.strategy.list.label.ticker = Referencia
+authenticated.strategy.list.label.name = Nombre
+authenticated.strategy.list.label.description = Descripcion
+
+authenticated.strategy.form.title = Formulario de estrategias
+
+authenticated.strategy.form.label.fundraiser = Recaudador de fondos:
+authenticated.strategy.form.label.ticker = Referencia:
+authenticated.strategy.form.label.name = Nombre:
+authenticated.strategy.form.label.description = Descripcion:
+authenticated.strategy.form.label.start-moment = Momento de inicio:
+authenticated.strategy.form.label.end-moment = Momento de acabado:
+authenticated.strategy.form.label.more-info = Mas informacion:
+authenticated.strategy.form.label.months-active = Meses activo:
+authenticated.strategy.form.label.expected-percentage = Porcentaje esperado:
+
+authenticated.strategy.form.button.tactics = Listar tácticas
+authenticated.strategy.form.button.fundraiser = Mostrar cuenta del recaudador de fondos
