@@ -24,7 +24,7 @@ acme.validation.Donation.message = The donation has errors:
 acme.validation.invention.hasParts.message =The invention must have any part before publish 
 acme.validation.strategy.duplicated-strategies.message = The ticker already exists in the database
 acme.validation.strategy.invalid-time-in.message = The end date must be after the start date
-fundraiser.strategy.error.no-tactics = No tactics have been created related to this strategy
+acme.validation.strategy.no-tactics.message = No tactics have been created related to this strategy
 
 
 acme.validation.notAnyAuditSections.message = This audit report can not be published because it has not got any audit sections linked

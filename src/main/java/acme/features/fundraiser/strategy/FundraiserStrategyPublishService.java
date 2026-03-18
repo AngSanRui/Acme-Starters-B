@@ -43,7 +43,7 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 	@Override
 	public void validate() {
 		int count = this.repository.countTacticsByStrategyId(this.strategy.getId());
-		super.state(count > 0, "*", "fundraiser.strategy.error.no-tactics");
+		super.state(count > 0, "*", "acme.validation.strategy.no-tactics.message");
 	}
 
 	@Override
