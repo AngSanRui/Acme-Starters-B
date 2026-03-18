@@ -2,7 +2,8 @@ fundraiser.strategy.list.title = Listado de estrategias
 
 fundraiser.strategy.list.label.ticker = Referencia
 fundraiser.strategy.list.label.name = Nombre
-fundraiser.strategy.list.label.description = Descripcion
+fundraiser.strategy.list.label.months-active = Meses activo:
+fundraiser.strategy.list.label.expected-percentage = Porcentaje esperado: 
 fundraiser.strategy.list.label.draft-mode = Modo Borrador
 
 fundraiser.strategy.list.button.create = Crear
@@ -16,8 +17,7 @@ fundraiser.strategy.form.label.description = Descripcion:
 fundraiser.strategy.form.label.start-moment = Momento de inicio:
 fundraiser.strategy.form.label.end-moment = Momento de acabado:
 fundraiser.strategy.form.label.more-info = Mas informacion:
-fundraiser.strategy.form.label.months-active = Meses activo:
-fundraiser.strategy.form.label.expected-percentage = Porcentaje esperado: 
+
 
 fundraiser.strategy.form.button.create = Crear
 fundraiser.strategy.form.button.update = Actualizar

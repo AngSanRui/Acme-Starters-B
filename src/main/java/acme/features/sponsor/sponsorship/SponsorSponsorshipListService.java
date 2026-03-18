@@ -53,6 +53,7 @@ public class SponsorSponsorshipListService extends AbstractService<Sponsor, Spon
 		super.unbindObjects(this.sponsorships, //
 			"ticker", "name", "description", //
 			"startMoment", "endMoment", "monthsActive", "totalMoney", "draftMode");
+
 	}
 
 }
