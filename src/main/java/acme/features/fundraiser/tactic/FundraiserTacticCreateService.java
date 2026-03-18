@@ -18,6 +18,7 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 	@Autowired
 	private FundraiserTacticRepository	repository;
 
+	private Strategy					strategy;
 	private Tactic						tactic;
 
 
@@ -25,10 +26,11 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 	public void load() {
 
 		int strategyId = super.getRequest().getData("strategyId", int.class);
-		Strategy strategy = this.repository.findStrategyById(strategyId);
+		this.strategy = this.repository.findStrategyById(strategyId);
 
 		this.tactic = super.newObject(Tactic.class);
-		this.tactic.setStrategy(strategy);
+		this.tactic.setStrategy(this.strategy);
+		this.tactic.setDraftMode(true);
 	}
 
 	@Override
@@ -36,9 +38,9 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 		boolean status;
 
 		int strategyId = super.getRequest().getData("strategyId", int.class);
-		Strategy strategy = this.repository.findStrategyById(strategyId);
+		this.strategy = this.repository.findStrategyById(strategyId);
 
-		status = this.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && strategy != null && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().isPrincipal();
+		status = this.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && this.strategy != null && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -62,10 +64,10 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 	public void unbind() {
 		SelectChoices choices;
 		choices = SelectChoices.from(TacticKind.class, this.tactic.getKind());
-		Tuple tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+		Tuple tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind", "draftMode");
 
 		tuple.put("strategyId", super.getRequest().getData("strategyId", int.class));
-		tuple.put("draftMode", true);
 		tuple.put("kind", choices);
+		tuple.put("readonly", !this.strategy.getDraftMode());
 	}
 }

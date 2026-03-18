@@ -48,7 +48,7 @@ public class FundraiserStrategyUpdateService extends AbstractService<Fundraiser,
 			Date end = this.strategy.getEndMoment();
 
 			if (start != null && end != null && !start.before(end))
-				super.state(false, "endMoment", "fundraiser.strategy.error.start-before-end");
+				super.state(false, "endMoment", "acme.validation.strategy.invalid-time-in.message");
 		}
 	}
 

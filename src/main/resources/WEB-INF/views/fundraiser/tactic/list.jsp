@@ -24,5 +24,5 @@
 </acme:list>
 
 <jstl:if test="${showCreate}">
-	<acme:button code="fundraiser.strategy.list.button.create" action="/fundraiser/tactic/create?strategyId=${strategyId}"/>
+	<acme:button code="fundraiser.tactic.list.button.create" action="/fundraiser/tactic/create?strategyId=${strategyId}"/>
 </jstl:if>

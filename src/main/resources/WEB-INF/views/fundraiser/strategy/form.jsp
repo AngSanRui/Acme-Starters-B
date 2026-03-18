@@ -25,8 +25,6 @@
 	<acme:form-moment 	code="fundraiser.strategy.form.label.start-moment" path="startMoment"/>
 	<acme:form-moment 	code="fundraiser.strategy.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="fundraiser.strategy.form.label.more-info" path="moreInfo"/>
-	<acme:form-double code="fundraiser.strategy.form.label.months-active" path="monthsActive"/>
-	<acme:form-double code="fundraiser.strategy.form.label.expected-percentage" path="expectedPercentage"/>
 	
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">
