@@ -12,7 +12,7 @@
 	<acme:form-url 		code="spokesperson.campaign.form.label.more-info" path="moreInfo"/>
 	<jstl:choose>
 		<jstl:when test="${_command != 'create'}">
-			<acme:form-checkbox	code="spokesperson.campaign.form.label.draft-mode" path="draftMode" readonly="true"/>
+			<acme:form-checkbox	code="spokesperson.campaign.form.label.draft-mode" path="draftMode"/>
 			<acme:form-double 	code="spokesperson.campaign.form.label.monthsActive" path="monthsActive" readonly="true"/>
 			<acme:form-integer 	code="spokesperson.campaign.form.label.effort" path="effort" readonly="true"/>
 		</jstl:when>
