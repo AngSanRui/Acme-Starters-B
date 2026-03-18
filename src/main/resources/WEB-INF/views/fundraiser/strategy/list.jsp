@@ -18,7 +18,8 @@
 <acme:list>
 	<acme:list-column code="fundraiser.strategy.list.label.ticker" path="ticker" width="25%"/>
 	<acme:list-column code="fundraiser.strategy.list.label.name" path="name" width="25%"/>
-	<acme:list-column code="fundraiser.strategy.list.label.description" path="description" width="50%"/>
+	<acme:list-column code="fundraiser.strategy.list.label.months-active" path="monthsActive" width="25%"/>
+	<acme:list-column code="fundraiser.strategy.list.label.expected-percentage" path="expectedPercentage" width="25%"/>
 	<acme:list-column code="fundraiser.strategy.list.label.draft-mode" path="draftMode" width="10%"/>
 </acme:list>
 

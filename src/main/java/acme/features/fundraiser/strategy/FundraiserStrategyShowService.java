@@ -44,13 +44,6 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
-		int strategyId = this.strategy.getId();
-
-		Double expectedPercentage = this.repository.expectedPercentageByStrategyId(strategyId);
-		Double monthsActive = this.strategy.getMonthsActive();
-
-		tuple.put("expectedPercentage", expectedPercentage);
-		tuple.put("monthsActive", monthsActive);
 		tuple.put("fundraiserId", this.strategy.getFundraiser().getId());
 		tuple.put("readonly", !this.strategy.getDraftMode());
 
