@@ -1,0 +1,60 @@
+
+package acme.features.spokesperson.milestone;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
+import acme.client.services.AbstractService;
+import acme.entities.campaign.Milestone;
+import acme.entities.campaign.MilestoneKind;
+import acme.realms.campaign.Spokesperson;
+
+@Service
+public class SpokespersonMilestoneShowService extends AbstractService<Spokesperson, Milestone> {
+
+	// Internal state ---------------------------------------------------------
+
+	@Autowired
+	private SpokespersonMilestoneRepository	repository;
+
+	private Milestone						milestone;
+
+	// AbstractService interface -------------------------------------------
+
+
+	@Override
+	public void load() {
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		this.milestone = this.repository.findMilestoneById(id);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+		int userId;
+		int spokespersonId;
+
+		userId = super.getRequest().getPrincipal().getAccountId();
+		spokespersonId = this.repository.findSpokespersonByAccountId(userId);
+		status = this.milestone != null && this.milestone.getCampaign().getSpokesperson().getId() == spokespersonId;
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void unbind() {
+		SelectChoices choices;
+		Tuple tuple;
+
+		choices = SelectChoices.from(MilestoneKind.class, this.milestone.getKind());
+		tuple = super.unbindObject(this.milestone, "title", "achievements", "effort", "kind");
+		tuple.put("inventionId", this.milestone.getCampaign().getId());
+		tuple.put("draftMode", this.milestone.getCampaign().getDraftMode());
+		tuple.put("kinds", choices);
+	}
+
+}

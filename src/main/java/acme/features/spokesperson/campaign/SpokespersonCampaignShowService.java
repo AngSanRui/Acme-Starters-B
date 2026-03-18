@@ -1,22 +1,22 @@
 
-package acme.features.any.campaign;
+package acme.features.spokesperson.campaign;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.campaign.Campaign;
+import acme.realms.campaign.Spokesperson;
 
 @Service
-public class AnyCampaignShowService extends AbstractService<Any, Campaign> {
+public class SpokespersonCampaignShowService extends AbstractService<Spokesperson, Campaign> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyCampaignRepository	repository;
+	private SpokespersonCampaignRepository	repository;
 
-	private Campaign				campaign;
+	private Campaign						campaign;
 
 	// AbstractService interface -------------------------------------------
 
@@ -32,8 +32,12 @@ public class AnyCampaignShowService extends AbstractService<Any, Campaign> {
 	@Override
 	public void authorise() {
 		boolean status;
+		int userId;
+		int spokespersonId;
 
-		status = this.campaign != null && !this.campaign.getDraftMode();
+		userId = super.getRequest().getPrincipal().getAccountId();
+		spokespersonId = this.repository.findSpokespersonByAccountId(userId);
+		status = this.campaign != null && this.campaign.getSpokesperson().getId() == spokespersonId && super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
 
 		super.setAuthorised(status);
 	}
