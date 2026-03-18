@@ -21,7 +21,7 @@ acme.validation.Donation.message = La donacion tiene errores:
 acme.validation.invention.hasParts.message = La invención debe tener alguna part asociada para publicarse
 acme.validation.strategy.duplicated-strategies.message = Ya existe ese ticker en la base de datos
 acme.validation.strategy.invalid-time-in.message = La fecha de inicio debe ser anterior a la de final
-fundraiser.strategy.error.no-tactics = No se han creado tácticas relacionadas con esta estrategia
+acme.validation.strategy.no-tactics.message = No se han creado tácticas relacionadas con esta estrategia
 
 acme.validation.notAnyAuditSections.message = Este informe de auditoría no puede ser publicado porque no tiene ninguna sección de auditoría enlazada
 acme.validation.startMomentIsNotFuture.message = El momento de inicio debe ser en el futuro respecto al momento actual de publicación
