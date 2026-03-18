@@ -20,14 +20,15 @@ public class AuthenticatedFundraiserUpdateService extends AbstractService<Authen
 
 	@Override
 	public void load() {
-		int userAccountId;
 
-		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		int userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
+
 	}
 
 	@Override
 	public void authorise() {
+
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
 		super.setAuthorised(status);
 	}

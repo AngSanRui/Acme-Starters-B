@@ -21,4 +21,6 @@ public interface AuthenticatedStrategyRepository extends AbstractRepository {
 	@Query("select coalesce(sum(t.expectedPercentage),0) from Tactic t where t.strategy.id = :strategyId and t.strategy.draftMode = false")
 	Double expectedPercentageByStrategyId(int strategyId);
 
+	@Query("select f.id from Fundraiser f where f.userAccount.id =:id")
+	int findFundraiserByAccountId(int id);
 }

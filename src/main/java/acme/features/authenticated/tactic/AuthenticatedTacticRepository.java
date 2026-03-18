@@ -22,4 +22,7 @@ public interface AuthenticatedTacticRepository extends AbstractRepository {
 	@Query("select t from Tactic t where t.id = :id")
 	Tactic findTacticById(int id);
 
+	@Query("select f.id from Fundraiser f where f.userAccount.id =:id")
+	int findFundraiserByAccountId(int id);
+
 }

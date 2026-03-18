@@ -8,6 +8,7 @@ import acme.client.components.models.Tuple;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.strategies.Strategy;
+import acme.realms.strategy.Fundraiser;
 
 @Service
 public class AuthenticatedStrategyShowService extends AbstractService<Authenticated, Strategy> {
@@ -33,8 +34,9 @@ public class AuthenticatedStrategyShowService extends AbstractService<Authentica
 	@Override
 	public void authorise() {
 		boolean status;
+		int fundraiserId = this.repository.findFundraiserByAccountId(super.getRequest().getPrincipal().getAccountId());
 
-		status = this.strategy != null && !this.strategy.getDraftMode();
+		status = this.strategy != null && super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && this.strategy.getFundraiser().getId() == fundraiserId;
 
 		super.setAuthorised(status);
 	}

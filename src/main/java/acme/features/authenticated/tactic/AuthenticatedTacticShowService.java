@@ -35,8 +35,9 @@ public class AuthenticatedTacticShowService extends AbstractService<Authenticate
 	@Override
 	public void authorise() {
 		boolean status;
+		int fundraiserId = this.repository.findFundraiserByAccountId(super.getRequest().getPrincipal().getAccountId());
 
-		status = this.tactic != null && !this.tactic.getStrategy().getDraftMode();
+		status = this.tactic != null && !this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().getId() == fundraiserId;
 
 		super.setAuthorised(status);
 	}

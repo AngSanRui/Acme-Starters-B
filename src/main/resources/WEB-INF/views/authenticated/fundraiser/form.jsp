@@ -18,7 +18,7 @@
 <acme:form>
 	<acme:form-textbox code="authenticated.fundraiser.form.label.bank" path="bank"/>
 	<acme:form-textarea code="authenticated.fundraiser.form.label.statement" path="statement"/>
-	<acme:form-checkbox code="authenticated.fundraiser.form.label.agent" path="agent"/>
+	<acme:form-textbox code="authenticated.fundraiser.form.label.agent" path="agent"/>
 
 	<jstl:if test="${_command == 'create'}">
 		<acme:submit code="authenticated.fundraiser.form.button.create" action="/authenticated/fundraiser/create"/>

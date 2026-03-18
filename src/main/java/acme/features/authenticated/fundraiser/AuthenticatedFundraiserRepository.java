@@ -16,4 +16,7 @@ public interface AuthenticatedFundraiserRepository extends AbstractRepository {
 
 	@Query("select f from Fundraiser f where f.userAccount.id = :id")
 	Fundraiser findFundraiserByUserAccountId(int id);
+
+	@Query("select f from Fundraiser f where f.id = :id")
+	Fundraiser findFundraiserById(int id);
 }

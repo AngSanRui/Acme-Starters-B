@@ -17,6 +17,7 @@ public class AuthenticatedFundraiserController extends AbstractController<Authen
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
+		super.addBasicCommand("show", AuthenticatedFundraiserShowService.class);
 		super.addBasicCommand("create", AuthenticatedFundraiserCreateService.class);
 		super.addBasicCommand("update", AuthenticatedFundraiserUpdateService.class);
 	}
