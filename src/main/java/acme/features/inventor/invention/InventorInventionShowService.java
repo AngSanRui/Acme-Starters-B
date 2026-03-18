@@ -34,7 +34,7 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 		boolean status;
 
 		int inventorId = this.repository.findInventorByAccountId(super.getRequest().getPrincipal().getAccountId());
-		status = super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && this.invention.getInventor().getId() == inventorId;
+		status = super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && this.invention != null && this.invention.getInventor().getId() == inventorId;
 		super.setAuthorised(status);
 	}
 

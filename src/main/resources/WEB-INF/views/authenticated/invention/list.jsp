@@ -8,6 +8,6 @@
 <acme:list>
 	<acme:list-column code="authenticated.invention.list.label.ticker" path="ticker" width="20%"/>
 	<acme:list-column code="authenticated.invention.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="authenticated.invention.list.label.startMoment" path="startMoment" width="30%"/>
-	<acme:list-column code="authenticated.invention.list.label.endMoment" path="endMoment" width="30%"/>
+	<acme:list-column code="authenticated.invention.list.label.start-moment" path="startMoment" width="30%"/>
+	<acme:list-column code="authenticated.invention.list.label.end-moment" path="endMoment" width="30%"/>
 </acme:list>

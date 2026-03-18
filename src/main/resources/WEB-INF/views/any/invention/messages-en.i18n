@@ -12,8 +12,8 @@ any.invention.list.title = Listing of inventions
 
 any.invention.list.label.ticker = Ticker
 any.invention.list.label.name = Name
-any.invention.list.label.startMoment = Start moment
-any.invention.list.label.endMoment = End moment
+any.invention.list.label.start-moment = Start moment
+any.invention.list.label.end-moment = End moment
 
 any.invention.form.title = Invention form
 
