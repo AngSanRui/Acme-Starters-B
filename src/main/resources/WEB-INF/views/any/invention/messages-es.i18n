@@ -12,8 +12,8 @@ any.invention.list.title = Listado de informes de invenciones
 
 any.invention.list.label.ticker = Referencia
 any.invention.list.label.name = Nombre
-any.invention.form.label.start-moment = Momento de inicio
-any.invention.form.label.end-moment = Momento de acabado
+any.invention.list.label.start-moment = Momento de inicio
+any.invention.list.label.end-moment = Momento de acabado
 
 any.invention.form.title = Formulario de informe de invención
 
@@ -26,7 +26,7 @@ any.invention.form.label.end-moment = Momento de acabado:
 any.invention.form.label.more-info = Mas informacion:
 any.invention.form.label.draft-mode = Modo borrador:
 any.invention.form.label.months-active = Meses activo:
-any.invention.form.label.costs = Coste:
+any.invention.form.label.cost = Coste:
 
 any.invention.form.button.parts = Listar partes de invención
 any.invention.form.button.inventor = Mostrar cuenta del inventor

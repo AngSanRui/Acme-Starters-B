@@ -12,8 +12,8 @@ authenticated.invention.list.title = Listado de informes de invenciones
 
 authenticated.invention.list.label.ticker = Referencia
 authenticated.invention.list.label.name = Nombre
-authenticated.invention.form.label.start-moment = Momento de inicio
-authenticated.invention.form.label.end-moment = Momento de acabado
+authenticated.invention.list.label.start-moment = Momento de inicio
+authenticated.invention.list.label.end-moment = Momento de acabado
 
 authenticated.invention.form.title = Formulario de informe de invención
 
@@ -26,7 +26,7 @@ authenticated.invention.form.label.end-moment = Momento de acabado:
 authenticated.invention.form.label.more-info = Mas informacion:
 authenticated.invention.form.label.draft-mode = Modo borrador:
 authenticated.invention.form.label.months-active = Meses activo:
-authenticated.invention.form.label.costs = Coste:
+authenticated.invention.form.label.cost = Coste:
 
 authenticated.invention.form.button.parts = Listar partes de invención
 authenticated.invention.form.button.inventor = Mostrar cuenta del inventor

@@ -21,7 +21,6 @@ acme.validation.sponsorship.start-after-end.message 	= The end date must be afte
 acme.validation.numberOfDonations.message	= A sponsorship must have at least one donation to be published
 acme.validation.donation.currency-not-supported.message = The only currently supported currency is EUR
 acme.validation.Donation.message = The donation has errors: 
-acme.validation.invention.hasParts.message =The invention must have any part before publish 
 acme.validation.strategy.duplicated-strategies.message = The ticker already exists in the database
 acme.validation.strategy.invalid-time-in.message = The end date must be after the start date
 acme.validation.strategy.no-tactics.message = No tactics have been created related to this strategy
@@ -34,3 +33,8 @@ acme.validation.endMomentIsNotFuture.message = The end moment must be in the fut
 acme.validation.audit-report.published-without-audit-section.message = This audit report can not be published because it has not got any audit sections linked
 acme.validation.audit-report.start-after-end.message = The endMoment must be after the startMoment
 acme.validation.audit-report.ticker-not-unique.message = This ticker is not unique
+
+acme.validation.invention.hasParts.message =The invention must have any part before publish 
+acme.validation.invention.ticker-not-unique.message = This ticker is not unique
+acme.validation.invention.start-after-end.message =End date must not be before than start date
+acme.validation.part.currency-not-supported.message =The only currently supported currency is EUR

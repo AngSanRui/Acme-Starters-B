@@ -22,7 +22,7 @@ acme.validation.sponsorship.start-after-end.message 	= La fecha de inicio debe s
 acme.validation.numberOfDonations.message	= Un sponsorship debe tener al menos una donación para ser publicada
 acme.validation.donation.currency-not-supported.message = La única moneda aceptada es el EUR
 acme.validation.Donation.message = La donacion tiene errores:
-acme.validation.invention.hasParts.message = La invención debe tener alguna part asociada para publicarse
+
 acme.validation.strategy.duplicated-strategies.message = Ya existe ese ticker en la base de datos
 acme.validation.strategy.invalid-time-in.message = La fecha de inicio debe ser anterior a la de final
 acme.validation.strategy.no-tactics.message = No se han creado tácticas relacionadas con esta estrategia
@@ -31,3 +31,7 @@ acme.validation.notAnyAuditSections.message = Este informe de auditoría no pued
 acme.validation.startMomentIsNotFuture.message = El momento de inicio debe ser en el futuro respecto al momento actual de publicación
 acme.validation.endMomentIsNotFuture.message = El momento de acabado debe ser en el futuro respecto al momento actual de publicación
 
+acme.validation.invention.hasParts.message =La invención debe tener alguna part asociada para publicarse
+acme.validation.invention.ticker-not-unique.message = El ticker no es único
+acme.validation.invention.start-after-end.message =La fecha de fin no puede ser anterior a la de inicio
+acme.validation.part.currency-not-supported.message =La única moneda aceptada es el EUR
