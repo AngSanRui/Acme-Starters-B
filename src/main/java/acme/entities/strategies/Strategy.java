@@ -11,6 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,6 +20,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
@@ -83,29 +85,34 @@ public class Strategy extends AbstractEntity {
 	private StrategyRepository	repository;
 
 
-	//@Mandatory
-	//@Valid
+	@Mandatory
+	@Valid
 	@Transient
-	private Double getMothsActive() {
+	public Double getMonthsActive() {
+
+		if (this.startMoment == null || this.endMoment == null)
+			return null;
 
 		double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+
+		months = Math.round(months * 100.0) / 100.0;
 		return months;
 	}
 
-	//@Mandatory
-	//@ValidScore
+	@Mandatory
+	@ValidScore
 	@Transient
 	public double getExpectedPercentage() {
 
 		double result;
-		result = this.repository.getExpectedPercentage(this.getId());
+		result = this.repository == null ? 0.0 : this.repository.getExpectedPercentage(this.getId());
 		return result;
 	}
 
 	// Relationships ----------------------------------------------------------
 
 
-	@Mandatory
+	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Fundraiser fundraiser;

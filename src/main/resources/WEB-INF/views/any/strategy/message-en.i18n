@@ -14,9 +14,8 @@ any.strategy.form.label.description = Description:
 any.strategy.form.label.start-moment = Start moment:
 any.strategy.form.label.end-moment = End moment:
 any.strategy.form.label.more-info = More info:
-any.strategy.form.label.draft-mode = Draft mode:
 any.strategy.form.label.months-active = Months active:
-any.strategy.form.label.hours = Hours:
+any.strategy.form.label.expected-percentage = Expected percentage:
 
 any.strategy.form.button.tactics = List tactics
 any.strategy.form.button.fundraiser = Show fundraiser account

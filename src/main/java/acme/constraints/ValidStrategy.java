@@ -17,7 +17,7 @@ public @interface ValidStrategy {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.validStrategy.message}";
+	String message() default "";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};

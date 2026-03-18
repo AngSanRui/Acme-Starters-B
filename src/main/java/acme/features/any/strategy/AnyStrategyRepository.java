@@ -18,4 +18,7 @@ public interface AnyStrategyRepository extends AbstractRepository {
 	@Query("select s from Strategy s where s.id = :id")
 	Strategy findStrategyById(int id);
 
+	@Query("select coalesce(sum(t.expectedPercentage),0) from Tactic t where t.strategy.id = :strategyId and t.strategy.draftMode = false")
+	Double expectedPercentageByStrategyId(int strategyId);
+
 }

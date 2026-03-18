@@ -1,12 +1,15 @@
 
 package acme.constraints;
 
+import java.util.Date;
+
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
+import acme.client.helpers.MomentHelper;
 import acme.entities.strategies.Strategy;
 import acme.entities.strategies.StrategyRepository;
 
@@ -20,6 +23,11 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 
 
 	@Override
+	protected void initialise(final ValidStrategy annotation) {
+		assert annotation != null;
+	}
+
+	@Override
 	public boolean isValid(final Strategy strategy, final ConstraintValidatorContext context) {
 
 		assert context != null;
@@ -30,28 +38,28 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			result = true;
 		else {
 
-			//Validate: Strategies cannot be published unless they have at least one tactic
+			//Validate: Strategy must exist
 
 			{
-				boolean hasTactic;
-				Integer tacticsPerStrategy;
+				boolean exists;
+				Strategy existingStrategy;
 
-				tacticsPerStrategy = this.repository.tacticsPerStrategy(strategy.getId());
-				hasTactic = tacticsPerStrategy >= 1;
+				existingStrategy = this.repository.strategyByTicker(strategy.getTicker());
+				exists = existingStrategy == null || existingStrategy.equals(strategy);
 
-				//super.state(context, hasTactic, "*", "acme.validation.strategy.no-tactics.message");
+				super.state(context, exists, "ticker", "acme.validation.strategy.duplicated-strategies.message");
 			}
 
 			//Validate: startMoment and endMoment must be a valid time interval in the future
 
 			{
 				boolean validTimeInterval;
+				Date startMoment = strategy.getStartMoment();
+				Date endMoment = strategy.getEndMoment();
 
-				if (strategy.getStartMoment() != null && strategy.getEndMoment() != null)
-					validTimeInterval = strategy.getStartMoment().before(strategy.getEndMoment());
-				else
-					validTimeInterval = true;
-				//super.state(context, validTimeInterval, "endMoment", "acme.validation.strategy.invalid-time-in.message");
+				validTimeInterval = startMoment == null || endMoment == null || MomentHelper.isAfter(endMoment, startMoment);
+
+				super.state(context, validTimeInterval, "endMoment", "acme.validation.strategy.invalid-time-in.message");
 
 			}
 
