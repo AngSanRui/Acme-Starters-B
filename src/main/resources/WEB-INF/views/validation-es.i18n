@@ -35,3 +35,7 @@ acme.validation.invention.hasParts.message =La invención debe tener alguna part
 acme.validation.invention.ticker-not-unique.message = El ticker no es único
 acme.validation.invention.start-after-end.message =La fecha de fin no puede ser anterior a la de inicio
 acme.validation.part.currency-not-supported.message =La única moneda aceptada es el EUR
+
+
+acme.validation.true = Verdadero
+acme.validation.false = Falso

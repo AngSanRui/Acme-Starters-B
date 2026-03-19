@@ -38,3 +38,6 @@ acme.validation.invention.hasParts.message =The invention must have any part bef
 acme.validation.invention.ticker-not-unique.message = This ticker is not unique
 acme.validation.invention.start-after-end.message =End date must not be before than start date
 acme.validation.part.currency-not-supported.message =The only currently supported currency is EUR
+
+acme.validation.true = True
+acme.validation.false = False

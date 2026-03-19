@@ -22,7 +22,7 @@
 	<acme:list-column code="sponsor.sponsorship.list.label.name" path="name" width="20%"/>
 	<acme:list-column code="sponsor.sponsorship.list.label.totalMoney" path="totalMoney" width="10%"/>
 	<acme:list-column code="sponsor.sponsorship.list.label.monthsActive" path="monthsActive" width="10%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.draftMode" path="draftMode" width="10%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.draftMode" path="draftModeLabel" width="10%"/>
 </acme:list>
 
 <acme:button code="sponsor.sponsorship.list.button.create" action="/sponsor/sponsorship/create"/>
