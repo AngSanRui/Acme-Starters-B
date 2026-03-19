@@ -2,7 +2,7 @@ key,name,notes,money,kind,key:sponsorship
 #base entity,"","","","","",""
 donation-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,EUR 500000.00,ALTRUIST,sponsorship-00
 #name- standard variations,"","","","",""
-donation-01,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,EUR 50.00,ALTRUIST,sponsorship-00
+donation-01,L,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,EUR 50.00,ALTRUIST,sponsorship-04
 donation-02,Lo,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,EUR 50.00,ALTRUIST,sponsorship-00
 donation-03,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,EUR 50.00,ALTRUIST,sponsorship-00
 donation-04,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,EUR 50.00,ALTRUIST,sponsorship-00

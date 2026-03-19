@@ -10,7 +10,7 @@
 
 authenticated.sponsor.form.title = Detalles de sponsor
 
-authenticated.sponsor.form.label.address = Direccción
+authenticated.sponsor.form.label.address = Dirección
 authenticated.sponsor.form.label.im = Im
 authenticated.sponsor.form.label.gold = Oro
 
