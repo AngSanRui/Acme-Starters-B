@@ -24,6 +24,7 @@ public class AuthenticatedStrategyListService extends AbstractService<Authentica
 	// AbstractService interface -------------------------------------------
 
 
+	@SuppressWarnings("unused")
 	@Override
 	public void load() {
 		int userId = super.getRequest().getPrincipal().getAccountId();

@@ -20,6 +20,7 @@ public class AuthenticatedDonationListService extends AbstractService<Authentica
 	@Autowired
 	private AuthenticatedDonationRepository	repository;
 
+	@SuppressWarnings("unused")
 	private Sponsorship						sponsorship;
 	private Collection<Donation>			donations;
 
@@ -30,6 +31,7 @@ public class AuthenticatedDonationListService extends AbstractService<Authentica
 	public void load() {
 		int sponsorshipId;
 		int userId;
+		@SuppressWarnings("unused")
 		int sponsorId;
 		userId = super.getRequest().getPrincipal().getAccountId();
 		sponsorId = this.repository.findSponsorByAccountId(userId);

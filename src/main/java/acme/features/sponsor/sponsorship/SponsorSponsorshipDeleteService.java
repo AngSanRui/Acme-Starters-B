@@ -72,6 +72,7 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 		this.repository.delete(this.sponsorship);
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void unbind() {
 		int sponsorId;
