@@ -20,7 +20,7 @@
 	<acme:list-column code="fundraiser.strategy.list.label.name" path="name" width="25%"/>
 	<acme:list-column code="fundraiser.strategy.list.label.months-active" path="monthsActive" width="25%"/>
 	<acme:list-column code="fundraiser.strategy.list.label.expected-percentage" path="expectedPercentage" width="25%"/>
-	<acme:list-column code="fundraiser.strategy.list.label.draft-mode" path="draftMode" width="10%"/>
+	<acme:list-column code="fundraiser.strategy.list.label.draft-mode" path="draftModeLabel" width="10%"/>
 </acme:list>
 
 <acme:button code="fundraiser.strategy.list.button.create" action="/fundraiser/strategy/create"/>

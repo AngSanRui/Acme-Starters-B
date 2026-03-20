@@ -22,6 +22,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MessageHelper;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidStrategy;
@@ -84,6 +85,13 @@ public class Strategy extends AbstractEntity {
 	@Autowired
 	private StrategyRepository	repository;
 
+
+	@Transient
+	public String getDraftModeLabel() {
+		if (this.draftMode == null)
+			return "";
+		return Boolean.TRUE.equals(this.draftMode) ? MessageHelper.getMessage("acme.validation.true") : MessageHelper.getMessage("acme.validation.false");
+	}
 
 	@Mandatory
 	@Valid

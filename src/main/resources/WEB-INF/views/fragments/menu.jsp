@@ -58,7 +58,8 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
-		<acme:menu-suboption code="master.menu.fundraiser.list-my-strategies" action="/fundraiser/strategy/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-strategies" action="/authenticated/strategy/list"/>
+			<acme:menu-suboption code="master.menu.fundraiser.list-my-strategies" action="/fundraiser/strategy/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
