@@ -20,7 +20,6 @@
 	<acme:list-column code="fundraiser.tactic.list.label.notes" path="notes" width="40%"/>
 	<acme:list-column code="fundraiser.tactic.list.label.expectedPercentage" path="expectedPercentage" width="20%"/>
 	<acme:list-column code="fundraiser.tactic.list.label.kind" path="kind" width="20%"/>
-	<acme:list-column code="fundraiser.tactic.list.label.draft-mode" path="draftMode" width="10%"/>
 </acme:list>
 
 <jstl:if test="${showCreate}">
