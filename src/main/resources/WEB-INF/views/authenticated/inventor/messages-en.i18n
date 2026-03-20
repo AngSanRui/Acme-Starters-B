@@ -5,5 +5,5 @@ authenticated.inventor.form.label.bio = Bio:
 authenticated.inventor.form.label.keyWords = KeyWords:
 authenticated.inventor.form.label.licensed = licensed:
 
-authenticated.inventor.form.button.create = Registarse
-authenticated.inventor.form.button.update = Actualizar
+authenticated.inventor.form.button.create = Register
+authenticated.inventor.form.button.update = Update
