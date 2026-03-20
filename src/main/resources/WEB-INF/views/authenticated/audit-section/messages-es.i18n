@@ -1,6 +1,6 @@
 
 
-authenticated.audit-section.list.title = Listing of audit sections
+authenticated.audit-section.list.title = Listado de seccion de auditoria
 
 authenticated.audit-section.list.label.name = Nombre
 authenticated.audit-section.list.label.notes = Notas
