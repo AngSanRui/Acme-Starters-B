@@ -56,15 +56,14 @@ public class SpokespersonMilestoneUpdateService extends AbstractService<Spokespe
 
 	@Override
 	public void unbind() {
+		SelectChoices choices;
 		Tuple tuple;
+
+		choices = SelectChoices.from(MilestoneKind.class, this.milestone.getKind());
 		tuple = super.unbindObject(this.milestone, "title", "achievements", "effort", "kind");
-		SelectChoices kinds;
-
-		kinds = SelectChoices.from(MilestoneKind.class, MilestoneKind.CONVERSION);
-
-		tuple.put("campaignId", super.getRequest().getData("sponsorshipId", int.class));
+		tuple.put("inventionId", this.milestone.getCampaign().getId());
 		tuple.put("draftMode", this.milestone.getCampaign().getDraftMode());
-		tuple.put("kinds", kinds);
+		tuple.put("kinds", choices);
 	}
 
 }
