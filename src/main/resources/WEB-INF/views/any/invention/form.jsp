@@ -16,9 +16,6 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-<%--
-	<acme:form-textbox 	code="any.invention.form.label.inventor" path="inventor"/>
-	--%>
 	<acme:form-textbox 	code="any.invention.form.label.ticker" path="ticker"/>
 	<acme:form-textbox 	code="any.invention.form.label.name" path="name"/>
 	<acme:form-textarea code="any.invention.form.label.description" path="description"/>
