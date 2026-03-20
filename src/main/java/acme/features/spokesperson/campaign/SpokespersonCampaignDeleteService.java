@@ -42,7 +42,7 @@ public class SpokespersonCampaignDeleteService extends AbstractService<Spokesper
 
 	@Override
 	public void validate() {
-		super.validateObject(this.campaign);
+		;
 	}
 
 	@Override

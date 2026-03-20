@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.campaign.Milestone;
+import acme.entities.campaign.MilestoneKind;
 import acme.realms.campaign.Spokesperson;
 
 @Service
@@ -44,7 +46,7 @@ public class SpokespersonMilestoneDeleteService extends AbstractService<Spokespe
 
 	@Override
 	public void validate() {
-		super.validateObject(this.milestone);
+		;
 	}
 
 	@Override
@@ -54,11 +56,14 @@ public class SpokespersonMilestoneDeleteService extends AbstractService<Spokespe
 
 	@Override
 	public void unbind() {
+		SelectChoices choices;
 		Tuple tuple;
-		tuple = super.unbindObject(this.milestone, "title", "achievements", "effort", "kind");
 
-		tuple.put("campaignId", super.getRequest().getData("sponsorshipId", int.class));
+		choices = SelectChoices.from(MilestoneKind.class, this.milestone.getKind());
+		tuple = super.unbindObject(this.milestone, "title", "achievements", "effort", "kind");
+		tuple.put("inventionId", this.milestone.getCampaign().getId());
 		tuple.put("draftMode", this.milestone.getCampaign().getDraftMode());
+		tuple.put("kinds", choices);
 	}
 
 }
