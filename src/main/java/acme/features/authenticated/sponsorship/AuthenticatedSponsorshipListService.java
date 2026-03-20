@@ -31,6 +31,7 @@ public class AuthenticatedSponsorshipListService extends AbstractService<Authent
 		super.setAuthorised(status);
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void load() {
 		int userId;
