@@ -16,9 +16,7 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-<%--
-	<acme:form-textbox 	code="funraiser.strategy.form.label.fundraiser" path="fundraiser"/>
-	--%>
+
 	<acme:form-textbox 	code="fundraiser.strategy.form.label.ticker" path="ticker"/>
 	<acme:form-textbox 	code="fundraiser.strategy.form.label.name" path="name"/>
 	<acme:form-textarea code="fundraiser.strategy.form.label.description" path="description"/>
