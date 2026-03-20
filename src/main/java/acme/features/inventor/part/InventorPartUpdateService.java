@@ -60,15 +60,14 @@ public class InventorPartUpdateService extends AbstractService<Inventor, Part> {
 
 	@Override
 	public void unbind() {
+		SelectChoices choices;
 		Tuple tuple;
-		SelectChoices kinds;
 
-		kinds = SelectChoices.from(PartKind.class, PartKind.CORE);
-
+		choices = SelectChoices.from(PartKind.class, this.part.getKind());
 		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind");
-		tuple.put("inventionId", super.getRequest().getData("inventionId", int.class));
+		tuple.put("inventionId", this.part.getInvention().getId());
 		tuple.put("draftMode", this.part.getInvention().getDraftMode());
-		tuple.put("kinds", kinds);
+		tuple.put("kinds", choices);
 	}
 
 }
