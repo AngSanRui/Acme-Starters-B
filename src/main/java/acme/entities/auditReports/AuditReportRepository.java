@@ -16,4 +16,7 @@ public interface AuditReportRepository extends AbstractRepository {
 
 	@Query("select sum(auditsec.hours) from AuditSection auditsec where auditsec.auditReport.id = :arId")
 	Integer calculateAuditReportHours(int arId);
+
+	@Query("select ar from AuditReport ar where ar.ticker = :ticker")
+	AuditReport isTickerUnique(String ticker);
 }

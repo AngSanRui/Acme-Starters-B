@@ -9,10 +9,10 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface StrategyRepository extends AbstractRepository {
 
-	@Query("select sum(t.expectedPercentage) from Tactic t where t.strategy.id = :strategyId")
+	@Query("select coalesce(sum(t.expectedPercentage),0) from Tactic t where t.strategy.id = :strategyId")
 	Double getExpectedPercentage(int strategyId);
 
-	@Query("select count(t.strategy.id) from Tactic t where t.strategy.id = :strategyId")
-	Integer tacticsPerStrategy(int strategyId);
+	@Query("select s from Strategy s where s.ticker = :ticker")
+	Strategy strategyByTicker(String ticker);
 
 }

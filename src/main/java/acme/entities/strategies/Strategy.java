@@ -1,7 +1,7 @@
 
 package acme.entities.strategies;
 
-import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,6 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,7 +20,9 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MessageHelper;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidStrategy;
@@ -83,33 +86,41 @@ public class Strategy extends AbstractEntity {
 	private StrategyRepository	repository;
 
 
-	//@Mandatory
-	//@Valid
 	@Transient
-	private Double getMothsActive() {
-
-		Double result;
-		Duration duration;
-
-		duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		result = duration.toDays() / 30.0;
-		return result;
+	public String getDraftModeLabel() {
+		if (this.draftMode == null)
+			return "";
+		return Boolean.TRUE.equals(this.draftMode) ? MessageHelper.getMessage("acme.validation.true") : MessageHelper.getMessage("acme.validation.false");
 	}
 
-	//@Mandatory
-	//@ValidScore
+	@Mandatory
+	@Valid
+	@Transient
+	public Double getMonthsActive() {
+
+		if (this.startMoment == null || this.endMoment == null)
+			return null;
+
+		double months = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+
+		months = Math.round(months * 100.0) / 100.0;
+		return months;
+	}
+
+	@Mandatory
+	@ValidScore
 	@Transient
 	public double getExpectedPercentage() {
 
 		double result;
-		result = this.repository.getExpectedPercentage(this.getId());
+		result = this.repository == null ? 0.0 : this.repository.getExpectedPercentage(this.getId());
 		return result;
 	}
 
 	// Relationships ----------------------------------------------------------
 
 
-	@Mandatory
+	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Fundraiser fundraiser;

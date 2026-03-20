@@ -1,0 +1,33 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.audit-report.list.title = Listado de informes de auditoria
+
+any.audit-report.list.label.auditor = Auditor
+any.audit-report.list.label.ticker = Referencia
+any.audit-report.list.label.name = Nombre
+any.audit-report.list.label.startMoment = Momento de inicio
+any.audit-report.list.label.endMoment = Momento de acabado
+
+any.audit-report.form.title = Formulario de informe de auditoria
+
+any.audit-report.form.label.auditor = Auditor:
+any.audit-report.form.label.ticker = Referencia:
+any.audit-report.form.label.name = Nombre:
+any.audit-report.form.label.description = Descripcion:
+any.audit-report.form.label.start-moment = Momento de inicio:
+any.audit-report.form.label.end-moment = Momento de acabado:
+any.audit-report.form.label.more-info = Mas informacion:
+any.audit-report.form.label.draft-mode = Modo borrador:
+any.audit-report.form.label.months-active = Meses activo:
+any.audit-report.form.label.hours = Horas:
+
+any.audit-report.form.button.audit-sections = Listar secciones de auditoria
+any.audit-report.form.button.auditor = Mostrar cuenta del auditor

@@ -1,0 +1,17 @@
+
+
+authenticated.audit-section.list.title = Listado de seccion de auditoria
+
+authenticated.audit-section.list.label.name = Nombre
+authenticated.audit-section.list.label.notes = Notas
+authenticated.audit-section.list.label.hours = Horas
+authenticated.audit-section.list.label.kind = Tipo
+
+authenticated.audit-section.form.title = Formulario de seccion de auditoria
+
+authenticated.audit-section.form.label.name = Nombre:
+authenticated.audit-section.form.label.notes = Notas:
+authenticated.audit-section.form.label.hours = Horas:
+authenticated.audit-section.form.label.kind = Tipo:
+
+

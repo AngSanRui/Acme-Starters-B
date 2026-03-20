@@ -12,3 +12,33 @@ acme.validation.header.message  	= Must have from 1 to 75 characters
 acme.validation.text.message   		= Must have from 1 to 255 characters
 
 acme.validation.ticker.message		= The ticker must follow the pattern: 2 uppercase letters, 2 digits, a -, and from 5 to 10 characters (alphanumeric or _)
+
+acme.validation.hasMilestones.message = The campaign must have at least 1 milestone associated to be published
+acme.validation.campaign.start-after-end.message = The end moment must be after start moment
+acme.validation.campaign.ticker-not-unique.message = The ticker must be unique
+acme.validation.sponsorship.ticker-not-unique.message = 	The ticker already exists in the database
+acme.validation.sponsorship.start-after-end.message 	= The end date must be after the start date
+acme.validation.numberOfDonations.message	= A sponsorship must have at least one donation to be published
+acme.validation.donation.currency-not-supported.message = The only currently supported currency is EUR
+acme.validation.Donation.message = The donation has errors: 
+acme.validation.strategy.duplicated-strategies.message = The ticker already exists in the database
+acme.validation.strategy.invalid-time-in.message = The end date must be after the start date
+acme.validation.strategy.no-tactics.message = No tactics have been created related to this strategy
+
+
+acme.validation.notAnyAuditSections.message = This audit report can not be published because it has not got any audit sections linked
+acme.validation.startMomentIsNotFuture.message = The start moment must be in the future regarding the actual moment when publishing
+acme.validation.endMomentIsNotFuture.message = The end moment must be in the future regarding the actual moment when publishing
+
+acme.validation.audit-report.published-without-audit-section.message = This audit report can not be published because it has not got any audit sections linked
+acme.validation.audit-report.start-after-end.message = The endMoment must be after the startMoment
+acme.validation.audit-report.ticker-not-unique.message = This ticker is not unique
+
+acme.validation.invention.hasParts.message =The invention must have any part before publish 
+acme.validation.invention.ticker-not-unique.message = This ticker is not unique
+acme.validation.invention.start-after-end.message =End date must not be before than start date
+acme.validation.part.currency-not-supported.message =The only currently supported currency is EUR
+acme.validation.Part.message = The part contains error
+
+acme.validation.true = True
+acme.validation.false = False
