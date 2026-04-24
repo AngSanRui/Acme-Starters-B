@@ -31,7 +31,7 @@ master.menu.authenticated.list-campaigns = List campaign
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.anonymous.list-strategies = Listar estrategias
+master.menu.anonymous.list-strategies = List strategies
 master.menu.administrator.list-user-accounts = List user accounts
 master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
