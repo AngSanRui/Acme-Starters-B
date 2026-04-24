@@ -1,0 +1,29 @@
+key,key:userAccount,position,skills,flag
+#base role
+manager-00,user-account-manager-00,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,FALSE
+#position- standard variations
+manager-01,user-account-manager-01,L,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-02,user-account-manager-02,Lo,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-03,user-account-manager-03,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-04,user-account-manager-04,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-05,user-account-manager-05,โลเร็ม อิปซัม,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-06,user-account-manager-06,لوريم إيبسوم,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-07,user-account-manager-07,洛伦·伊普森,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-08,user-account-manager-08,<marquee>Hacked</marquee>,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-09,user-account-manager-09,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit amet  consectetu,FALSE
+manager-10,user-account-manager-10,' or 'A' = 'A,Lorem ipsum dolor sit amet  consectetu,FALSE
+#highlights- no singular values
+#skills- standard variations
+manager-11,user-account-manager-11,Lorem ipsum dolor sit amet  consectetu,L,FALSE
+manager-12,user-account-manager-12,Lorem ipsum dolor sit amet  consectetu,Lo,FALSE
+manager-13,user-account-manager-13,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod t,FALSE
+manager-14,user-account-manager-14,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod te,FALSE
+manager-15,user-account-manager-15,Lorem ipsum dolor sit amet  consectetu,โลเร็ม อิปซัม,FALSE
+manager-16,user-account-manager-16,Lorem ipsum dolor sit amet  consectetu,لوريم إيبسوم,FALSE
+manager-17,user-account-manager-17,Lorem ipsum dolor sit amet  consectetu,洛伦·伊普森,FALSE
+manager-18,user-account-manager-18,Lorem ipsum dolor sit amet  consectetu,<marquee>Hacked</marquee>,FALSE
+manager-19,user-account-manager-19,Lorem ipsum dolor sit amet  consectetu,<script>alert(‘Hacked!’);</script>,FALSE
+manager-20,user-account-manager-20,Lorem ipsum dolor sit amet  consectetu,' or 'A' = 'A,FALSE
+#highlights- no singular values
+#flag- standard values
+manager-21,user-account-manager-21,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,TRUE
