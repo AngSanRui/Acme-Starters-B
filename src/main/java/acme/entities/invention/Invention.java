@@ -122,7 +122,7 @@ public class Invention extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Inventor	inventor;
 
-	@Mandatory
+	//@Mandatory
 	@Valid
 	@ManyToOne(optional = true)
 	private Project		project;

@@ -3,15 +3,12 @@ package acme.realms.strategy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.validation.Mandatory;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
-import acme.entities.projects.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -45,8 +42,4 @@ public class Fundraiser extends AbstractRole {
 
 	// Relationships ----------------------------------------------------------
 
-	@NotNull
-	@Valid
-	@ManyToOne(optional = true)
-	private Project				project;
 }

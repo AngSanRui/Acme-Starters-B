@@ -119,7 +119,7 @@ public class Campaign extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Spokesperson	spokesperson;
 
-	@Mandatory
+	//@Mandatory
 	@Valid
 	@ManyToOne(optional = true)
 	private Project			project;
