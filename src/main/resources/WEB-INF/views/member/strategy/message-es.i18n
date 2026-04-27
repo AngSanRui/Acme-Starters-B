@@ -1,0 +1,21 @@
+member.strategy.list.title = Listado de estrategias
+
+member.strategy.list.label.ticker = Referencia
+member.strategy.list.label.name = Nombre
+member.strategy.list.label.months-active = Meses activo:
+member.strategy.list.label.expected-percentage = Porcentaje esperado: 
+member.strategy.list.label.draft-mode = Modo Borrador
+
+member.strategy.list.button.create = Crear
+
+member.strategy.form.title = Formulario de estrategias
+
+member.strategy.form.label.member = Recaudador de fondos:
+member.strategy.form.label.ticker = Referencia:
+member.strategy.form.label.name = Nombre:
+member.strategy.form.label.description = Descripcion:
+member.strategy.form.label.start-moment = Momento de inicio:
+member.strategy.form.label.end-moment = Momento de acabado:
+member.strategy.form.label.more-info = Mas informacion:
+
+

@@ -71,6 +71,11 @@ master.menu.sponsor.list-sponsorships = List published sponsorships
 master.menu.fundraiser = Fundraiser
 master.menu.fundraiser.list-my-strategies = List my strategies
 
+# master.menu.member ###################################################
+
+master.menu.member = Member
+master.menu.member.list-projects = List projects
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

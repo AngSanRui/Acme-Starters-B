@@ -75,6 +75,10 @@
 			<acme:menu-suboption code="master.menu.sponsor.manage-my-sponsorships" action="/sponsor/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.sponsor.list-sponsorships" action="/authenticated/sponsorship/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.member" access="hasRealm('Member')">
+			<acme:menu-suboption code="master.menu.member.list-projects" action="/member/project/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>		

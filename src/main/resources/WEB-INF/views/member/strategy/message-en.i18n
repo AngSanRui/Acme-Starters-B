@@ -1,0 +1,23 @@
+member.strategy.list.title = Listing of strategies
+
+member.strategy.list.label.member = member
+member.strategy.list.label.ticker = Ticker
+member.strategy.list.label.name = Name
+member.strategy.list.label.months-active = Months active
+member.strategy.list.label.expected-percentage = Expected percentage
+member.strategy.list.label.draft-mode = Draft Mode
+
+member.strategy.list.button.create = Create
+
+member.strategy.form.title = Strategies form
+
+member.strategy.form.label.member = member:
+member.strategy.form.label.ticker = Ticker:
+member.strategy.form.label.name = Name:
+member.strategy.form.label.description = Description:
+member.strategy.form.label.start-moment = Start moment:
+member.strategy.form.label.end-moment = End moment:
+member.strategy.form.label.more-info = More info:
+
+
+
