@@ -74,6 +74,12 @@ master.menu.sponsor.list-sponsorships = Lista las sponsorships publicadas
 master.menu.fundraiser = Recaudador de fondos
 master.menu.fundraiser.list-my-strategies = Administrar mis estrategias
 
+
+# master.menu.member ###################################################
+
+master.menu.member = Miembro
+master.menu.member.list-projects = Lista de projectos
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

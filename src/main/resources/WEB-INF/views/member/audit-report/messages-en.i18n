@@ -1,0 +1,31 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+member.audit-report.list.title = Listing of audit reports
+
+member.audit-report.list.label.member = member
+member.audit-report.list.label.ticker = Ticker
+member.audit-report.list.label.name = Name
+member.audit-report.list.label.startMoment = Start moment
+member.audit-report.list.label.endMoment = End moment
+member.audit-report.list.label.draftMode = Is in draft mode
+
+member.audit-report.form.title = Audit report form
+
+member.audit-report.form.label.member = member:
+member.audit-report.form.label.ticker = Ticker:
+member.audit-report.form.label.name = Name:
+member.audit-report.form.label.description = Description:
+member.audit-report.form.label.start-moment = Start moment:
+member.audit-report.form.label.end-moment = End moment:
+member.audit-report.form.label.more-info = More info:
+member.audit-report.form.label.draft-mode = Draft mode:
+member.audit-report.form.label.months-active = Months active:
+member.audit-report.form.label.hours = Hours:
