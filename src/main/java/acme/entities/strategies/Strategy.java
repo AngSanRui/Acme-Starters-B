@@ -126,7 +126,7 @@ public class Strategy extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Fundraiser	fundraiser;
 
-	@Mandatory
+	//@Mandatory
 	@Valid
 	@ManyToOne(optional = true)
 	private Project		project;

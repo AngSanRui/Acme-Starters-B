@@ -56,7 +56,7 @@ public class Donation extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Sponsorship			sponsorship;
 
-	@Mandatory
+	//@Mandatory
 	@Valid
 	@ManyToOne(optional = true)
 	private Project				project;
