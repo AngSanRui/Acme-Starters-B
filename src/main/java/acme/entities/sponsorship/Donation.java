@@ -13,6 +13,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.constraints.ValidDonation;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
+import acme.entities.projects.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -54,4 +55,9 @@ public class Donation extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Sponsorship			sponsorship;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = true)
+	private Project				project;
 }
