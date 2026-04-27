@@ -1,7 +1,6 @@
 
 package acme.entities.projects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -24,9 +23,9 @@ public class WorksIn extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	//Habría que ver si es necesario
-	@Mandatory
-	@Column
-	private String				roles;
+	//@Mandatory
+	//@Column
+	//private String				roles;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -35,7 +34,7 @@ public class WorksIn extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Project				projects;
+	private Project				project;
 
 	@Mandatory
 	@Valid
