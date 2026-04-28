@@ -16,6 +16,8 @@ public class MemberCampaignShowService extends AbstractService<Member, Campaign>
 	@Autowired
 	private MemberCampaignRepository	repository;
 
+	private Integer						userAccountId;
+
 	private Campaign					campaign;
 
 	// AbstractService interface -------------------------------------------
@@ -24,8 +26,11 @@ public class MemberCampaignShowService extends AbstractService<Member, Campaign>
 	@Override
 	public void authorise() {
 		boolean status;
+		Integer campaignId;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		campaignId = super.getRequest().getData("id", int.class);
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isCampaignIdInProjectWhereUserIsMember(campaignId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 

@@ -16,6 +16,8 @@ public class MemberSponsorshipShowService extends AbstractService<Member, Sponso
 	@Autowired
 	private MemberSponsorshipRepository	repository;
 
+	private Integer						userAccountId;
+
 	private Sponsorship					sponsorship;
 
 	// AbstractService interface -------------------------------------------
@@ -24,8 +26,11 @@ public class MemberSponsorshipShowService extends AbstractService<Member, Sponso
 	@Override
 	public void authorise() {
 		boolean status;
+		Integer sponsorshipId;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		sponsorshipId = super.getRequest().getData("id", int.class);
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isSponsorshipInProjectWhereUserIsMember(sponsorshipId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 

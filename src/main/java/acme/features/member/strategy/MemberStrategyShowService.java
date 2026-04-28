@@ -16,6 +16,8 @@ public class MemberStrategyShowService extends AbstractService<Member, Strategy>
 	@Autowired
 	private MemberStrategyRepository	repository;
 
+	private Integer						userAccountId;
+
 	private Strategy					strategy;
 
 	// AbstractService interface -------------------------------------------
@@ -24,8 +26,11 @@ public class MemberStrategyShowService extends AbstractService<Member, Strategy>
 	@Override
 	public void authorise() {
 		boolean status;
+		Integer strategyId;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		strategyId = super.getRequest().getData("id", int.class);
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isStrategyIdInProjectWhereUserIsMember(strategyId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 

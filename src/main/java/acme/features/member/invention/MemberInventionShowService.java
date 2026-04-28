@@ -16,6 +16,8 @@ public class MemberInventionShowService extends AbstractService<Member, Inventio
 	@Autowired
 	private MemberInventionRepository	repository;
 
+	private Integer						userAccountId;
+
 	private Invention					invention;
 
 	// AbstractService interface -------------------------------------------
@@ -24,8 +26,11 @@ public class MemberInventionShowService extends AbstractService<Member, Inventio
 	@Override
 	public void authorise() {
 		boolean status;
+		Integer inventionId;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		inventionId = super.getRequest().getData("id", int.class);
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isInventionInProjectWhereUserIsMember(inventionId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 
