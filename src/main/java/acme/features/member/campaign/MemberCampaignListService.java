@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
 import acme.entities.campaign.Campaign;
+import acme.entities.projects.Project;
 import acme.realms.members.Member;
 
 @Service
@@ -18,6 +19,10 @@ public class MemberCampaignListService extends AbstractService<Member, Campaign>
 	@Autowired
 	private MemberCampaignRepository	repository;
 
+	private Integer						userAccountId;
+
+	private Project						project;
+
 	private Collection<Campaign>		campaigns;
 
 	// AbstractService interface -------------------------------------------
@@ -27,7 +32,9 @@ public class MemberCampaignListService extends AbstractService<Member, Campaign>
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.project = this.repository.findProjectById(super.getRequest().getData("projectId", int.class));
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.findProjectWithUserAccount(this.userAccountId).contains(this.project);
 		super.setAuthorised(status);
 	}
 

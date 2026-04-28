@@ -18,6 +18,8 @@ public class MemberProjectListService extends AbstractService<Member, Project> {
 	@Autowired
 	private MemberProjectRepository	repository;
 
+	private Integer					userAccountId;
+
 	private Collection<Project>		projects;
 
 	// AbstractService interface -------------------------------------------
@@ -27,14 +29,14 @@ public class MemberProjectListService extends AbstractService<Member, Project> {
 	public void authorise() {
 		boolean status;
 
-		//Se necesita algo para mostrar?
 		status = super.getRequest().getPrincipal().isAuthenticated();
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		this.projects = this.repository.findAllProjects();
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.projects = this.repository.findProjectWithUserAccount(this.userAccountId);
 	}
 
 	@Override

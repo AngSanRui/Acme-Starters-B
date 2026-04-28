@@ -16,6 +16,8 @@ public class MemberAuditReportShowService extends AbstractService<Member, AuditR
 	@Autowired
 	private MemberAuditReportRepository	repository;
 
+	private Integer						userAccountId;
+
 	private AuditReport					auditReport;
 
 	// AbstractService interface -------------------------------------------
@@ -24,8 +26,11 @@ public class MemberAuditReportShowService extends AbstractService<Member, AuditR
 	@Override
 	public void authorise() {
 		boolean status;
+		Integer auditReportId;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		auditReportId = super.getRequest().getData("id", int.class);
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isAuditReportInProjectWhereUserIsMember(auditReportId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 

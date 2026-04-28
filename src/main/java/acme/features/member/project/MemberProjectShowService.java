@@ -16,6 +16,8 @@ public class MemberProjectShowService extends AbstractService<Member, Project> {
 	@Autowired
 	private MemberProjectRepository	repository;
 
+	private Integer					userAccountId;
+
 	private Project					project;
 
 	// AbstractService interface -------------------------------------------
@@ -25,8 +27,9 @@ public class MemberProjectShowService extends AbstractService<Member, Project> {
 	public void authorise() {
 		boolean status;
 
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
 		//Se necesita algo para mostrar?
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.findProjectWithUserAccount(this.userAccountId).contains(this.project);
 		super.setAuthorised(status);
 	}
 

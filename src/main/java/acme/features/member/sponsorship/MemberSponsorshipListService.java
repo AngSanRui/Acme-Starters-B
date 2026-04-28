@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
+import acme.entities.projects.Project;
 import acme.entities.sponsorship.Sponsorship;
 import acme.realms.members.Member;
 
@@ -18,6 +19,10 @@ public class MemberSponsorshipListService extends AbstractService<Member, Sponso
 	@Autowired
 	private MemberSponsorshipRepository	repository;
 
+	private Integer						userAccountId;
+
+	private Project						project;
+
 	private Collection<Sponsorship>		sponsorships;
 
 	// AbstractService interface -------------------------------------------
@@ -27,7 +32,9 @@ public class MemberSponsorshipListService extends AbstractService<Member, Sponso
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.project = this.repository.findProjectById(super.getRequest().getData("projectId", int.class));
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.findProjectWithUserAccount(this.userAccountId).contains(this.project);
 		super.setAuthorised(status);
 	}
 

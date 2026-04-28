@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
 import acme.entities.invention.Invention;
+import acme.entities.projects.Project;
 import acme.realms.members.Member;
 
 @Service
@@ -18,6 +19,10 @@ public class MemberInventionListService extends AbstractService<Member, Inventio
 	@Autowired
 	private MemberInventionRepository	repository;
 
+	private Integer						userAccountId;
+
+	private Project						project;
+
 	private Collection<Invention>		inventions;
 
 	// AbstractService interface -------------------------------------------
@@ -27,7 +32,9 @@ public class MemberInventionListService extends AbstractService<Member, Inventio
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.project = this.repository.findProjectById(super.getRequest().getData("projectId", int.class));
+		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.findProjectWithUserAccount(this.userAccountId).contains(this.project);
 		super.setAuthorised(status);
 	}
 
