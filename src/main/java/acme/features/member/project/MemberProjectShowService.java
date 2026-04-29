@@ -29,7 +29,7 @@ public class MemberProjectShowService extends AbstractService<Member, Project> {
 
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
 		//Se necesita algo para mostrar?
-		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.findProjectWithUserAccount(this.userAccountId).contains(this.project);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class) && this.project != null && this.repository.findProjectWithUserAccount(this.userAccountId).contains(this.project);
 		super.setAuthorised(status);
 	}
 

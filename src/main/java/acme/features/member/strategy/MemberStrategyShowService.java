@@ -30,7 +30,7 @@ public class MemberStrategyShowService extends AbstractService<Member, Strategy>
 
 		strategyId = super.getRequest().getData("id", int.class);
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
-		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isStrategyIdInProjectWhereUserIsMember(strategyId, this.userAccountId);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class) && this.strategy != null && this.repository.isStrategyIdInProjectWhereUserIsMember(strategyId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 

@@ -29,7 +29,7 @@ public class MemberProjectListService extends AbstractService<Member, Project> {
 	public void authorise() {
 		boolean status;
 
-		status = super.getRequest().getPrincipal().isAuthenticated();
+		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class);
 		super.setAuthorised(status);
 	}
 

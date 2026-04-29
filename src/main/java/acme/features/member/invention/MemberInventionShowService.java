@@ -30,7 +30,7 @@ public class MemberInventionShowService extends AbstractService<Member, Inventio
 
 		inventionId = super.getRequest().getData("id", int.class);
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
-		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isInventionInProjectWhereUserIsMember(inventionId, this.userAccountId);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class) && this.invention != null && this.repository.isInventionInProjectWhereUserIsMember(inventionId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 
