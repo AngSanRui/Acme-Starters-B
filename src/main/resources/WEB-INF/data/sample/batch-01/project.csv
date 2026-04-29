@@ -1,6 +1,6 @@
 key,ticker,title,description,keyWords,startMoment,endMoment,moreInfo,draftMode,key:manager
 #base entity
-project-00,PJ00-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,manager-00
+project-00,PJ00-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,manager-00
 #ticker- standard variations
 project-01,PJ99-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,manager-00
 project-02,ZZ89-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,manager-00
