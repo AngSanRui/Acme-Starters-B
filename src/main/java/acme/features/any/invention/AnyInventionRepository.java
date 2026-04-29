@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.invention.Invention;
+import acme.entities.projects.Project;
 
 @Repository
 public interface AnyInventionRepository extends AbstractRepository {
@@ -17,4 +18,10 @@ public interface AnyInventionRepository extends AbstractRepository {
 
 	@Query("select inv from Invention inv where inv.id = :id")
 	Invention findInventionById(int id);
+
+	@Query("select inv from Invention inv where inv.project.id = :projectId")
+	Collection<Invention> findInventionByProjectId(int projectId);
+
+	@Query("select pro from Project pro where pro.id = :id")
+	Project findProjectByProjectId(int id);
 }
