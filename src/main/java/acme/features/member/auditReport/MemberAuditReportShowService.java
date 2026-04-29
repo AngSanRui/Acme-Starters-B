@@ -30,7 +30,7 @@ public class MemberAuditReportShowService extends AbstractService<Member, AuditR
 
 		auditReportId = super.getRequest().getData("id", int.class);
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
-		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isAuditReportInProjectWhereUserIsMember(auditReportId, this.userAccountId);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class) && this.auditReport != null && this.repository.isAuditReportInProjectWhereUserIsMember(auditReportId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 

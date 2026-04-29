@@ -30,7 +30,7 @@ public class MemberSponsorshipShowService extends AbstractService<Member, Sponso
 
 		sponsorshipId = super.getRequest().getData("id", int.class);
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
-		status = super.getRequest().getPrincipal().isAuthenticated() && this.repository.isSponsorshipInProjectWhereUserIsMember(sponsorshipId, this.userAccountId);
+		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class) && this.sponsorship != null && this.repository.isSponsorshipInProjectWhereUserIsMember(sponsorshipId, this.userAccountId);
 		super.setAuthorised(status);
 	}
 

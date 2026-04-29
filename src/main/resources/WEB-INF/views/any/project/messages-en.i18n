@@ -1,0 +1,26 @@
+any.project.list.title = Listing of projects
+
+any.project.list.label.ticker = Ticker
+any.project.list.label.title = Título
+any.project.list.label.start-moment = Start moment
+any.project.list.label.end-moment = End moment
+
+any.project.form.title = Project form
+
+any.project.form.label.auditor = any:
+any.project.form.label.ticker = Ticker:
+any.project.form.label.title = Title:
+any.project.form.label.description = Description:
+any.project.form.label.keyWords = Key Words:
+any.project.form.label.start-moment = Start moment:
+any.project.form.label.end-moment = End moment:
+any.project.form.label.more-info = More info:
+any.project.form.label.draft-mode = Draft mode:
+
+any.project.form.button.inventions = Inventions
+any.project.form.button.audit-report = Audit Reports
+any.project.form.button.campaign = Campaigns
+any.project.form.button.sponsorship = Sponsorships
+any.project.form.button.strategy = Strategies
+
+

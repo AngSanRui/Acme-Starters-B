@@ -17,6 +17,7 @@ master.menu.anonymous.list-inventions = List inventions
 master.menu.anonymous.list-audit-reports = List audit reports
 master.menu.anonymous.list-sponsorships = List sponsorship
 master.menu.anonymous.list-campaigns = List campaign
+master.menu.anonymous.list-projects = List projects
 
 # master.menu.authenticated #######################################################
 
@@ -75,6 +76,11 @@ master.menu.fundraiser.list-my-strategies = List my strategies
 
 master.menu.member = Member
 master.menu.member.list-projects = List projects
+
+# master.menu.manager ###################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-projects = List projects
 
 # master.menu.user-account ####################################################
 
