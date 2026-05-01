@@ -20,37 +20,25 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface ManagerDashboardRepository extends AbstractRepository {
 
-	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
-	Double averageNumberOfJobsPerEmployer();
-
-	@Query("select avg(select count(a) from Application a where a.worker.id = w.id) from Worker w")
-	Double averageNumberOfApplicationsPerWorker();
-
-	@Query("select avg(select count(a) from Application a where exists(select j from Job j where j.employer.id = e.id and a.job.id = j.id)) from Employer e")
-	Double averageNumberOfApplicationsPerEmployer();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.PENDING")
-	Double ratioOfPendingApplications();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.ACCEPTED")
-	Double ratioOfAcceptedApplications();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.REJECTED")
-	Double ratioOfRejectedApplications();
-
-	@Query("SELECT (COUNT(p) FROM Project p WHERE p.manager.id = m.id")
+	@Query("SELECT COUNT(p) FROM Project p WHERE p.manager.id = :managerId")
 	Integer totalNumberOfProjects(Integer managerId);
 
-	@Query("SELECT(COUNT(p) * 1.0) - (SELECT COUNT(p2) * 1.0 / COUNT(DISTINCT m.id) FROM Manager m LEFT JOIN m.projects p2) FROM Project p WHERE p.manager.id = :managerId")
+	@Query("SELECT(COUNT(p) * 1.0) - (SELECT COUNT(p2) * 1.0 / COUNT(DISTINCT m.id) FROM Project p2, Manager m WHERE p2.manager.id = m.id) FROM Project p WHERE p.manager.id = :managerId")
 	Double deviationOfTheAverageNumOfProjects(Integer managerId);
 
-	@Query("SELECT MIN(COALESCE((SELECT SUM(m.getMonthsActive)),0)/NULLIF(COUNT(*),0) FROM Member m WHERE m.project_id = p.id) FROM Project p WHERE p.manager_id = :managerId")
-	Double minimumDeviationOfEffort(int managerId);
+	@Query(
+		value = "SELECT MIN(esfuerzo) FROM (  SELECT (CAST(SUM(m.months_active) AS DOUBLE) / NULLIF(COUNT(m.id), 0)) as esfuerzo  FROM member m WHERE m.project_id IN (SELECT id FROM project WHERE manager_id = :managerId) GROUP BY m.project_id) as subquery",
+		nativeQuery = true)
+	Double minimumDeviationOfEffort(Integer managerId);
 
-	@Query("SELECT MAX(COALESCE((SELECT SUM(m.getMonthsActive)),0)/NULLIF(COUNT(*),0) FROM Member m WHERE m.project_id = p.id) FROM Project p WHERE p.manager_id = :managerId")
-	Double maximumDeviationOfEffort();
+	@Query(
+		value = "SELECT MAX(esfuerzo) FROM (  SELECT (CAST(SUM(m.months_active) AS DOUBLE) / NULLIF(COUNT(m.id), 0)) as esfuerzo  FROM member m WHERE m.project_id IN (SELECT id FROM project WHERE manager_id = :managerId) GROUP BY m.project_id) as subquery",
+		nativeQuery = true)
+	Double maximumDeviationOfEffort(Integer managerId);
 
-	@Query("SELECT AVG(COALESCE((SELECT SUM(m.getMonthsActive)),0)/NULLIF(COUNT(*),0) FROM Member m WHERE m.project_id = p.id) FROM Project p WHERE p.manager_id = :managerId")
-	Double averageDeviationOfEffort();
+	@Query(
+		value = "SELECT AVG(esfuerzo) FROM (  SELECT (CAST(SUM(m.months_active) AS DOUBLE) / NULLIF(COUNT(m.id), 0)) as esfuerzo  FROM member m WHERE m.project_id IN (SELECT id FROM project WHERE manager_id = :managerId) GROUP BY m.project_id) as subquery",
+		nativeQuery = true)
+	Double averageDeviationOfEffort(Integer managerId);
 
 }
