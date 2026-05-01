@@ -20,5 +20,6 @@ public class MemberCampaignController extends AbstractController<Member, Campaig
 
 		super.addBasicCommand("list", MemberCampaignListService.class);
 		super.addBasicCommand("show", MemberCampaignShowService.class);
+		super.addBasicCommand("update", MemberCampaignAddService.class);
 	}
 }
