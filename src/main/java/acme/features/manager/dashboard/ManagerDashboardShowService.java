@@ -46,8 +46,8 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 		totalNumberOfProjects = this.repository.totalNumberOfProjects(managerId);
 		deviationOfTheAverageNumOfProjects = this.repository.deviationOfTheAverageNumOfProjects(managerId);
 		minimumDeviationOfEffort = this.repository.minimumDeviationOfEffort(managerId);
-		maximumDeviationOfEffort = this.repository.maximumDeviationOfEffort();
-		averageDeviationOfEffort = this.repository.averageDeviationOfEffort();
+		maximumDeviationOfEffort = this.repository.maximumDeviationOfEffort(managerId);
+		averageDeviationOfEffort = this.repository.averageDeviationOfEffort(managerId);
 
 		this.dashboard = super.newObject(Dashboard.class);
 		this.dashboard.setTotalNumberOfProjects(totalNumberOfProjects);
