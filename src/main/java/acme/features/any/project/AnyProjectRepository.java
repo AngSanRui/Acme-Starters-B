@@ -15,4 +15,7 @@ public interface AnyProjectRepository extends AbstractRepository {
 
 	@Query("select pro from Project pro where pro.draftMode = false")
 	Collection<Project> findAllPublishedProjects();
+
+	@Query("select count(i) from Invention i where i.project.id = :projectId")
+	Integer getNumOfInventions(int projectId);
 }
