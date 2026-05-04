@@ -28,9 +28,7 @@ public class ManagerSponsorshipShowService extends AbstractService<Manager, Spon
 	@Override
 	public void authorise() {
 		boolean status;
-		Integer sponsorshipId;
 
-		sponsorshipId = super.getRequest().getData("id", int.class);
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.managerId = this.repository.findManagerIdByAccountId(this.userAccountId);
 		status = super.getRequest().getPrincipal().isAuthenticated() && this.sponsorship.getProject().getManager().getId() == this.managerId;

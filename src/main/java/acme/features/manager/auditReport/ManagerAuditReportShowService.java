@@ -28,9 +28,7 @@ public class ManagerAuditReportShowService extends AbstractService<Manager, Audi
 	@Override
 	public void authorise() {
 		boolean status;
-		Integer auditReportId;
 
-		auditReportId = super.getRequest().getData("id", int.class);
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.managerId = this.repository.findManagerIdByAccountId(this.userAccountId);
 		status = super.getRequest().getPrincipal().hasRealmOfType(Manager.class) && this.auditReport.getProject().getManager().getId() == this.managerId;
