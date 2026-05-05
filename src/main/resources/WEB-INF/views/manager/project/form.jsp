@@ -20,7 +20,8 @@
 			<acme:button code="manager.project.form.button.audit-report" action="/manager/audit-report/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.campaign" action="/manager/campaign/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.sponsorship" action="/manager/sponsorship/list?projectId=${id}"/>
-			<acme:button code="manager.project.form.button.strategy" action="/manager/strategy/list?projectId=${id}"/>			
+			<acme:button code="manager.project.form.button.strategy" action="/manager/strategy/list?projectId=${id}"/>	
+			<acme:button code="manager.project.form.button.member" action="/manager/member/list?projectId=${id}"/>			
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 		<acme:button code="manager.project.form.button.inventions" action="/manager/invention/list?projectId=${id}"/>

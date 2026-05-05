@@ -11,7 +11,7 @@ import acme.realms.managers.Manager;
 import acme.realms.members.Member;
 
 @Service
-public class ManagaMemberCreateService extends AbstractService<Manager, Member> {
+public class ManagerMemberCreateService extends AbstractService<Manager, Member> {
 
 	// Internal state ---------------------------------------------------------
 
