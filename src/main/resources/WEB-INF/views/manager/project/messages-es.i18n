@@ -17,6 +17,7 @@ manager.project.form.label.end-moment = Momento de acabado:
 manager.project.form.label.more-info = Mas informacion:
 manager.project.form.label.draft-mode = Modo borrador:
 
+manager.member.list.button.createMember = Añadir miembro
 manager.project.form.button.inventions = Invenciones
 manager.project.form.button.audit-report = Auditorias
 manager.project.form.button.campaign = Campañas

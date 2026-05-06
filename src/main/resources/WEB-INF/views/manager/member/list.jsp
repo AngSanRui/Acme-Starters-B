@@ -19,6 +19,5 @@
 	<acme:list-column code="manager.member.list.label.userAccount" path="userAccount" width="100%"/>
 </acme:list>
 
-<%--
-<acme:button code="auditor.audit-report.list.button.create" action="/auditor/audit-report/create"/>
---%>
+
+

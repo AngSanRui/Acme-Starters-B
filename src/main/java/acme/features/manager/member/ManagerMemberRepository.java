@@ -27,6 +27,9 @@ public interface ManagerMemberRepository extends AbstractRepository {
 	@Query("select wk.member.userAccount from WorksIn wk WHERE wk.project.id = :projectId")
 	Collection<UserAccount> findAllUserAccountsByProjectId(int projectId);
 
+	@Query("select m from Member m")
+	Collection<Member> findAllMembers();
+
 	@Query("select wk.member from WorksIn wk WHERE wk.project.id = :projectId")
 	Collection<Member> findAllMembersByProjectId(int projectId);
 
