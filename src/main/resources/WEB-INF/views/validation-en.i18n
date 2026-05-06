@@ -1,3 +1,5 @@
+
+
 # validation-en.i18n
 #
 # Copyright (C) 2012-2026 Rafael Corchuelo.
@@ -42,3 +44,6 @@ acme.validation.Part.message = The part contains error
 
 acme.validation.true = True
 acme.validation.false = False
+
+acme.validation.duplicated-member = That member is already member in this project with this role
+acme.validation.role-error = This member not has that role, please select another role or member 

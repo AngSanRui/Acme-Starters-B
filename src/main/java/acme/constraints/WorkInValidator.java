@@ -9,6 +9,9 @@ import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
 import acme.entities.projects.WorksIn;
 import acme.entities.projects.WorksInRepository;
+import acme.realms.campaign.Spokesperson;
+import acme.realms.inventor.Inventor;
+import acme.realms.strategy.Fundraiser;
 
 @Validator
 public class WorkInValidator extends AbstractValidator<ValidWorksIn, WorksIn> {
@@ -43,6 +46,27 @@ public class WorkInValidator extends AbstractValidator<ValidWorksIn, WorksIn> {
 				uniqueProjectMember = existingProjectMember == null || existingProjectMember.equals(projectMember);
 
 				super.state(context, uniqueProjectMember, "*", "acme.validation.duplicated-member");
+			}
+			{
+				boolean hasRole = false;
+				switch (projectMember.getRole()) {
+				case FUNDRAISER: {
+					hasRole = projectMember.getMember().getUserAccount().hasRealmOfType(Fundraiser.class);
+					break;
+				}
+				case INVENTOR: {
+					hasRole = projectMember.getMember().getUserAccount().hasRealmOfType(Inventor.class);
+					break;
+				}
+				case SPOKESPERSON: {
+					hasRole = projectMember.getMember().getUserAccount().hasRealmOfType(Spokesperson.class);
+					break;
+				}
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + projectMember.getRole());
+				}
+				super.state(context, hasRole, "*", "acme.validation.role-error");
+
 			}
 			result = !super.hasErrors(context);
 		}

@@ -17,7 +17,7 @@ master.menu.anonymous.list-inventions = Listar invenciones
 master.menu.anonymous.list-audit-reports = Listar informes de auditoria
 master.menu.anonymous.list-sponsorships = Listar sponsorships
 master.menu.anonymous.list-campaigns = Lista de campañas
-master.menu.anonymous.list-projects = Lista de projectos
+master.menu.anonymous.list-projects = Lista de proyectos
 
 
 # master.menu.authenticated #######################################################
@@ -28,6 +28,7 @@ master.menu.authenticated.list-inventions = Listar invenciones
 master.menu.authenticated.list-audit-reports = Listar informes de auditoria
 master.menu.authenticated.list-sponsorships = Listar sponsorships
 master.menu.authenticated.list-campaigns = Lista de campañas
+master.menu.authenticated.list-projects = Lista de proyectos
 
 
 # master.menu.administrator ###################################################

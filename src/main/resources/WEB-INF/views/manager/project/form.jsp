@@ -13,7 +13,6 @@
 	<acme:form-url 		code="manager.project.form.label.more-info" path="moreInfo"/>
 	<acme:form-checkbox	code="manager.project.form.label.draft-mode" path="draftMode"/>
 
-	<acme:button code="manager.member.list.button.createMember" action="/manager/works-in/create?projectId=${id}"/>
 	
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
@@ -34,6 +33,7 @@
 			<acme:submit code="manager.project.form.button.update" action="/manager/project/update"/>
 			<acme:submit code="manager.project.form.button.delete" action="/manager/project/delete"/>
 			<acme:submit code="manager.project.form.button.publish" action="/manager/project/publish"/>
+			<acme:button code="manager.member.list.button.createMember" action="/manager/works-in/create?projectId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="manager.project.form.button.create" action="/manager/project/create"/>

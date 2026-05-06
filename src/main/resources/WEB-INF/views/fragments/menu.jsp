@@ -34,6 +34,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-inventions" action="/authenticated/invention/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-sponsorships" action="/authenticated/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-campaigns" action="/any/campaign/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-projects" action="/any/project/list"/>
 		</acme:menu-option>
 		
 

@@ -45,3 +45,6 @@ acme.validation.Part.message = La parte contiene errores
 
 acme.validation.true = Verdadero
 acme.validation.false = Falso
+
+acme.validation.duplicated-member = Este miembro ya trabaja en este projecto con este rol
+acme.validation.role-error = Este miembro no tiene este rol, por favor seleccione otro rol o miembro
