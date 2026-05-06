@@ -12,10 +12,18 @@
 
 package acme.features.manager.dashboard;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
+import acme.entities.campaign.Campaign;
+import acme.entities.invention.Invention;
+import acme.entities.projects.Project;
+import acme.entities.strategies.Strategy;
 import acme.forms.Dashboard;
 import acme.realms.managers.Manager;
 
@@ -35,26 +43,64 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 	@Override
 	public void load() {
 
-		int managerId = super.getRequest().getData("id", int.class);
+		Integer userAccountId = super.getRequest().getPrincipal().getAccountId();
+		Manager manager = this.repository.findManagerByUserId(userAccountId);
+		Integer managerId = manager.getId();
 
-		Integer totalNumberOfProjects;
-		Double deviationOfTheAverageNumOfProjects;
-		Double minimumDeviationOfEffort;
-		Double maximumDeviationOfEffort;
-		Double averageDeviationOfEffort;
+		Integer numberOfMyProjects = this.repository.numberOfProjectsByManager(managerId);
+		Double averageNumberOfProjectsExcludingThemselves = this.repository.averageNumberOfProjectsByManagerExcludingThemselves(managerId);
+		double desviationNumberOfProjectsByManager = numberOfMyProjects - averageNumberOfProjectsExcludingThemselves;
 
-		totalNumberOfProjects = this.repository.totalNumberOfProjects(managerId);
-		deviationOfTheAverageNumOfProjects = this.repository.deviationOfTheAverageNumOfProjects(managerId);
-		minimumDeviationOfEffort = this.repository.minimumDeviationOfEffort(managerId);
-		maximumDeviationOfEffort = this.repository.maximumDeviationOfEffort(managerId);
-		averageDeviationOfEffort = this.repository.averageDeviationOfEffort(managerId);
+		Collection<Project> projects = this.repository.findProjectsByManager(managerId);
+
+		Double minEffort = 0.0;
+		Double maxEffort = 0.0;
+		Double averageOfEffortOfProjectsByManager = 0.0;
+		double acum = 0.0;
+
+		List<Double> projectEfforts = new ArrayList<>();
+
+		for (Project p : projects) {
+			double totalActiveMonths = 0.0;
+
+			Collection<Strategy> strategies = this.repository.findStrategiesByProjectId(p.getId());
+			for (Strategy s : strategies)
+				if (s.getMonthsActive() != null)
+					totalActiveMonths += s.getMonthsActive();
+
+			Collection<Campaign> campaigns = this.repository.findCampaignsByProjectId(p.getId());
+			for (Campaign c : campaigns)
+				if (c.getMonthsActive() != null)
+					totalActiveMonths += c.getMonthsActive();
+
+			Collection<Invention> inventions = this.repository.findInventionsByProjectId(p.getId());
+			for (Invention i : inventions)
+				if (i.getMonthsActive() != null)
+					totalActiveMonths += i.getMonthsActive();
+
+			Integer membersCount = this.repository.countMembersByProject(p.getId());
+
+			Double effort = 0.0;
+			if (membersCount != null && membersCount > 0)
+				effort = totalActiveMonths / membersCount;
+			projectEfforts.add(effort);
+
+			if (effort < minEffort)
+				minEffort = effort;
+			if (effort > maxEffort)
+				maxEffort = effort;
+			acum += effort;
+		}
+
+		averageOfEffortOfProjectsByManager = acum / projects.size();
 
 		this.dashboard = super.newObject(Dashboard.class);
-		this.dashboard.setTotalNumberOfProjects(totalNumberOfProjects);
-		this.dashboard.setDeviationOfTheAverageNumOfProjects(deviationOfTheAverageNumOfProjects);
-		this.dashboard.setMinimumDeviationOfEffort(minimumDeviationOfEffort);
-		this.dashboard.setMaximumDeviationOfEffort(maximumDeviationOfEffort);
-		this.dashboard.setAverageDeviationOfEffort(averageDeviationOfEffort);
+		this.dashboard.setTotalNumberOfProjects(numberOfMyProjects);
+		this.dashboard.setDeviationOfTheAverageNumOfProjects(desviationNumberOfProjectsByManager);
+		this.dashboard.setMinimumDeviationOfEffort(minEffort);
+		this.dashboard.setMaximumDeviationOfEffort(maxEffort);
+		this.dashboard.setAverageDeviationOfEffort(averageOfEffortOfProjectsByManager);
+
 	}
 
 	@Override
@@ -64,10 +110,7 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.dashboard, //
-			"totalNumberOfProjects", "deviationOfTheAverageNumOfProjects", // 
-			"minimumDeviationOfEffort", "maximumDeviationOfEffort", //
-			"averageDeviationOfEffort");
+		super.unbindObject(this.dashboard, "totalNumberOfProjects", "deviationOfTheAverageNumOfProjects", "minimumDeviationOfEffort", "maximumDeviationOfEffort", "averageDeviationOfEffort");
 	}
 
 }

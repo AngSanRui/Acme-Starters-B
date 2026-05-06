@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 manager.dashboard.form.title = Panel de indicadores de administrador
+manager.dashboard.form.title.general-indicators = Indicadores generales
 
 manager.dashboard.form.label.total-numbers-project = Número total de proyectos:
 manager.dashboard.form.label.deviation-average-projects = Desviación promedio del número total de proyectos:

@@ -42,7 +42,6 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-initial" action="/administrator/system/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>
-			<acme:menu-suboption code="master.menu.manager.show-dashboard" action="/manager/dashboard/show" />		
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 		</acme:menu-option>
@@ -84,6 +83,7 @@
 		
 		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
 			<acme:menu-suboption code="master.menu.manager.list-projects" action="/manager/project/list"/>
+			<acme:menu-suboption code="master.menu.manager.show-dashboard" action="/manager/dashboard/show" />		
 		</acme:menu-option>
 	</acme:menu-left>
 

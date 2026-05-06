@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 manager.dashboard.form.title = Administrator dashboard
+manager.dashboard.form.title.general-indicators = General indicators
 
 manager.dashboard.form.label.total-numbers-project = Total number of projects:
 manager.dashboard.form.label.deviation-average-projects = Average deviation of all the projects:
