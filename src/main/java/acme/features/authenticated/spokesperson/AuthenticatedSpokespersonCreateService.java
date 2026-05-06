@@ -9,6 +9,7 @@ import acme.client.components.principals.UserAccount;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
 import acme.realms.campaign.Spokesperson;
+import acme.realms.members.Member;
 
 @Service
 public class AuthenticatedSpokespersonCreateService extends AbstractService<Authenticated, Spokesperson> {
@@ -18,6 +19,8 @@ public class AuthenticatedSpokespersonCreateService extends AbstractService<Auth
 	private AuthenticatedSpokespersonRepository	repository;
 
 	private Spokesperson						spokesperson;
+
+	private Member								member;
 
 	// AbstractService interface -------------------------------------------
 
@@ -32,6 +35,9 @@ public class AuthenticatedSpokespersonCreateService extends AbstractService<Auth
 
 		this.spokesperson = new Spokesperson();
 		this.spokesperson.setUserAccount(userAccount);
+
+		this.member = new Member();
+		this.member.setUserAccount(userAccount);
 	}
 
 	@Override
@@ -55,6 +61,8 @@ public class AuthenticatedSpokespersonCreateService extends AbstractService<Auth
 	@Override
 	public void execute() {
 		this.repository.save(this.spokesperson);
+		if (!super.getRequest().getPrincipal().hasRealmOfType(Member.class))
+			this.repository.save(this.member);
 	}
 
 	@Override
