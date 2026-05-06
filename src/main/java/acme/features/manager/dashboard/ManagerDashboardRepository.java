@@ -12,33 +12,42 @@
 
 package acme.features.manager.dashboard;
 
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.campaign.Campaign;
+import acme.entities.invention.Invention;
+import acme.entities.projects.Project;
+import acme.entities.strategies.Strategy;
+import acme.realms.managers.Manager;
 
 @Repository
 public interface ManagerDashboardRepository extends AbstractRepository {
 
-	@Query("SELECT COUNT(p) FROM Project p WHERE p.manager.id = :managerId")
-	Integer totalNumberOfProjects(Integer managerId);
+	@Query("select count(p) from Project p where p.manager.id = :id")
+	Integer numberOfProjectsByManager(int id);
 
-	@Query("SELECT(COUNT(p) * 1.0) - (SELECT COUNT(p2) * 1.0 / COUNT(DISTINCT m.id) FROM Project p2, Manager m WHERE p2.manager.id = m.id) FROM Project p WHERE p.manager.id = :managerId")
-	Double deviationOfTheAverageNumOfProjects(Integer managerId);
+	@Query(value = "SELECT IFNULL(AVG(project_count), 0) FROM (" + "  SELECT COUNT(id) as project_count " + "  FROM project " + "  WHERE manager_id != :id " + "  GROUP BY manager_id" + ") as subquery", nativeQuery = true)
+	Double averageNumberOfProjectsByManagerExcludingThemselves(int id);
 
-	@Query(
-		value = "SELECT MIN(esfuerzo) FROM (  SELECT (CAST(SUM(m.months_active) AS DOUBLE) / NULLIF(COUNT(m.id), 0)) as esfuerzo  FROM member m WHERE m.project_id IN (SELECT id FROM project WHERE manager_id = :managerId) GROUP BY m.project_id) as subquery",
-		nativeQuery = true)
-	Double minimumDeviationOfEffort(Integer managerId);
+	@Query("SELECT p FROM Project p WHERE p.manager.id = :id")
+	Collection<Project> findProjectsByManager(int id);
 
-	@Query(
-		value = "SELECT MAX(esfuerzo) FROM (  SELECT (CAST(SUM(m.months_active) AS DOUBLE) / NULLIF(COUNT(m.id), 0)) as esfuerzo  FROM member m WHERE m.project_id IN (SELECT id FROM project WHERE manager_id = :managerId) GROUP BY m.project_id) as subquery",
-		nativeQuery = true)
-	Double maximumDeviationOfEffort(Integer managerId);
+	@Query("SELECT m from Manager m where m.userAccount.id = :id")
+	Manager findManagerByUserId(int id);
 
-	@Query(
-		value = "SELECT AVG(esfuerzo) FROM (  SELECT (CAST(SUM(m.months_active) AS DOUBLE) / NULLIF(COUNT(m.id), 0)) as esfuerzo  FROM member m WHERE m.project_id IN (SELECT id FROM project WHERE manager_id = :managerId) GROUP BY m.project_id) as subquery",
-		nativeQuery = true)
-	Double averageDeviationOfEffort(Integer managerId);
+	@Query("select s from Strategy s where s.project.id = :projectId")
+	Collection<Strategy> findStrategiesByProjectId(int projectId);
 
+	@Query("select c from Campaign c where c.project.id = :projectId")
+	Collection<Campaign> findCampaignsByProjectId(int projectId);
+
+	@Query("select i from Invention i where i.project.id = :projectId")
+	Collection<Invention> findInventionsByProjectId(int projectId);
+
+	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId")
+	Integer countMembersByProject(int projectId);
 }
