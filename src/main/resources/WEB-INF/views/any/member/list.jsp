@@ -16,7 +16,7 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="manager.member.list.label.userAccount" path="userAccount" width="100%"/>
+	<acme:list-column code="any.member.list.label.userAccount" path="userAccount" width="100%"/>
 </acme:list>
 
 

@@ -1,5 +1,5 @@
 
-package acme.features.manager.member;
+package acme.features.member.member;
 
 import java.util.Collection;
 
@@ -13,7 +13,7 @@ import acme.entities.projects.WorksIn;
 import acme.realms.members.Member;
 
 @Repository
-public interface ManagerMemberRepository extends AbstractRepository {
+public interface MemberMemberRepository extends AbstractRepository {
 
 	@Query("select pr from Project pr where pr.id = :id")
 	Project findProjectById(int id);
@@ -21,8 +21,8 @@ public interface ManagerMemberRepository extends AbstractRepository {
 	@Query("select pr from Project pr where pr.manager.id = :managerId")
 	Collection<Project> findProjectByManagerId(Integer managerId);
 
-	@Query("select man.id from Manager man where man.userAccount.id =:id")
-	int findManagerIdByAccountId(int id);
+	@Query("select mem from Member mem where mem.userAccount.id =:id")
+	Member findMemberByAccountId(int id);
 
 	@Query("select wk.member.userAccount from WorksIn wk WHERE wk.project.id = :projectId")
 	Collection<UserAccount> findAllUserAccountsByProjectId(int projectId);
@@ -39,8 +39,8 @@ public interface ManagerMemberRepository extends AbstractRepository {
 	@Query("select mem from Member mem where mem.id = :memberId")
 	Member findMemberById(int memberId);
 
-	@Query("select pro from Project pro where pro.manager.id = :managerId")
-	Collection<Project> findAllProjectsByManagerId(int managerId);
+	@Query("select wk.project from WorksIn wk where wk.member.id = :memberId")
+	Collection<Project> findAllProjectsByMemberId(int memberId);
 
 	//	@Query("select usac.username from UserAccount where usac.id = :userAccountId")
 	//	String findUsernameByUserAccountId(int userAccountId);
