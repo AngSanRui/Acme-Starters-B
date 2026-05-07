@@ -1,8 +1,8 @@
 
 package acme.features.member.member;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +39,7 @@ public class MemberMemberShowService extends AbstractService<Member, Member> {
 		int userAccountId = super.getRequest().getPrincipal().getAccountId();
 		Member member = this.repository.findMemberByAccountId(userAccountId);
 
-		Collection<Member> members = Collections.emptySet();
+		Collection<Member> members = new ArrayList<Member>();
 		Collection<Project> proyectos = this.repository.findAllProjectsByMemberId(member.getId());
 
 		for (Project p : proyectos)
