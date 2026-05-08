@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.campaign.Campaign;
 import acme.entities.campaign.Milestone;
+import acme.entities.projects.Project;
 
 @Repository
 public interface SpokespersonCampaignRepository extends AbstractRepository {
@@ -27,4 +28,7 @@ public interface SpokespersonCampaignRepository extends AbstractRepository {
 
 	@Query("select count(milestone.campaign.id) from Milestone milestone where milestone.campaign.id = :campaignId")
 	Integer milestonesPerCampaign(int campaignId);
+
+	@Query("SELECT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
+	Collection<Project> findProjectsByUserAccountId(int userAccountId);
 }
