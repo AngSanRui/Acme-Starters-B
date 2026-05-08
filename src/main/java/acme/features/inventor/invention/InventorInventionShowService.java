@@ -34,9 +34,10 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 
 		inventionId = super.getRequest().getData("id", int.class);
 		this.invention = this.repository.findInventionsById(inventionId);
-		this.projects = this.repository.findProjectsByUserAccountId(this.invention.getInventor().getUserAccount().getId());
-		if (this.invention.getProject() != null && !this.projects.contains(this.invention.getProject()))
+		if (this.invention != null && this.invention.getProject() != null && !this.projects.contains(this.invention.getProject())) {
 			this.projects.add(this.invention.getProject());
+			this.projects = this.repository.findProjectsByUserAccountId(this.invention.getInventor().getUserAccount().getId());
+		}
 	}
 
 	@Override
@@ -50,12 +51,13 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 
 	@Override
 	public void unbind() {
-		SelectChoices choices;
+		SelectChoices choices = null;
 		Project visible = null;
 
-		if (this.invention.getProject() != null)
+		if (this.invention.getProject() != null) {
 			visible = this.invention.getProject();
-		choices = SelectChoices.from(this.projects, "title", visible);
+			choices = SelectChoices.from(this.projects, "title", visible);
+		}
 
 		Tuple tuple;
 		tuple = super.unbindObject(this.invention, //

@@ -4,13 +4,13 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form> 
-	<acme:form-textbox code="inventor.invention.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
-	<acme:form-textbox code="inventor.invention.form.label.name" path="name" readonly="${!draftMode}"/>
-	<acme:form-textarea code="inventor.invention.form.label.description" path="description" readonly="${!draftMode}"/>
-	<acme:form-moment code="inventor.invention.form.label.startMoment" path="startMoment" readonly="${!draftMode}"/>
-	<acme:form-moment code="inventor.invention.form.label.endMoment" path="endMoment" readonly="${!draftMode}"/>
-	<acme:form-url code="inventor.invention.form.label.moreInfo" path="moreInfo" readonly="${!draftMode}"/>
-	<acme:form-double code="inventor.invention.form.label.monthsActive" path="monthsActive" readonly="true"/>
+	<acme:form-textbox code="inventor.invention.form.label.ticker" path="ticker"/>
+	<acme:form-textbox code="inventor.invention.form.label.name" path="name"/>
+	<acme:form-textarea code="inventor.invention.form.label.description" path="description"/>
+	<acme:form-moment code="inventor.invention.form.label.startMoment" path="startMoment"/>
+	<acme:form-moment code="inventor.invention.form.label.endMoment" path="endMoment"/>
+	<acme:form-url code="inventor.invention.form.label.moreInfo" path="moreInfo" />
+	<acme:form-double code="inventor.invention.form.label.monthsActive" path="monthsActive"/>
 	<acme:form-money code="inventor.invention.form.label.Costs" path="Costs" readonly="true"/>
 	<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${project}"/>
 	
