@@ -18,6 +18,9 @@ public class ManagerWorksInController extends AbstractController<Manager, WorksI
 
 		super.setMediaType(MediaType.TEXT_HTML);
 
+		super.addBasicCommand("list", ManagerWorksInListService.class);
+		super.addBasicCommand("show", ManagerWorksInShowService.class);
 		super.addBasicCommand("create", ManagerWorksInCreateService.class);
+		super.addBasicCommand("delete", ManagerWorksInDeleteService.class);
 	}
 }

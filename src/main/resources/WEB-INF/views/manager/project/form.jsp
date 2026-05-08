@@ -21,19 +21,20 @@
 			<acme:button code="manager.project.form.button.campaign" action="/manager/campaign/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.sponsorship" action="/manager/sponsorship/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.strategy" action="/manager/strategy/list?projectId=${id}"/>	
-			<acme:button code="manager.project.form.button.member" action="/manager/member/list?projectId=${id}"/>			
+			<acme:button code="manager.project.form.button.worksIn" action="/manager/works-in/list?projectId=${id}"/>			
+				
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 		<acme:button code="manager.project.form.button.inventions" action="/manager/invention/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.audit-report" action="/manager/audit-report/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.campaign" action="/manager/campaign/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.sponsorship" action="/manager/sponsorship/list?projectId=${id}"/>
-			<acme:button code="manager.project.form.button.member" action="/manager/member/list?projectId=${id}"/>
 			<acme:button code="manager.project.form.button.strategy" action="/manager/strategy/list?projectId=${id}"/>			
 			<acme:submit code="manager.project.form.button.update" action="/manager/project/update"/>
 			<acme:submit code="manager.project.form.button.delete" action="/manager/project/delete"/>
 			<acme:submit code="manager.project.form.button.publish" action="/manager/project/publish"/>
 			<acme:button code="manager.member.list.button.createMember" action="/manager/works-in/create?projectId=${id}"/>
+			<acme:button code="manager.project.form.button.worksIn" action="/manager/works-in/list?projectId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="manager.project.form.button.create" action="/manager/project/create"/>
