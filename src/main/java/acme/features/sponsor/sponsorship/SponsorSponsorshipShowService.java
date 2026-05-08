@@ -12,10 +12,15 @@
 
 package acme.features.sponsor.sponsorship;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
+import acme.entities.projects.Project;
 import acme.entities.sponsorship.Sponsorship;
 import acme.realms.sponsorship.Sponsor;
 
@@ -52,7 +57,13 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "totalMoney", "draftMode");
+		SelectChoices choices;
+		Tuple tuple;
+		Collection<Project> projects = this.repository.findPublishedProjects();
+		choices = SelectChoices.from(projects, "title", this.sponsorship.getProject());
+
+		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "totalMoney", "draftMode");
+		tuple.put("project", choices);
 	}
 
 }

@@ -25,6 +25,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.list-inventions" action="/any/invention/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-sponsorships" action="/any/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-campaigns" action="/any/campaign/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.list-projects" action="/any/project/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
@@ -33,6 +34,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-inventions" action="/authenticated/invention/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-sponsorships" action="/authenticated/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-campaigns" action="/any/campaign/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-projects" action="/any/project/list"/>
 		</acme:menu-option>
 		
 
@@ -40,7 +42,7 @@
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-initial" action="/administrator/system/populate-initial"/>
-			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>			
+			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 		</acme:menu-option>
@@ -74,6 +76,15 @@
 
 			<acme:menu-suboption code="master.menu.sponsor.manage-my-sponsorships" action="/sponsor/sponsorship/list"/>
 			<acme:menu-suboption code="master.menu.sponsor.list-sponsorships" action="/authenticated/sponsorship/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.member" access="hasRealm('Member')">
+			<acme:menu-suboption code="master.menu.member.list-projects" action="/member/project/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
+			<acme:menu-suboption code="master.menu.manager.list-projects" action="/manager/project/list"/>
+			<acme:menu-suboption code="master.menu.manager.show-dashboard" action="/manager/dashboard/show" />		
 		</acme:menu-option>
 	</acme:menu-left>
 

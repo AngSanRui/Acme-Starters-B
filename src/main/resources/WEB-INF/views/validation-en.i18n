@@ -1,3 +1,5 @@
+
+
 # validation-en.i18n
 #
 # Copyright (C) 2012-2026 Rafael Corchuelo.
@@ -39,6 +41,11 @@ acme.validation.invention.ticker-not-unique.message = This ticker is not unique
 acme.validation.invention.start-after-end.message =End date must not be before than start date
 acme.validation.part.currency-not-supported.message =The only currently supported currency is EUR
 acme.validation.Part.message = The part contains error
+acme.validation.numberOfInventions.message = The project needs to have at least 1 invention associated to be published.
+acme.validation.member-error = Invalid member value.
 
 acme.validation.true = True
 acme.validation.false = False
+
+acme.validation.duplicated-member = That member is already member in this project with this role
+acme.validation.role-error = This member not has that role, please select another role or member 

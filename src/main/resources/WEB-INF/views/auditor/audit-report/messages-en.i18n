@@ -29,6 +29,7 @@ auditor.audit-report.form.label.more-info = More info:
 auditor.audit-report.form.label.draft-mode = Draft mode:
 auditor.audit-report.form.label.months-active = Months active:
 auditor.audit-report.form.label.hours = Hours:
+auditor.audit-report.form.label.project = Project: 
 
 auditor.audit-report.form.button.audit-sections = List audit sections
 
@@ -37,3 +38,4 @@ auditor.audit-report.form.button.update = Update
 auditor.audit-report.form.button.delete = Delete
 auditor.audit-report.form.button.publish = Publish
 auditor.audit-report.form.button.create = Create
+auditor.audit-report.form.button.link = Link Project

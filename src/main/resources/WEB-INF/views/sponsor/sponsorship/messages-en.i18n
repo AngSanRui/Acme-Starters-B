@@ -21,12 +21,14 @@ sponsor.sponsorship.form.label.monthsActive = Months Active:
 sponsor.sponsorship.form.label.totalMoney = Total Money:
 sponsor.sponsorship.form.label.draftMode = Draft Mode:
 
+sponsor.sponsorship.form.label.project = Project:
 		
 sponsor.sponsorship.form.button.donations = Donations
 sponsor.sponsorship.form.button.update = Update
 sponsor.sponsorship.form.button.delete = Delete
 sponsor.sponsorship.form.button.publish = Publish
 sponsor.sponsorship.form.button.create = Create
+sponsor.sponsorship.form.button.link = Link Project
 
 sponsor.sponsorship.list.label.ticker = Ticker
 sponsor.sponsorship.list.label.startMoment = Start Moment

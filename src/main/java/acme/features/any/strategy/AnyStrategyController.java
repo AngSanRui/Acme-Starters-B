@@ -21,5 +21,7 @@ public class AnyStrategyController extends AbstractController<Any, Strategy> {
 
 		super.addBasicCommand("list", AnyStrategyListService.class);
 		super.addBasicCommand("show", AnyStrategyShowService.class);
+
+		super.addCustomCommand("projectList", "list", AnyStrategyProjectListService.class);
 	}
 }

@@ -1,0 +1,26 @@
+member.project.list.title = Listado de informes de projectos
+
+member.project.list.label.ticker = Referencia
+member.project.list.label.title = Título
+member.project.list.label.start-moment = Momento de inicio
+member.project.list.label.end-moment = Momento de acabado
+
+member.project.form.title = Formulario de informe de projectos
+
+member.project.form.label.member = member:
+member.project.form.label.ticker = Referencia:
+member.project.form.label.title = Título:
+member.project.form.label.description = Descripcion:
+member.project.form.label.keyWords = Palabras claves:
+member.project.form.label.start-moment = Momento de inicio:
+member.project.form.label.end-moment = Momento de acabado:
+member.project.form.label.more-info = Mas informacion:
+member.project.form.label.draft-mode = Modo borrador:
+
+member.project.form.button.inventions = Invenciones
+member.project.form.button.audit-report = Auditorias
+member.project.form.button.campaign = Campañas
+member.project.form.button.sponsorship = Sponsorships
+member.project.form.button.strategy = Estrategias
+
+

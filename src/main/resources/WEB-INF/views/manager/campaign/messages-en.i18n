@@ -1,0 +1,30 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.campaign.list.title = Listing of campaigns
+
+manager.campaign.list.label.manager = manager
+manager.campaign.list.label.ticker = Ticker
+manager.campaign.list.label.name = Name
+manager.campaign.list.label.startMoment = Start moment
+manager.campaign.list.label.endMoment = End moment
+
+manager.campaign.form.title = Campaign form
+
+manager.campaign.form.label.sponsor = manager:
+manager.campaign.form.label.ticker = Ticker:
+manager.campaign.form.label.name = Name:
+manager.campaign.form.label.description = Description:
+manager.campaign.form.label.start-moment = Start moment:
+manager.campaign.form.label.end-moment = End moment:
+manager.campaign.form.label.more-info = More info:
+manager.campaign.form.label.draft-mode = Draft mode
+manager.campaign.form.label.monthsActive = Months active:
+manager.campaign.form.label.effort = Effort:

@@ -37,4 +37,9 @@ public class Manager extends AbstractRole {
 	@Valid
 	@Column
 	private Boolean				flag;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
+
 }

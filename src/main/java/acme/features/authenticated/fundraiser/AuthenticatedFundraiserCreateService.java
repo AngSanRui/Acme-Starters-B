@@ -8,6 +8,7 @@ import acme.client.components.principals.Authenticated;
 import acme.client.components.principals.UserAccount;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
+import acme.realms.members.Member;
 import acme.realms.strategy.Fundraiser;
 
 @Service
@@ -17,6 +18,8 @@ public class AuthenticatedFundraiserCreateService extends AbstractService<Authen
 	private AuthenticatedFundraiserRepository	repository;
 
 	private Fundraiser							fundraiser;
+
+	private Member								member;
 
 
 	@Override
@@ -29,6 +32,9 @@ public class AuthenticatedFundraiserCreateService extends AbstractService<Authen
 
 		this.fundraiser = new Fundraiser();
 		this.fundraiser.setUserAccount(userAccount);
+
+		this.member = new Member();
+		this.member.setUserAccount(userAccount);
 	}
 
 	@Override
@@ -50,6 +56,8 @@ public class AuthenticatedFundraiserCreateService extends AbstractService<Authen
 	@Override
 	public void execute() {
 		this.repository.save(this.fundraiser);
+		if (!super.getRequest().getPrincipal().hasRealmOfType(Member.class))
+			this.repository.save(this.member);
 	}
 
 	@Override

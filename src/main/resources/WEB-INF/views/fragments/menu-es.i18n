@@ -17,6 +17,7 @@ master.menu.anonymous.list-inventions = Listar invenciones
 master.menu.anonymous.list-audit-reports = Listar informes de auditoria
 master.menu.anonymous.list-sponsorships = Listar sponsorships
 master.menu.anonymous.list-campaigns = Lista de campañas
+master.menu.anonymous.list-projects = Lista de proyectos
 
 
 # master.menu.authenticated #######################################################
@@ -27,6 +28,7 @@ master.menu.authenticated.list-inventions = Listar invenciones
 master.menu.authenticated.list-audit-reports = Listar informes de auditoria
 master.menu.authenticated.list-sponsorships = Listar sponsorships
 master.menu.authenticated.list-campaigns = Lista de campañas
+master.menu.authenticated.list-projects = Lista de proyectos
 
 
 # master.menu.administrator ###################################################
@@ -36,6 +38,7 @@ master.menu.authenticated.list-strategies = Listar estrategias
 master.menu.administrator.list-user-accounts = Ver cuentas de usuario
 master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
+master.menu.manager.show-dashboard = Enseñar panel
 master.menu.administrator.shut-system-down = Parar el sistema
 
 # master.menu.provider ########################################################
@@ -73,6 +76,17 @@ master.menu.sponsor.list-sponsorships = Lista las sponsorships publicadas
 
 master.menu.fundraiser = Recaudador de fondos
 master.menu.fundraiser.list-my-strategies = Administrar mis estrategias
+
+
+# master.menu.member ###################################################
+
+master.menu.member = Miembro
+master.menu.member.list-projects = Lista de projectos
+
+# master.menu.manager ###################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-projects = Listar mis projectos
 
 # master.menu.user-account ####################################################
 
