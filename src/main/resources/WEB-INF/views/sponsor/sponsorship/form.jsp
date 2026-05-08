@@ -22,10 +22,12 @@
 	<acme:form-moment code="sponsor.sponsorship.form.label.startMoment" path="startMoment"/>
 	<acme:form-moment code="sponsor.sponsorship.form.label.endMoment" path="endMoment"/>
 	<acme:form-url code="sponsor.sponsorship.form.label.moreInfo" path="moreInfo"/>
+	<acme:form-select code="sponsor.sponsorship.form.label.project" path="project" choices="${project}" readonly="${draftMode}"/>
 	
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
+		<jstl:when test="${acme:anyOf(_command, 'show|link') && draftMode == false}">
 			<acme:button code="sponsor.sponsorship.form.button.donations" action="/sponsor/donation/list?sponsorshipId=${id}"/>			
+			<acme:submit code="sponsor.sponsorship.form.button.link" action="/sponsor/sponsorship/link"/>		
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:button code="sponsor.sponsorship.form.button.donations" action="/sponsor/donation/list?sponsorshipId=${id}"/>

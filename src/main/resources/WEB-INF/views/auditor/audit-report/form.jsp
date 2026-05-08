@@ -22,13 +22,15 @@
 	<acme:form-moment 	code="auditor.audit-report.form.label.start-moment" path="startMoment"/>
 	<acme:form-moment 	code="auditor.audit-report.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="auditor.audit-report.form.label.more-info" path="moreInfo"/>
+	<acme:form-select code="auditor.audit-report.form.label.project" path="project" choices="${project}" readonly="${draftMode}" />
 
 <jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
 			<acme:form-double 	code="auditor.audit-report.form.label.months-active" path="monthsActive" readonly="true"/>
 			<acme:form-integer 	code="auditor.audit-report.form.label.hours" path="hours" readonly="true"/>
 			
-			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>			
+			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>
+			<acme:submit code="auditor.audit-report.form.button.link" action="/auditor/audit-report/link"/>			
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:form-double 	code="auditor.audit-report.form.label.months-active" path="monthsActive" readonly="true"/>
