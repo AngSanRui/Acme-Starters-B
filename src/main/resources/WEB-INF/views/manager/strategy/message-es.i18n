@@ -1,4 +1,5 @@
 member.strategy.list.title = Listado de estrategias
+manager.strategy.list.title = Listado de estrategias
 
 member.strategy.list.label.ticker = Referencia
 member.strategy.list.label.name = Nombre

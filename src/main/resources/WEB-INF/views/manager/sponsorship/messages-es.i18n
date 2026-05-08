@@ -10,6 +10,7 @@
 
 member.membership.form.title = Formulario de membership
 member.membership.list.title = Listado de memberships
+manager.sponsorship.list.title = Listado de sponsorship
 
 member.membership.form.label.ticker = Ticker:
 member.membership.form.label.name = Nombre: 

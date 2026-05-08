@@ -29,9 +29,7 @@ public class ManagerInventionShowService extends AbstractService<Manager, Invent
 	@Override
 	public void authorise() {
 		boolean status;
-		Integer inventionId;
 
-		inventionId = super.getRequest().getData("id", int.class);
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.managerId = this.repository.findManagerIdByAccountId(this.userAccountId);
 		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class) && this.invention.getProject().getManager().getId() == this.managerId;

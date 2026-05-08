@@ -1,6 +1,6 @@
 key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson,key:project
 #base entity
-campaign-00,AA00-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,spokesperson-00,project-00
+campaign-00,AA00-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,spokesperson-00,project-00
 #ticker- standard variations
 campaign-01,AA99-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,spokesperson-00,null
 campaign-02,ZZ00-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,spokesperson-00,null
@@ -64,7 +64,7 @@ campaign-49,AA47-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum do
 campaign-50,AA48-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,spokesperson-00,null
 #draftMode- no singular values,"","","","","","","",""
 #spokesperson- standard variations
-campaign-51,AA49-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,spokesperson-01,project-01
+campaign-51,AA49-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,spokesperson-01,project-01
 campaign-52,AA50-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,spokesperson-02,null
 campaign-53,AA51-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,spokesperson-03,null
 campaign-54,AA52-TICKER,"Lorem ipsum dolor sit amet  consectetu","Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,spokesperson-04,null

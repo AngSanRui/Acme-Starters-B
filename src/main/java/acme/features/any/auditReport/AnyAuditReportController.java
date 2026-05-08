@@ -32,6 +32,8 @@ public class AnyAuditReportController extends AbstractController<Any, AuditRepor
 
 		super.addBasicCommand("list", AnyAuditReportListService.class);
 		super.addBasicCommand("show", AnyAuditReportShowService.class);
+
+		super.addCustomCommand("projectList", "list", AnyAuditReportProjectListService.class);
 	}
 
 }

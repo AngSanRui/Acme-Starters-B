@@ -16,15 +16,15 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox 	code="member.invention.form.label.ticker" path="ticker"/>
-	<acme:form-textbox 	code="member.invention.form.label.name" path="name"/>
-	<acme:form-textarea code="member.invention.form.label.description" path="description"/>
-	<acme:form-moment 	code="member.invention.form.label.start-moment" path="startMoment"/>
-	<acme:form-moment 	code="member.invention.form.label.end-moment" path="endMoment"/>
-	<acme:form-url 		code="member.invention.form.label.more-info" path="moreInfo"/>
-	<acme:form-checkbox	code="member.invention.form.label.draft-mode" path="draftMode"/>
-	<acme:form-double 	code="member.invention.form.label.months-active" path="monthsActive"/>
-	<acme:form-money 	code="member.invention.form.label.cost" path="cost"/>
+	<acme:form-textbox 	code="manager.invention.form.label.ticker" path="ticker"/>
+	<acme:form-textbox 	code="manager.invention.form.label.name" path="name"/>
+	<acme:form-textarea code="manager.invention.form.label.description" path="description"/>
+	<acme:form-moment 	code="manager.invention.form.label.start-moment" path="startMoment"/>
+	<acme:form-moment 	code="manager.invention.form.label.end-moment" path="endMoment"/>
+	<acme:form-url 		code="manager.invention.form.label.more-info" path="moreInfo"/>
+	<acme:form-checkbox	code="manager.invention.form.label.draft-mode" path="draftMode"/>
+	<acme:form-double 	code="manager.invention.form.label.months-active" path="monthsActive"/>
+	<acme:form-money 	code="manager.invention.form.label.cost" path="cost"/>
 <%--
 	<acme:button code="member.invention.form.button.parts" action="/member/part/list?inventionId=${id}"/>
 	<acme:button code="member.invention.form.button.inventor" action="/member/inventor/show?inventorId=${inventor.id}"/>
