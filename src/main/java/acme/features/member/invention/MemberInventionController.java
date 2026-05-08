@@ -20,6 +20,5 @@ public class MemberInventionController extends AbstractController<Member, Invent
 
 		super.addBasicCommand("list", MemberInventionListService.class);
 		super.addBasicCommand("show", MemberInventionShowService.class);
-		super.addBasicCommand("update", MemberInventionAddService.class);
 	}
 }

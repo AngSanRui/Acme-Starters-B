@@ -20,6 +20,5 @@ public class MemberStrategyController extends AbstractController<Member, Strateg
 
 		super.addBasicCommand("list", MemberStrategyListService.class);
 		super.addBasicCommand("show", MemberStrategyShowService.class);
-		super.addBasicCommand("update", MemberStrategyAddService.class);
 	}
 }

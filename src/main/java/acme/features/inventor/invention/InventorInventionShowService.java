@@ -1,11 +1,16 @@
 
 package acme.features.inventor.invention;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.invention.Invention;
+import acme.entities.projects.Project;
 import acme.realms.inventor.Inventor;
 
 @Service
@@ -15,6 +20,8 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 
 	@Autowired
 	private InventorInventionRepository	repository;
+
+	private Collection<Project>			projects;
 
 	private Invention					invention;
 
@@ -27,6 +34,9 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 
 		inventionId = super.getRequest().getData("id", int.class);
 		this.invention = this.repository.findInventionsById(inventionId);
+		this.projects = this.repository.findProjectsByUserAccountId(this.invention.getInventor().getUserAccount().getId());
+		if (this.invention.getProject() != null && !this.projects.contains(this.invention.getProject()))
+			this.projects.add(this.invention.getProject());
 	}
 
 	@Override
@@ -40,6 +50,17 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.invention, "inventor", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "cost");
+		SelectChoices choices;
+		Project visible = null;
+
+		if (this.invention.getProject() != null)
+			visible = this.invention.getProject();
+		choices = SelectChoices.from(this.projects, "title", visible);
+
+		Tuple tuple;
+		tuple = super.unbindObject(this.invention, //
+			"ticker", "startMoment", "endMoment", "name", //
+			"description", "moreInfo", "draftMode", "monthsActive", "cost");
+		tuple.put("project", choices);
 	}
 }

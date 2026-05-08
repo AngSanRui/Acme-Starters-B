@@ -1,8 +1,13 @@
 member.strategy.list.title = Listado de estrategias
 manager.strategy.list.title = Listado de estrategias
 
+member.strategy.list.label.member = Miembro
 member.strategy.list.label.ticker = Referencia
 member.strategy.list.label.name = Nombre
+member.strategy.list.label.start-moment = Momento de inicio
+member.strategy.list.label.end-moment = Momento de finalizacion
+
+
 member.strategy.list.label.months-active = Meses activo:
 member.strategy.list.label.expected-percentage = Porcentaje esperado: 
 member.strategy.list.label.draft-mode = Modo Borrador
