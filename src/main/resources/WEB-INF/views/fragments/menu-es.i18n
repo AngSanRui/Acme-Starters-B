@@ -38,6 +38,7 @@ master.menu.authenticated.list-strategies = Listar estrategias
 master.menu.administrator.list-user-accounts = Ver cuentas de usuario
 master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
+master.menu.manager.show-dashboard = Enseñar panel
 master.menu.administrator.shut-system-down = Parar el sistema
 
 # master.menu.provider ########################################################

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.invention.Invention;
 import acme.entities.invention.Part;
+import acme.entities.projects.Project;
 
 @Repository
 public interface InventorInventionRepository extends AbstractRepository {
@@ -24,4 +25,7 @@ public interface InventorInventionRepository extends AbstractRepository {
 
 	@Query("select p from Part p where p.invention.id = :inventionId")
 	Collection<Part> findPartsByInventionId(int inventionId);
+
+	@Query("SELECT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
+	Collection<Project> findProjectsByUserAccountId(int userAccountId);
 }

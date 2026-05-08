@@ -37,6 +37,7 @@ master.menu.anonymous.list-strategies = List strategies
 master.menu.administrator.list-user-accounts = List user accounts
 master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
+master.menu.manager.show-dashboard = Show dashboard
 master.menu.administrator.shut-system-down = Shut system down
 
 # master.menu.provider ########################################################
