@@ -1,14 +1,3 @@
-/*
- * EmployerJobShowService.java
- *
- * Copyright (C) 2012-2026 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
 
 package acme.features.sponsor.sponsorship;
 
@@ -25,7 +14,7 @@ import acme.entities.sponsorship.Sponsorship;
 import acme.realms.sponsorship.Sponsor;
 
 @Service
-public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Sponsorship> {
+public class SponsorSponsorshipLinkProyectService extends AbstractService<Sponsor, Sponsorship> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -49,20 +38,45 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null && //
-			this.sponsorship.getSponsor().isPrincipal();
-
+		status = this.sponsorship != null && !this.sponsorship.getDraftMode() && this.sponsorship.getSponsor().isPrincipal();
 		super.setAuthorised(status);
 	}
 
 	@Override
+	public void bind() {
+		super.bindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "project");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.sponsorship);
+		{
+			boolean correctNumberOfDonations;
+			correctNumberOfDonations = this.repository.getNumberOfDonationsBySponsorshipId(this.sponsorship.getId()) >= 1;
+			super.state(correctNumberOfDonations, "*", "acme.validation.numberOfDonations.message");
+		}
+		{
+			boolean isBefore;
+			isBefore = this.sponsorship.getStartMoment().before(this.sponsorship.getEndMoment());
+			super.state(isBefore, "startMoment", "acme.validation.correctDates.message");
+			super.state(isBefore, "endMoment", "acme.validation.correctDates.message");
+		}
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.sponsorship);
+	}
+
+	@Override
 	public void unbind() {
-		SelectChoices choices;
 		Tuple tuple;
+		SelectChoices choices;
+
 		Collection<Project> projects = this.repository.findPublishedProjects();
 		choices = SelectChoices.from(projects, "title", this.sponsorship.getProject());
 
-		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "totalMoney", "draftMode");
+		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 		tuple.put("project", choices);
 	}
 

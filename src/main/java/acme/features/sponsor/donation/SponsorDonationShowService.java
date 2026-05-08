@@ -56,6 +56,7 @@ public class SponsorDonationShowService extends AbstractService<Sponsor, Donatio
 	@Override
 	public void unbind() {
 		SelectChoices choices;
+
 		choices = SelectChoices.from(DonationKind.class, this.donation.getKind());
 		Tuple tuple;
 
