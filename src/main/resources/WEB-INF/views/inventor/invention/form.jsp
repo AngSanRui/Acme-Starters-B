@@ -16,8 +16,7 @@
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|link') && draftMode == false}">
-			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
-			<acme:submit code="inventor.invention.form.button.link" action="/inventor/invention/link"/>			
+			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>		
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish|link') && draftMode == true}">
 			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
