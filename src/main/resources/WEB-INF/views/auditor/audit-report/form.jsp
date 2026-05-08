@@ -22,7 +22,7 @@
 	<acme:form-moment 	code="auditor.audit-report.form.label.start-moment" path="startMoment"/>
 	<acme:form-moment 	code="auditor.audit-report.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="auditor.audit-report.form.label.more-info" path="moreInfo"/>
-	<acme:form-select code="auditor.audit-report.form.label.project" path="project" choices="${project}" readonly="${draftMode}" />
+	<acme:form-select code="auditor.audit-report.form.label.project" path="projects" choices="${project}" readonly="${draftMode}" />
 
 <jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">

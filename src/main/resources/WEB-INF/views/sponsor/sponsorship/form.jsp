@@ -22,7 +22,7 @@
 	<acme:form-moment code="sponsor.sponsorship.form.label.startMoment" path="startMoment"/>
 	<acme:form-moment code="sponsor.sponsorship.form.label.endMoment" path="endMoment"/>
 	<acme:form-url code="sponsor.sponsorship.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-select code="sponsor.sponsorship.form.label.project" path="project" choices="${project}" readonly="${draftMode}"/>
+	<acme:form-select code="sponsor.sponsorship.form.label.project" path="projects" choices="${project}" readonly="${draftMode}"/>
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|link') && draftMode == false}">
