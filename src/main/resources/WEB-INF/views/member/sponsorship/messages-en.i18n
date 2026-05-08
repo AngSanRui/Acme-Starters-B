@@ -1,0 +1,35 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+member.membership.form.title = membership form 
+member.membership.list.title = Listing of membership
+
+member.membership.form.label.ticker = Ticker:
+member.membership.form.label.name = Name: 
+member.membership.form.label.description = Description:
+member.membership.form.label.startMoment = Start Moment:
+member.membership.form.label.endMoment = End Moment:
+member.membership.form.label.moreInfo = More info:
+member.membership.form.label.monthsActive = Months Active:
+member.membership.form.label.totalMoney = Total Money:
+member.membership.form.label.draftMode = Draft Mode:
+
+	
+
+member.membership.list.label.ticker = Ticker
+member.membership.list.label.startMoment = Start Moment
+member.membership.list.label.endMoment = End Moment
+member.membership.list.label.name = Name
+member.membership.list.label.monthsActive = Months Active
+member.membership.list.label.totalMoney = Total Money
+member.membership.list.label.description = Description
+member.membership.list.label.moreInfo = More Info
+member.membership.list.label.draftMode = Draft Mode
+

@@ -9,6 +9,7 @@ import acme.client.components.principals.UserAccount;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
 import acme.realms.inventor.Inventor;
+import acme.realms.members.Member;
 
 @Service
 public class AuthenticatedInventorCreateService extends AbstractService<Authenticated, Inventor> {
@@ -18,6 +19,8 @@ public class AuthenticatedInventorCreateService extends AbstractService<Authenti
 	private AuthenticatedInventorRepository	repository;
 
 	private Inventor						inventor;
+
+	private Member							member;
 
 	// AbstractService interface -------------------------------------------
 
@@ -32,6 +35,9 @@ public class AuthenticatedInventorCreateService extends AbstractService<Authenti
 
 		this.inventor = new Inventor();
 		this.inventor.setUserAccount(userAccount);
+
+		this.member = new Member();
+		this.member.setUserAccount(userAccount);
 	}
 
 	@Override
@@ -55,6 +61,8 @@ public class AuthenticatedInventorCreateService extends AbstractService<Authenti
 	@Override
 	public void execute() {
 		this.repository.save(this.inventor);
+		if (!super.getRequest().getPrincipal().hasRealmOfType(Member.class))
+			this.repository.save(this.member);
 	}
 
 	@Override

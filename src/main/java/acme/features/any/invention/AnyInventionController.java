@@ -21,5 +21,6 @@ public class AnyInventionController extends AbstractController<Any, Invention> {
 
 		super.addBasicCommand("list", AnyInventionListService.class);
 		super.addBasicCommand("show", AnyInventionShowService.class);
+		super.addCustomCommand("projectList", "list", AnyInventionProjectListService.class);
 	}
 }

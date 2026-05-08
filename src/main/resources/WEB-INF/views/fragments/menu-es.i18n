@@ -17,6 +17,7 @@ master.menu.anonymous.list-inventions = Listar invenciones
 master.menu.anonymous.list-audit-reports = Listar informes de auditoria
 master.menu.anonymous.list-sponsorships = Listar sponsorships
 master.menu.anonymous.list-campaigns = Lista de campañas
+master.menu.anonymous.list-projects = Lista de proyectos
 
 
 # master.menu.authenticated #######################################################
@@ -27,6 +28,7 @@ master.menu.authenticated.list-inventions = Listar invenciones
 master.menu.authenticated.list-audit-reports = Listar informes de auditoria
 master.menu.authenticated.list-sponsorships = Listar sponsorships
 master.menu.authenticated.list-campaigns = Lista de campañas
+master.menu.authenticated.list-projects = Lista de proyectos
 
 
 # master.menu.administrator ###################################################
@@ -74,6 +76,17 @@ master.menu.sponsor.list-sponsorships = Lista las sponsorships publicadas
 master.menu.fundraiser = Recaudador de fondos
 master.menu.fundraiser.list-my-strategies = Administrar mis estrategias
 
+
+# master.menu.member ###################################################
+
+master.menu.member = Miembro
+master.menu.member.list-projects = Lista de projectos
+
+# master.menu.manager ###################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-projects = Listar mis projectos
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -86,6 +99,8 @@ master.menu.user-account.become-inventor = Hazte inventor
 master.menu.user-account.inventor-profile = Perfil de inventor
 master.menu.user-account.become-sponsor = Hacerse sponsor
 master.menu.user-account.sponsor-profile = Perfil de sponsor
+master.menu.user-account.become-manager = Hacerse manager
+master.menu.user-account.manager-profile = Perfil de manager
 master.menu.user-account.become-auditor = Hacerse auditor
 master.menu.user-account.auditor-profile = Perfil del auditor
 master.menu.user-account.become-spokesperson = Hacerse portavoz

@@ -17,6 +17,7 @@ master.menu.anonymous.list-inventions = List inventions
 master.menu.anonymous.list-audit-reports = List audit reports
 master.menu.anonymous.list-sponsorships = List sponsorship
 master.menu.anonymous.list-campaigns = List campaign
+master.menu.anonymous.list-projects = List projects
 
 # master.menu.authenticated #######################################################
 
@@ -26,6 +27,7 @@ master.menu.authenticated.list-inventions = List inventions
 master.menu.authenticated.list-audit-reports = List audit reports
 master.menu.authenticated.list-sponsorships = List sponsorship
 master.menu.authenticated.list-campaigns = List campaign
+master.menu.authenticated.list-projects = List projects
 
 
 # master.menu.administrator ###################################################
@@ -71,6 +73,16 @@ master.menu.sponsor.list-sponsorships = List published sponsorships
 master.menu.fundraiser = Fundraiser
 master.menu.fundraiser.list-my-strategies = List my strategies
 
+# master.menu.member ###################################################
+
+master.menu.member = Member
+master.menu.member.list-projects = List projects
+
+# master.menu.manager ###################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-projects = List projects
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -83,6 +95,8 @@ master.menu.user-account.become-inventor = Become a inventor
 master.menu.user-account.inventor-profile = Inventor profile
 master.menu.user-account.become-sponsor = Become a sponsor
 master.menu.user-account.sponsor-profile = Sponsor profile
+master.menu.user-account.become-manager = Become a manager
+master.menu.user-account.manager-profile = Manager profile
 master.menu.user-account.become-auditor = Become a auditor
 master.menu.user-account.auditor-profile = Auditor profile
 master.menu.user-account.become-spokesperson = Become a spokesperson

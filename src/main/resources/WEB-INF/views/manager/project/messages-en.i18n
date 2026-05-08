@@ -1,0 +1,35 @@
+manager.project.list.title = Listing of projects
+
+manager.project.list.label.ticker = Ticker
+manager.project.list.label.title = Título
+manager.project.list.label.start-moment = Start moment
+manager.project.list.label.end-moment = End moment
+manager.project.list.label.username = Username
+manager.project.list.label.role = Role
+
+manager.project.form.title = Project form
+
+manager.project.form.label.auditor = manager:
+manager.project.form.label.ticker = Ticker:
+manager.project.form.label.username = Username:
+manager.project.form.label.role = Role:
+manager.project.form.label.title = Title:
+manager.project.form.label.description = Description:
+manager.project.form.label.keyWords = Key Words:
+manager.project.form.label.start-moment = Start moment:
+manager.project.form.label.end-moment = End moment:
+manager.project.form.label.more-info = More info:
+manager.project.form.label.draft-mode = Draft mode:
+
+manager.member.list.button.createMember = Add member
+manager.project.form.button.inventions = Inventions
+manager.project.form.button.audit-report = Audit Reports
+manager.project.form.button.campaign = Campaigns
+manager.project.form.button.sponsorship = Sponsorships
+manager.project.form.button.strategy = Strategies
+manager.project.form.button.member = Members
+manager.project.form.button.create = Create
+manager.project.form.button.worksIn = Members
+manager.project.form.button.publish = Publish
+manager.project.form.button.delete = Delete
+manager.project.form.button.update = Update

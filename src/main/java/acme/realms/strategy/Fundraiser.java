@@ -41,4 +41,5 @@ public class Fundraiser extends AbstractRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
 }

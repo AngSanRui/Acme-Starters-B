@@ -1,0 +1,32 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2026 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for member particular
+# purposes.  The copyright owner does not offer member warranties or representations, nor do
+# they accept member liabilities with respect to them.
+
+member.invention.list.title = Listado de informes de invenciones
+
+member.invention.list.label.ticker = Referencia
+member.invention.list.label.name = Nombre
+member.invention.list.label.start-moment = Momento de inicio
+member.invention.list.label.end-moment = Momento de acabado
+
+member.invention.form.title = Formulario de informe de invención
+
+member.invention.form.label.inventor = Inventor:
+member.invention.form.label.ticker = Referencia:
+member.invention.form.label.name = Nombre:
+member.invention.form.label.description = Descripcion:
+member.invention.form.label.start-moment = Momento de inicio:
+member.invention.form.label.end-moment = Momento de acabado:
+member.invention.form.label.more-info = Mas informacion:
+member.invention.form.label.draft-mode = Modo borrador:
+member.invention.form.label.months-active = Meses activo:
+member.invention.form.label.cost = Coste:
+
+member.invention.form.button.parts = Listar partes de invención
+member.invention.form.button.inventor = Mostrar cuenta del inventor
