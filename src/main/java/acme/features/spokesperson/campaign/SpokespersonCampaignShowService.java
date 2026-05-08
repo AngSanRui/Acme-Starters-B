@@ -35,7 +35,7 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 		id = super.getRequest().getData("id", int.class);
 		this.campaign = this.repository.findCampaignById(id);
 		this.projects = this.repository.findProjectsByUserAccountId(this.campaign.getSpokesperson().getUserAccount().getId());
-		if (this.campaign.getProject() != null)
+		if (this.campaign.getProject() != null && !this.projects.contains(this.campaign.getProject()))
 			this.projects.add(this.campaign.getProject());
 	}
 

@@ -35,7 +35,7 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 		inventionId = super.getRequest().getData("id", int.class);
 		this.invention = this.repository.findInventionsById(inventionId);
 		this.projects = this.repository.findProjectsByUserAccountId(this.invention.getInventor().getUserAccount().getId());
-		if (this.invention.getProject() != null)
+		if (this.invention.getProject() != null && !this.projects.contains(this.invention.getProject()))
 			this.projects.add(this.invention.getProject());
 	}
 
