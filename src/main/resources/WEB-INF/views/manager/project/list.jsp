@@ -9,3 +9,5 @@
 	<acme:list-column code="manager.project.list.label.start-moment" path="startMoment" width="20%"/>
 	<acme:list-column code="manager.project.list.label.end-moment" path="endMoment" width="20%"/>
 </acme:list>
+
+<acme:button code="manager.project.form.button.create" action="/manager/project/create"/>

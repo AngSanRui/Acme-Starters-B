@@ -8,8 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-member.membership.form.title = membership form 
+member.membership.form.title = Membership form 
 member.membership.list.title = Listing of membership
+manager.sponsorship.list.title = Listing of sponsorship
 
 member.membership.form.label.ticker = Ticker:
 member.membership.form.label.name = Name: 

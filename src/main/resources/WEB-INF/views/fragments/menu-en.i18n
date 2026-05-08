@@ -27,6 +27,7 @@ master.menu.authenticated.list-inventions = List inventions
 master.menu.authenticated.list-audit-reports = List audit reports
 master.menu.authenticated.list-sponsorships = List sponsorship
 master.menu.authenticated.list-campaigns = List campaign
+master.menu.authenticated.list-projects = List projects
 
 
 # master.menu.administrator ###################################################

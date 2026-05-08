@@ -74,7 +74,7 @@ project-57,PJ57-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor 
 project-58,PJ58-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,,TRUE,manager-00
 #moreInfo- singular values
 #draftMode- standard variations
-project-59,PJ59-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,manager-00
+#project-59,PJ59-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,FALSE,manager-00
 #draftMode- no singular values
 #manager- standard variations
 project-60,PJ60-TICKER,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,manager-01

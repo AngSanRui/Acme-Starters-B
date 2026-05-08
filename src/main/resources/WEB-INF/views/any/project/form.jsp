@@ -13,14 +13,13 @@
 	<acme:form-url 		code="any.project.form.label.more-info" path="moreInfo"/>
 	<acme:form-checkbox	code="any.project.form.label.draft-mode" path="draftMode"/>
 																		
-	<acme:button code="any.project.invention.form.button.inventions" action="/any/invention/projectList?projectId=${id}"/>
-<%--
-	<acme:button code="any.project.form.button.audit-report" action="/any/audit-report/list?projectId=${id}"/>
-	<acme:button code="any.project.form.button.campaign" action="/any/campaign/list?projectId=${id}"/>
-	<acme:button code="any.project.form.button.sponsorship" action="/any/sponsorship/list?projectId=${id}"/>
-	<acme:button code="any.project.form.button.strategy" action="/any/strategy/list?projectId=${id}"/>
+	<acme:button code="any.project.form.button.inventions" action="/any/invention/projectList?projectId=${id}"/>
+	<acme:button code="any.project.form.button.audit-report" action="/any/audit-report/projectList?projectId=${id}"/>
+	<acme:button code="any.project.form.button.campaign" action="/any/campaign/projectList?projectId=${id}"/>
+	<acme:button code="any.project.form.button.sponsorship" action="/any/sponsorship/projectList?projectId=${id}"/>
+	<acme:button code="any.project.form.button.strategy" action="/any/strategy/projectList?projectId=${id}"/>
 	
-
+<%--
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
 			<acme:button code="any.project.form.button.parts" action="/any/part/list?projectId=${id}"/>			

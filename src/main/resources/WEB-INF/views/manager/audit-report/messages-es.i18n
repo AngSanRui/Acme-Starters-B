@@ -8,7 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-member.audit-report.list.title = Listado de informes de memberia
+member.audit-report.list.title = Listado de informes de membresía
+manager.audit-report.list.title = Listado de informes de membresía
 
 member.audit-report.list.label.member = member
 member.audit-report.list.label.ticker = Referencia
