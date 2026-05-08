@@ -52,8 +52,28 @@ public class ProjectValidator extends AbstractValidator<ValidProject, Project> {
 
 				if (!isDraft && project.getStartMoment() != null && project.getEndMoment() != null)
 					correctDates = MomentHelper.isBefore(project.getStartMoment(), project.getEndMoment());
-				super.state(context, correctDates, "kickOff", "acme.validation.correctDates.message");
-				super.state(context, correctDates, "closeOut", "acme.validation.correctDates.message");
+				super.state(context, correctDates, "start-moment", "acme.validation.correctDates.message");
+				super.state(context, correctDates, "end-moment", "acme.validation.correctDates.message");
+			}
+			if (project.getStartMoment() != null && project.getEndMoment() != null) {
+				boolean startBeforeEnd;
+
+				startBeforeEnd = MomentHelper.isBeforeOrEqual(project.getStartMoment(), project.getEndMoment());
+
+				super.state(context, startBeforeEnd, "endMoment", "acme.validation.sponsorship.start-after-end.message");
+			}
+			{	//check that ticker is unique
+				if (project.getTicker() != null) {
+					boolean tickerIsUnique;
+
+					Project s = this.repository.isTickerUnique(project.getTicker());
+					if (s == null || s.getId() == project.getId())
+						tickerIsUnique = true;
+					else
+						tickerIsUnique = false;
+
+					super.state(context, tickerIsUnique, "ticker", "acme.validation.sponsorship.ticker-not-unique.message");
+				}
 			}
 			result = !super.hasErrors(context);
 		}

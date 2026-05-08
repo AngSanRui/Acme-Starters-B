@@ -35,7 +35,7 @@ public class ManagerWorksInListService extends AbstractService<Manager, WorksIn>
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		managerId = this.repository.findManagerIdByAccountId(userAccountId);
 		//Chequea que el rol sea manager, que el proyecto exista y que el proyecto pertenezca al manager
-		status = super.getRequest().getPrincipal().hasRealmOfType(Manager.class) && this.project != null && this.project.getManager().getId() == managerId;
+		status = this.project != null && super.getRequest().getPrincipal().hasRealmOfType(Manager.class) && this.project.getManager().getId() == managerId;
 		super.setAuthorised(status);
 	}
 

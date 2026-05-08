@@ -29,7 +29,7 @@ public class AnyAuditReportProjectListService extends AbstractService<Any, Audit
 		Integer projectId;
 
 		projectId = this.getRequest().getData("projectId", int.class);
-		status = !this.repository.findProjectByProjectId(projectId).getDraftMode();
+		status = this.repository.findProjectByProjectId(projectId) != null && !this.repository.findProjectByProjectId(projectId).getDraftMode();
 		super.setAuthorised(status);
 	}
 

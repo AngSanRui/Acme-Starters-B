@@ -1,4 +1,7 @@
-manager.works-in.form.title = Add member
+manager.works-in.form.title = Member form
 
 manager.works-in.form.label.role = Role:
 manager.works-in.form.label.member = Member:
+manager.works-in.list.title = List of members
+
+manager.member.list.button.deleteMember = Delete

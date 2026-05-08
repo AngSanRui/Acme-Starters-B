@@ -50,7 +50,9 @@ public class ManagerProjectPublish extends AbstractService<Manager, Project> {
 
 	@Override
 	public void validate() {
-		super.validateObject(this.project);
+		Project ee = this.project;
+		ee.setDraftMode(false);
+		super.validateObject(ee);
 	}
 
 	@Override

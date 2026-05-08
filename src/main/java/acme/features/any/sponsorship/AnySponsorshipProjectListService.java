@@ -29,7 +29,7 @@ public class AnySponsorshipProjectListService extends AbstractService<Any, Spons
 		Integer projectId;
 
 		projectId = this.getRequest().getData("projectId", int.class);
-		status = !this.repository.findProjectByProjectId(projectId).getDraftMode();
+		status = this.repository.findProjectByProjectId(projectId) != null && !this.repository.findProjectByProjectId(projectId).getDraftMode();
 		super.setAuthorised(status);
 	}
 

@@ -48,8 +48,13 @@ public class ManagerWorksInShowService extends AbstractService<Manager, WorksIn>
 	public void load() {
 		Integer worksIn = super.getRequest().getData("id", Integer.class);
 		this.relacion = this.repository.findWorksInById(worksIn);
-		this.project = this.relacion.getProject();
-		this.miembros = this.repository.findMemberProjectById(this.project.getId());
+		if (this.relacion != null) {
+			this.project = this.relacion.getProject();
+			this.miembros = this.repository.findMemberProjectById(this.project.getId());
+		} else {
+			this.project = null;
+			this.miembros = null;
+		}
 	}
 
 	@Override

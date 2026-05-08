@@ -41,15 +41,20 @@ public class WorkInValidator extends AbstractValidator<ValidWorksIn, WorksIn> {
 				boolean uniqueProjectMember;
 				WorksIn existingProjectMember = null;
 
-				if (projectMember != null)
+				if (projectMember != null && projectMember.getMember() != null)
 					existingProjectMember = this.worksInRepository.findByRoleAndMemberIdAndProjectId(projectMember.getRole(), projectMember.getMember().getId(), projectMember.getProject().getId());
+				else
+					super.state(context, false, "*", "acme.validation.member-error");
 				uniqueProjectMember = existingProjectMember == null || existingProjectMember.equals(projectMember);
 
 				super.state(context, uniqueProjectMember, "*", "acme.validation.duplicated-member");
 			}
-			{
+			if (projectMember != null && projectMember.getMember() != null) {
 				boolean hasRole = false;
 				switch (projectMember.getRole()) {
+				case null: {
+					super.state(context, false, "*", "acme.validation.role-error");
+				}
 				case FUNDRAISER: {
 					hasRole = projectMember.getMember().getUserAccount().hasRealmOfType(Fundraiser.class);
 					break;
