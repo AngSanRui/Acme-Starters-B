@@ -22,5 +22,9 @@ manager.project.form.button.audit-report = Audit Reports
 manager.project.form.button.campaign = Campaigns
 manager.project.form.button.sponsorship = Sponsorships
 manager.project.form.button.strategy = Strategies
+manager.project.form.button.create = Create project
+manager.project.form.button.update = Update project
+manager.project.form.button.delete = Delete project
+manager.project.form.button.publish = Publish project
 
 
