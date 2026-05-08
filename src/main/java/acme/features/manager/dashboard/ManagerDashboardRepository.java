@@ -48,6 +48,6 @@ public interface ManagerDashboardRepository extends AbstractRepository {
 	@Query("select i from Invention i where i.project.id = :projectId")
 	Collection<Invention> findInventionsByProjectId(int projectId);
 
-	@Query("select count(pm) from ProjectMember pm where pm.project.id = :projectId")
+	@Query("select count(w) from WorksIn w where w.project.id = :projectId")
 	Integer countMembersByProject(int projectId);
 }

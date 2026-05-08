@@ -85,7 +85,7 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 				effort = totalActiveMonths / membersCount;
 			projectEfforts.add(effort);
 
-			if (effort < minEffort)
+			if (effort < minEffort || minEffort == 0.0)
 				minEffort = effort;
 			if (effort > maxEffort)
 				maxEffort = effort;
