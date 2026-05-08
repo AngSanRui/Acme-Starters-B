@@ -51,8 +51,11 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 	@Override
 	public void unbind() {
 		SelectChoices choices;
+		Project visible = null;
 
-		choices = SelectChoices.from(this.projects, "title", this.projects.stream().filter(p -> this.invention.getProject().getId() == p.getId()).findFirst().orElse(null));
+		if (this.invention.getProject() != null)
+			visible = this.invention.getProject();
+		choices = SelectChoices.from(this.projects, "title", visible);
 
 		Tuple tuple;
 		tuple = super.unbindObject(this.invention, //

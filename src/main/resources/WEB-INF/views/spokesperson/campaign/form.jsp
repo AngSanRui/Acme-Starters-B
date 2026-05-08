@@ -10,6 +10,8 @@
 	<acme:form-moment 	code="spokesperson.campaign.form.label.start-moment" path="startMoment"/>
 	<acme:form-moment 	code="spokesperson.campaign.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="spokesperson.campaign.form.label.more-info" path="moreInfo"/>
+	<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${project}"/>
+	
 	<jstl:choose>
 		<jstl:when test="${_command != 'create'}">
 			<acme:form-checkbox	code="spokesperson.campaign.form.label.draft-mode" path="draftMode"/>
@@ -19,13 +21,15 @@
 	</jstl:choose>
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>			
+			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
+			<acme:submit code="spokesperson.campaign.form.button.link" action="/spokesperson/campaign/link"/>								
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
 			<acme:submit code="spokesperson.campaign.form.button.update" action="/spokesperson/campaign/update"/>
 			<acme:submit code="spokesperson.campaign.form.button.delete" action="/spokesperson/campaign/delete"/>
 			<acme:submit code="spokesperson.campaign.form.button.publish" action="/spokesperson/campaign/publish"/>
+			<acme:submit code="spokesperson.campaign.form.button.link" action="/spokesperson/campaign/link"/>				
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="spokesperson.campaign.form.button.create" action="/spokesperson/campaign/create"/>
