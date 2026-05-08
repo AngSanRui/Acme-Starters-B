@@ -37,7 +37,7 @@ public class ManagerAuditReportListService extends AbstractService<Manager, Audi
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.managerId = this.repository.findManagerIdByAccountId(this.userAccountId);
 		this.project = this.repository.findProjectById(super.getRequest().getData("projectId", int.class));
-		status = super.getRequest().getPrincipal().hasRealmOfType(Manager.class) && this.project.getManager().getId() == this.managerId;
+		status = this.project != null && super.getRequest().getPrincipal().hasRealmOfType(Manager.class) && this.project.getManager().getId() == this.managerId;
 		super.setAuthorised(status);
 	}
 

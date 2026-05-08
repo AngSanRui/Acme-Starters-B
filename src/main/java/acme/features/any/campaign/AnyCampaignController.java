@@ -21,6 +21,7 @@ public class AnyCampaignController extends AbstractController<Any, Campaign> {
 
 		super.addBasicCommand("list", AnyCampaignListService.class);
 		super.addBasicCommand("show", AnyCampaignShowService.class);
+		super.addCustomCommand("projectList", "list", AnyCampaignProjectListService.class);
 	}
 
 }

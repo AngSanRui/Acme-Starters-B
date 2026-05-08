@@ -1,0 +1,10 @@
+
+member.member.list.title = Listing of members from a project
+
+member.member.list.label.userAccount = Username
+
+member.member.form.title = Member
+
+member.member.form.label.userAccount = Username
+member.member.form.label.fullName = Full name
+member.member.form.label.email = Email

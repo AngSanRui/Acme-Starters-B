@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 member.audit-report.list.title = Listing of audit reports
+manager.audit-report.list.title = Listing of audit reports
 
 member.audit-report.list.label.member = member
 member.audit-report.list.label.ticker = Ticker

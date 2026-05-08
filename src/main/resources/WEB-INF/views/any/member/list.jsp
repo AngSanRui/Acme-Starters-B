@@ -16,8 +16,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="any.invention.list.label.ticker" path="ticker" width="20%"/>
-	<acme:list-column code="any.invention.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="any.invention.list.label.start-moment" path="startMoment" width="30%"/>
-	<acme:list-column code="any.invention.list.label.end-moment" path="endMoment" width="30%"/>
+	<acme:list-column code="any.member.list.label.userAccount" path="userAccount" width="100%"/>
 </acme:list>
+
+
+
