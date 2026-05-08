@@ -7,6 +7,8 @@ manager.project.list.label.end-moment = Momento de acabado
 
 manager.project.form.title = Formulario de informe de projectos
 
+manager.project.form.label.username = Nombre de usuario 
+manager.project.form.label.role = Rol
 manager.project.form.label.manager = manager:
 manager.project.form.label.ticker = Referencia:
 manager.project.form.label.title = Título:
@@ -26,5 +28,8 @@ manager.project.form.button.create = Crear proyecto
 manager.project.form.button.update = Actualizar proyecto
 manager.project.form.button.delete = Borrar proyecto
 manager.project.form.button.publish = Publicar proyecto
+manager.project.form.button.worksIn = Miembros
+
+manager.member.list.button.createMember = Añadir Miembros
 
 
