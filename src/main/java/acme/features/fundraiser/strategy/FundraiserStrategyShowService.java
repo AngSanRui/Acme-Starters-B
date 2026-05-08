@@ -35,7 +35,7 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 		strategyId = super.getRequest().getData("id", int.class);
 		this.strategy = this.repository.findStrategyById(strategyId);
 		this.projects = this.repository.findProjectsByUserAccountId(this.strategy.getFundraiser().getUserAccount().getId());
-		if (this.strategy.getProject() != null)
+		if (this.strategy.getProject() != null && !this.projects.contains(this.strategy.getProject()))
 			this.projects.add(this.strategy.getProject());
 	}
 
