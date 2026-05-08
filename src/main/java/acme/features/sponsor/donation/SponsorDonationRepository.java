@@ -32,5 +32,4 @@ public interface SponsorDonationRepository extends AbstractRepository {
 
 	@Query("select d from Donation d where d.sponsorship.id = :id")
 	Collection<Donation> findDonationsBySponsorshipId(int id);
-
 }
