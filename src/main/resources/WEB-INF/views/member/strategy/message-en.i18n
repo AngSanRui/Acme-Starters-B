@@ -4,7 +4,7 @@ member.strategy.list.label.member = member
 member.strategy.list.label.ticker = Ticker
 member.strategy.list.label.name = Name
 member.strategy.list.label.start-moment = Start moment
-member.strategy.lsit.label.end-moment = End moment
+member.strategy.list.label.end-moment = End moment
 
 member.strategy.list.button.create = Create
 

@@ -6,6 +6,10 @@ member.strategy.list.label.months-active = Meses activo:
 member.strategy.list.label.expected-percentage = Porcentaje esperado: 
 member.strategy.list.label.draft-mode = Modo Borrador
 
+member.strategy.list.label.member = Miembro
+member.strategy.list.label.start-moment = Momento de inicio
+member.strategy.list.label.end-moment = Momento de acabado
+
 member.strategy.list.button.create = Crear
 
 member.strategy.form.title = Formulario de estrategias
