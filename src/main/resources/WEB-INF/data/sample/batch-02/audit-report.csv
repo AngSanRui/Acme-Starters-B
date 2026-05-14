@@ -1,0 +1,3 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:auditor,key:project
+audit-report-91,UU99-TICKER,PUB-AUDIT,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/01 00:02,2039/12/31 23:59,http://lorem.com/ipsum,FALSE,auditor-01,null
+audit-report-92,JJ00-TICKER,OTHER-AUDIT,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2026/01/01 00:00,2026/01/01 23:00,http://lorem.com/ipsum,TRUE,auditor-02,null

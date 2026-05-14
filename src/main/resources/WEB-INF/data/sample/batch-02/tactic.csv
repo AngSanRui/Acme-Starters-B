@@ -1,0 +1,5 @@
+key,name,notes,expectedPercentage,kind,draftMode,key:strategy
+#base entity
+tactic-91,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,TRUE,strategy-81
+tactic-92,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,TRUE,strategy-82
+tactic-90,Lorem ipsum dolor sit amet  consectetu,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,50,SUBTLE,TRUE,strategy-83
