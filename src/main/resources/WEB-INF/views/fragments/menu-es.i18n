@@ -34,6 +34,7 @@ master.menu.authenticated.list-projects = Lista de proyectos
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.list-advertisements = Listar anuncios
 master.menu.authenticated.list-strategies = Listar estrategias
 master.menu.administrator.list-user-accounts = Ver cuentas de usuario
 master.menu.administrator.populate-db-initial = Poblar BD (inicial)

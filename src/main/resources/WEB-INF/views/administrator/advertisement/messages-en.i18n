@@ -1,0 +1,17 @@
+administrator.advertisement.list.title = Listing of advertisements
+
+administrator.advertisement.list.label.slogan = Slogan
+administrator.advertisement.list.label.picture = Picture
+administrator.advertisement.list.label.target = Target
+
+administrator.advertisement.list.button.create = Create new
+
+administrator.advertisement.form.title = Advertisement form
+
+administrator.advertisement.form.label.slogan = Slogan:
+administrator.advertisement.form.label.picture = Picture:
+administrator.advertisement.form.label.target = Target:
+
+administrator.advertisement.form.button.create = Create
+administrator.advertisement.form.button.update = Update
+administrator.advertisement.form.button.delete = Delete
