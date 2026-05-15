@@ -96,6 +96,6 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.project, "ticker", "title", "description", "keyWords", "startMoment", "endMoment", "moreInfo");
+		super.unbindObject(this.project, "ticker", "title", "description", "keyWords", "startMoment", "endMoment", "moreInfo", "draftMode");
 	}
 }

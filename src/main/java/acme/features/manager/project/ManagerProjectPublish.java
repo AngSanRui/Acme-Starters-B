@@ -51,7 +51,6 @@ public class ManagerProjectPublish extends AbstractService<Manager, Project> {
 	@Override
 	public void validate() {
 		Project ee = this.project;
-		ee.setDraftMode(false);
 		super.validateObject(ee);
 	}
 
@@ -98,7 +97,7 @@ public class ManagerProjectPublish extends AbstractService<Manager, Project> {
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.project, "ticker", "title", "description", "keyWords", "startMoment", "endMoment", "moreInfo");
+		super.unbindObject(this.project, "ticker", "title", "description", "keyWords", "startMoment", "endMoment", "moreInfo", "draftMode");
 	}
 
 }
