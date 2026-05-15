@@ -34,18 +34,16 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 
 		inventionId = super.getRequest().getData("id", int.class);
 		this.invention = this.repository.findInventionsById(inventionId);
-		if (this.invention != null && this.invention.getProject() != null && !this.projects.contains(this.invention.getProject())) {
+		this.projects = this.repository.findProjectsByUserAccountId(this.invention.getInventor().getUserAccount().getId());
+		if (this.invention.getProject() != null && !this.projects.contains(this.invention.getProject()))
 			this.projects.add(this.invention.getProject());
-			this.projects = this.repository.findProjectsByUserAccountId(this.invention.getInventor().getUserAccount().getId());
-		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		int inventorId = this.repository.findInventorByAccountId(super.getRequest().getPrincipal().getAccountId());
-		status = super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && this.invention != null && this.invention.getInventor().getId() == inventorId;
+		status = super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && this.invention != null && this.invention.getInventor().isPrincipal();
 		super.setAuthorised(status);
 	}
 
@@ -54,10 +52,10 @@ public class InventorInventionShowService extends AbstractService<Inventor, Inve
 		SelectChoices choices = null;
 		Project visible = null;
 
-		if (this.invention.getProject() != null) {
+		if (this.invention.getProject() != null)
 			visible = this.invention.getProject();
-			choices = SelectChoices.from(this.projects, "title", visible);
-		}
+
+		choices = SelectChoices.from(this.projects, "title", visible);
 
 		Tuple tuple;
 		tuple = super.unbindObject(this.invention, //
