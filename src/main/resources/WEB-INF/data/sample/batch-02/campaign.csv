@@ -1,0 +1,6 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson,key:project
+#base entity
+#ticker- standard variations
+campaign-88,AU99-TICKER,PUB-CAMPAIGN,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/01 00:02,2039/12/31 23:59,http://lorem.com/ipsum,FALSE,spokesperson-01,null
+campaign-89,ZU00-TICKER,UNP-CAMPAIGN,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/01 00:02,2039/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-01,null
+campaign-90,AU50-TICKER,OTHER-CAMPAIGN,Lorem ipsum dolor sit amet  consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/01/01 00:02,2039/12/31 23:59,http://lorem.com/ipsum,TRUE,spokesperson-02,null

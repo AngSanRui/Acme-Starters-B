@@ -34,9 +34,10 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 
 		id = super.getRequest().getData("id", int.class);
 		this.campaign = this.repository.findCampaignById(id);
-		this.projects = this.repository.findProjectsByUserAccountId(this.campaign.getSpokesperson().getUserAccount().getId());
-		if (this.campaign.getProject() != null && !this.projects.contains(this.campaign.getProject()))
+		if (this.campaign != null && this.campaign.getProject() != null && !this.projects.contains(this.campaign.getProject())) {
+			this.projects = this.repository.findProjectsByUserAccountId(this.campaign.getSpokesperson().getUserAccount().getId());
 			this.projects.add(this.campaign.getProject());
+		}
 	}
 
 	@Override
@@ -55,15 +56,15 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 	@Override
 	public void unbind() {
 		Tuple tuple;
-		SelectChoices choices;
+		SelectChoices choices = null;
 
 		Project visible = null;
 
-		if (this.campaign.getProject() != null)
+		if (this.campaign.getProject() != null) {
 			visible = this.campaign.getProject();
 
-		choices = SelectChoices.from(this.projects, "title", visible);
-
+			choices = SelectChoices.from(this.projects, "title", visible);
+		}
 		tuple = super.unbindObject(this.campaign, "spokesperson", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "effort");
 		tuple.put("project", choices);
 	}

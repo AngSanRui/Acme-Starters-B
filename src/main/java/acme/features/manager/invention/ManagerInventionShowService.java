@@ -32,7 +32,7 @@ public class ManagerInventionShowService extends AbstractService<Manager, Invent
 
 		this.userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.managerId = this.repository.findManagerIdByAccountId(this.userAccountId);
-		status = super.getRequest().getPrincipal().hasRealmOfType(Member.class) && this.invention.getProject().getManager().getId() == this.managerId;
+		status = this.invention != null && (super.getRequest().getPrincipal().hasRealmOfType(Member.class) || super.getRequest().getPrincipal().hasRealmOfType(Manager.class)) && this.invention.getProject().getManager().getId() == this.managerId;
 		super.setAuthorised(status);
 	}
 
