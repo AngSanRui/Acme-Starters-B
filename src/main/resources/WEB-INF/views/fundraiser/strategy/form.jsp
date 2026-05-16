@@ -17,12 +17,12 @@
 
 <acme:form>
 
-	<acme:form-textbox 	code="fundraiser.strategy.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
-	<acme:form-textbox 	code="fundraiser.strategy.form.label.name" path="name" readonly="${!draftMode}"/>
-	<acme:form-textarea code="fundraiser.strategy.form.label.description" path="description" readonly="${!draftMode}"/>
-	<acme:form-moment 	code="fundraiser.strategy.form.label.start-moment" path="startMoment" readonly="${!draftMode}"/>
-	<acme:form-moment 	code="fundraiser.strategy.form.label.end-moment" path="endMoment" readonly="${!draftMode}"/>
-	<acme:form-url 		code="fundraiser.strategy.form.label.more-info" path="moreInfo" readonly="${!draftMode}"/>
+	<acme:form-textbox 	code="fundraiser.strategy.form.label.ticker" path="ticker" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-textbox 	code="fundraiser.strategy.form.label.name" path="name" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-textarea code="fundraiser.strategy.form.label.description" path="description" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-moment 	code="fundraiser.strategy.form.label.start-moment" path="startMoment" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-moment 	code="fundraiser.strategy.form.label.end-moment" path="endMoment" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-url 		code="fundraiser.strategy.form.label.more-info" path="moreInfo" readonly="${!draftMode  && _command != 'create'}"/>
 	<acme:form-select code="fundraiser.strategy.form.label.project" path="project" choices="${project}"/>
 	
 	<jstl:choose>

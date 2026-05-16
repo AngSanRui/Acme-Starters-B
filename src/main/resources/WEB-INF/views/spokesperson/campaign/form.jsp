@@ -4,12 +4,12 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox 	code="spokesperson.campaign.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
-	<acme:form-textbox 	code="spokesperson.campaign.form.label.name" path="name" readonly="${!draftMode}"/>
-	<acme:form-textarea code="spokesperson.campaign.form.label.description" path="description" readonly="${!draftMode}"/>
-	<acme:form-moment 	code="spokesperson.campaign.form.label.start-moment" path="startMoment" readonly="${!draftMode}"/>
-	<acme:form-moment 	code="spokesperson.campaign.form.label.end-moment" path="endMoment" readonly="${!draftMode}"/>
-	<acme:form-url 		code="spokesperson.campaign.form.label.more-info" path="moreInfo" readonly="${!draftMode}"/>
+	<acme:form-textbox 	code="spokesperson.campaign.form.label.ticker" path="ticker" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-textbox 	code="spokesperson.campaign.form.label.name" path="name" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-textarea code="spokesperson.campaign.form.label.description" path="description" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-moment 	code="spokesperson.campaign.form.label.start-moment" path="startMoment" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-moment 	code="spokesperson.campaign.form.label.end-moment" path="endMoment" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-url 		code="spokesperson.campaign.form.label.more-info" path="moreInfo" readonly="${!draftMode  && _command != 'create'}"/>
 	<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${project}"/>
 	
 	<jstl:choose>

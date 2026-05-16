@@ -54,7 +54,7 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 
 	@Override
 	public void bind() {
-		super.bindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		super.bindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "project");
 	}
 
 	@Override
@@ -83,6 +83,7 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 	@Override
 	public void execute() {
 		this.auditReport.setDraftMode(false);
+		this.auditReport.setProject(null);
 		this.repository.save(this.auditReport);
 	}
 

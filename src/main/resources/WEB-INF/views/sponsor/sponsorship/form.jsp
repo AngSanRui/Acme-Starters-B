@@ -16,13 +16,13 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form> 
-	<acme:form-textbox code="sponsor.sponsorship.form.label.ticker" path="ticker"/>
-	<acme:form-textbox code="sponsor.sponsorship.form.label.name" path="name"/>
-	<acme:form-textarea code="sponsor.sponsorship.form.label.description" path="description"/>
-	<acme:form-moment code="sponsor.sponsorship.form.label.startMoment" path="startMoment"/>
-	<acme:form-moment code="sponsor.sponsorship.form.label.endMoment" path="endMoment"/>
-	<acme:form-url code="sponsor.sponsorship.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-select code="sponsor.sponsorship.form.label.project" path="projects" choices="${project}" readonly="${draftMode}"/>
+	<acme:form-textbox code="sponsor.sponsorship.form.label.ticker" path="ticker" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-textbox code="sponsor.sponsorship.form.label.name" path="name" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-textarea code="sponsor.sponsorship.form.label.description" path="description" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-moment code="sponsor.sponsorship.form.label.startMoment" path="startMoment" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-moment code="sponsor.sponsorship.form.label.endMoment" path="endMoment" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-url code="sponsor.sponsorship.form.label.moreInfo" path="moreInfo" readonly="${!draftMode  && _command != 'create'}"/>
+	<acme:form-select code="sponsor.sponsorship.form.label.project" path="project" choices="${project}" readonly="false"/>
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|link') && draftMode == false}">
