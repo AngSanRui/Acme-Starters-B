@@ -41,7 +41,7 @@ public class InventorInventionLinkProjectService extends AbstractService<Invento
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null && this.invention.getDraftMode() == true && this.invention.getInventor().isPrincipal() && !this.projects.isEmpty();
+		status = this.invention != null && this.invention.getInventor().isPrincipal();
 		super.setAuthorised(status);
 	}
 

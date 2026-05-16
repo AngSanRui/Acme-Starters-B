@@ -10,7 +10,6 @@
 	<acme:form-moment code="inventor.invention.form.label.startMoment" path="startMoment" readonly="${!draftMode}"/>
 	<acme:form-moment code="inventor.invention.form.label.endMoment" path="endMoment" readonly="${!draftMode}"/>
 	<acme:form-url code="inventor.invention.form.label.moreInfo" path="moreInfo" readonly="${!draftMode}"/>
-	<acme:form-checkbox	code="manager.project.form.label.draft-mode" path="draftMode" readonly="${!draftMode}"/>
 	<acme:form-double code="inventor.invention.form.label.monthsActive" path="monthsActive" readonly="true"/>
 	<acme:form-money code="inventor.invention.form.label.Costs" path="Costs" readonly="true"/>
 	<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${project}"/>
