@@ -34,21 +34,15 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 
 		id = super.getRequest().getData("id", int.class);
 		this.campaign = this.repository.findCampaignById(id);
-		if (this.campaign != null && this.campaign.getProject() != null && !this.projects.contains(this.campaign.getProject())) {
-			this.projects = this.repository.findProjectsByUserAccountId(this.campaign.getSpokesperson().getUserAccount().getId());
+		this.projects = this.repository.findProjectsByUserAccountId(this.campaign.getSpokesperson().getUserAccount().getId());
+		if (this.campaign.getProject() != null && !this.projects.contains(this.campaign.getProject()))
 			this.projects.add(this.campaign.getProject());
-		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		int userId;
-		int spokespersonId;
-
-		userId = super.getRequest().getPrincipal().getAccountId();
-		spokespersonId = this.repository.findSpokespersonByAccountId(userId);
-		status = this.campaign != null && this.campaign.getSpokesperson().getId() == spokespersonId && super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
+		status = this.campaign != null && this.campaign.getSpokesperson().isPrincipal() && super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
 
 		super.setAuthorised(status);
 	}
@@ -60,11 +54,10 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 
 		Project visible = null;
 
-		if (this.campaign.getProject() != null) {
+		if (this.campaign.getProject() != null)
 			visible = this.campaign.getProject();
 
-			choices = SelectChoices.from(this.projects, "title", visible);
-		}
+		choices = SelectChoices.from(this.projects, "title", visible);
 		tuple = super.unbindObject(this.campaign, "spokesperson", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "effort");
 		tuple.put("project", choices);
 	}

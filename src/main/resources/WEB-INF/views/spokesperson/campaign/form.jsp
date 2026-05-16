@@ -4,24 +4,24 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox 	code="spokesperson.campaign.form.label.ticker" path="ticker"/>
-	<acme:form-textbox 	code="spokesperson.campaign.form.label.name" path="name"/>
-	<acme:form-textarea code="spokesperson.campaign.form.label.description" path="description"/>
-	<acme:form-moment 	code="spokesperson.campaign.form.label.start-moment" path="startMoment"/>
-	<acme:form-moment 	code="spokesperson.campaign.form.label.end-moment" path="endMoment"/>
-	<acme:form-url 		code="spokesperson.campaign.form.label.more-info" path="moreInfo"/>
+	<acme:form-textbox 	code="spokesperson.campaign.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
+	<acme:form-textbox 	code="spokesperson.campaign.form.label.name" path="name" readonly="${!draftMode}"/>
+	<acme:form-textarea code="spokesperson.campaign.form.label.description" path="description" readonly="${!draftMode}"/>
+	<acme:form-moment 	code="spokesperson.campaign.form.label.start-moment" path="startMoment" readonly="${!draftMode}"/>
+	<acme:form-moment 	code="spokesperson.campaign.form.label.end-moment" path="endMoment" readonly="${!draftMode}"/>
+	<acme:form-url 		code="spokesperson.campaign.form.label.more-info" path="moreInfo" readonly="${!draftMode}"/>
 	<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${project}"/>
 	
 	<jstl:choose>
 		<jstl:when test="${_command != 'create'}">
-			<acme:form-checkbox	code="spokesperson.campaign.form.label.draft-mode" path="draftMode"/>
 			<acme:form-double 	code="spokesperson.campaign.form.label.monthsActive" path="monthsActive" readonly="true"/>
 			<acme:form-integer 	code="spokesperson.campaign.form.label.effort" path="effort" readonly="true"/>
 		</jstl:when>
 	</jstl:choose>
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>							
+		<jstl:when test="${acme:anyOf(_command, 'show|link') && draftMode == false}">
+			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>	
+			<acme:submit code="spokesperson.campaign.form.button.link" action="/spokesperson/campaign/link"/>						
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish|link') && draftMode == true}">
 			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
