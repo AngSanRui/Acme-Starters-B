@@ -41,7 +41,7 @@ public class FundraiserStrategyLinkService extends AbstractService<Fundraiser, S
 	public void authorise() {
 		boolean status;
 
-		status = this.strategy != null && this.strategy.getDraftMode() == true && this.strategy.getFundraiser().isPrincipal() && !this.projects.isEmpty();
+		status = this.strategy != null && this.strategy.getFundraiser().isPrincipal();
 		super.setAuthorised(status);
 	}
 

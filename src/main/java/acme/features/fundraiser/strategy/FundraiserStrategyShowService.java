@@ -34,18 +34,16 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 
 		strategyId = super.getRequest().getData("id", int.class);
 		this.strategy = this.repository.findStrategyById(strategyId);
-		if (this.strategy != null && this.strategy.getProject() != null && !this.projects.contains(this.strategy.getProject())) {
-			this.projects = this.repository.findProjectsByUserAccountId(this.strategy.getFundraiser().getUserAccount().getId());
+		this.projects = this.repository.findProjectsByUserAccountId(this.strategy.getFundraiser().getUserAccount().getId());
+		if (this.strategy.getProject() != null && !this.projects.contains(this.strategy.getProject()))
 			this.projects.add(this.strategy.getProject());
-		}
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		int fundraiserId = this.repository.findFundraiserByUserAccountId(super.getRequest().getPrincipal().getAccountId()).getId();
-		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && this.strategy != null && this.strategy.getFundraiser().getId() == fundraiserId;
+		status = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && this.strategy != null && this.strategy.getFundraiser().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -56,14 +54,12 @@ public class FundraiserStrategyShowService extends AbstractService<Fundraiser, S
 		SelectChoices choices = null;
 		Project visible = null;
 
-		if (this.strategy.getProject() != null) {
+		if (this.strategy.getProject() != null)
 			visible = this.strategy.getProject();
 
-			choices = SelectChoices.from(this.projects, "title", visible);
-		}
+		choices = SelectChoices.from(this.projects, "title", visible);
 		tuple = super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 		tuple.put("fundraiserId", this.strategy.getFundraiser().getId());
-		tuple.put("readonly", !this.strategy.getDraftMode());
 		tuple.put("project", choices);
 
 	}

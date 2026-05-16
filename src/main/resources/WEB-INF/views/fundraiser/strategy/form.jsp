@@ -17,24 +17,25 @@
 
 <acme:form>
 
-	<acme:form-textbox 	code="fundraiser.strategy.form.label.ticker" path="ticker"/>
-	<acme:form-textbox 	code="fundraiser.strategy.form.label.name" path="name"/>
-	<acme:form-textarea code="fundraiser.strategy.form.label.description" path="description"/>
-	<acme:form-moment 	code="fundraiser.strategy.form.label.start-moment" path="startMoment"/>
-	<acme:form-moment 	code="fundraiser.strategy.form.label.end-moment" path="endMoment"/>
-	<acme:form-url 		code="fundraiser.strategy.form.label.more-info" path="moreInfo"/>
+	<acme:form-textbox 	code="fundraiser.strategy.form.label.ticker" path="ticker" readonly="${!draftMode}"/>
+	<acme:form-textbox 	code="fundraiser.strategy.form.label.name" path="name" readonly="${!draftMode}"/>
+	<acme:form-textarea code="fundraiser.strategy.form.label.description" path="description" readonly="${!draftMode}"/>
+	<acme:form-moment 	code="fundraiser.strategy.form.label.start-moment" path="startMoment" readonly="${!draftMode}"/>
+	<acme:form-moment 	code="fundraiser.strategy.form.label.end-moment" path="endMoment" readonly="${!draftMode}"/>
+	<acme:form-url 		code="fundraiser.strategy.form.label.more-info" path="moreInfo" readonly="${!draftMode}"/>
 	<acme:form-select code="fundraiser.strategy.form.label.project" path="project" choices="${project}"/>
 	
 	<jstl:choose>
 		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>		
+			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
+			<acme:submit code="fundraiser.strategy.form.button.link" action="/fundraiser/strategy/link"/>		
 		</jstl:when>
 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish|link') && draftMode == true}">
 			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
 			<acme:submit code="fundraiser.strategy.form.button.update"  action="/fundraiser/strategy/update"/>
 			<acme:submit code="fundraiser.strategy.form.button.delete" action="/fundraiser/strategy/delete"/>
-			<acme:submit code="fundraiser.strategy.form.button.publish" action="/fundraiser/strategy/publish"/>
+			<acme:submit code="fundraiser.strategy.form.button.publish" action="/fundraiser/strategy/publish"/>	
 			<acme:submit code="fundraiser.strategy.form.button.link" action="/fundraiser/strategy/link"/>			
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
