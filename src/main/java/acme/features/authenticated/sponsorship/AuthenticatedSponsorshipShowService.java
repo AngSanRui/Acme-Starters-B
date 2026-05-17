@@ -34,7 +34,7 @@ public class AuthenticatedSponsorshipShowService extends AbstractService<Authent
 	public void authorise() {
 		boolean status;
 		int sponsorId = this.repository.findSponsorByAccountId(super.getRequest().getPrincipal().getAccountId());
-		status = this.sponsorship != null && super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class) && this.sponsorship.getSponsor().getId() == sponsorId;
+		status = this.sponsorship != null && super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class) && (this.sponsorship.getSponsor().getId() == sponsorId || !this.sponsorship.getDraftMode());
 		super.setAuthorised(status);
 	}
 

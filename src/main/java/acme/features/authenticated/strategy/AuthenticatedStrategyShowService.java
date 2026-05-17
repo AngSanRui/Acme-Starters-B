@@ -36,7 +36,7 @@ public class AuthenticatedStrategyShowService extends AbstractService<Authentica
 		boolean status;
 		int fundraiserId = this.repository.findFundraiserByAccountId(super.getRequest().getPrincipal().getAccountId());
 
-		status = this.strategy != null && super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && this.strategy.getFundraiser().getId() == fundraiserId;
+		status = this.strategy != null && super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && (this.strategy.getFundraiser().getId() == fundraiserId || !this.strategy.getDraftMode());
 
 		super.setAuthorised(status);
 	}
