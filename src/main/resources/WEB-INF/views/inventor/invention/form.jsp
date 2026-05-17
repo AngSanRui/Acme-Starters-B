@@ -11,7 +11,7 @@
 	<acme:form-moment code="inventor.invention.form.label.endMoment" path="endMoment" readonly="${!draftMode  && _command != 'create'}"/>
 	<acme:form-url code="inventor.invention.form.label.moreInfo" path="moreInfo" readonly="${!draftMode  && _command != 'create'}"/>
 	<acme:form-double code="inventor.invention.form.label.monthsActive" path="monthsActive" readonly="true"/>
-	<acme:form-money code="inventor.invention.form.label.Costs" path="Costs" readonly="true"/>
+	<acme:form-money code="inventor.invention.form.label.Costs" path="cost" readonly="true"/>
 	<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${project}"/>
 	
 	<jstl:choose>	 

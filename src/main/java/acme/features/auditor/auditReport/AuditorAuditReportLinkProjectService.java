@@ -83,13 +83,13 @@ public class AuditorAuditReportLinkProjectService extends AbstractService<Audito
 
 	@Override
 	public void unbind() {
-		SelectChoices choices;
 		Tuple tuple;
+		SelectChoices choices;
 
 		Collection<Project> projects = this.repository.findPublishedProjects();
-		choices = SelectChoices.from(projects, "title", null);
+		choices = SelectChoices.from(projects, "title", this.auditReport.getProject());
 
-		tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		tuple = super.unbindObject(this.auditReport, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "hours");
 		tuple.put("project", choices);
 	}
 

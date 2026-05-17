@@ -70,13 +70,12 @@ public class SponsorSponsorshipLinkProyectService extends AbstractService<Sponso
 
 	@Override
 	public void unbind() {
-		Tuple tuple;
 		SelectChoices choices;
-
+		Tuple tuple;
 		Collection<Project> projects = this.repository.findPublishedProjects();
 		choices = SelectChoices.from(projects, "title", this.sponsorship.getProject());
 
-		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "monthsActive", "totalMoney", "draftMode");
 		tuple.put("project", choices);
 	}
 

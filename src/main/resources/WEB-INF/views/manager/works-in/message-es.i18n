@@ -1,6 +1,12 @@
 manager.works-in.form.title = Formulario de miembro
 
-manager.works-in.form.label.role = Role:
+manager.works-in.form.label.role = Rol:
 manager.works-in.form.label.member = Miembro:
 manager.works-in.list.title = Lista de miembros
 manager.member.list.button.deleteMember = Borrar
+
+manager.works-in.form.title = Member form
+
+
+manager.project.list.label.username = Nombre de usuario
+manager.project.list.label.role = Rol

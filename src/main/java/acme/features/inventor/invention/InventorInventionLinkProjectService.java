@@ -62,12 +62,18 @@ public class InventorInventionLinkProjectService extends AbstractService<Invento
 
 	@Override
 	public void unbind() {
-		SelectChoices choices;
+		SelectChoices choices = null;
+		Project visible = null;
+
+		if (this.invention.getProject() != null)
+			visible = this.invention.getProject();
+
+		choices = SelectChoices.from(this.projects, "title", visible);
+
 		Tuple tuple;
-
-		choices = SelectChoices.from(this.projects, "title", this.invention.getProject());
-
-		tuple = super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		tuple = super.unbindObject(this.invention, //
+			"ticker", "startMoment", "endMoment", "name", //
+			"description", "moreInfo", "draftMode", "monthsActive", "cost");
 		tuple.put("project", choices);
 	}
 

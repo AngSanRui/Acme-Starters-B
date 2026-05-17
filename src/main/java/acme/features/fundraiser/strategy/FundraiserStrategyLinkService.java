@@ -62,12 +62,16 @@ public class FundraiserStrategyLinkService extends AbstractService<Fundraiser, S
 
 	@Override
 	public void unbind() {
-		SelectChoices choices;
 		Tuple tuple;
+		SelectChoices choices = null;
+		Project visible = null;
 
-		choices = SelectChoices.from(this.projects, "title", this.strategy.getProject());
+		if (this.strategy.getProject() != null)
+			visible = this.strategy.getProject();
 
-		tuple = super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		choices = SelectChoices.from(this.projects, "title", visible);
+		tuple = super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		tuple.put("fundraiserId", this.strategy.getFundraiser().getId());
 		tuple.put("project", choices);
 	}
 

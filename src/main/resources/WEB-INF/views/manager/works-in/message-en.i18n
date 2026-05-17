@@ -5,3 +5,5 @@ manager.works-in.form.label.member = Member:
 manager.works-in.list.title = List of members
 
 manager.member.list.button.deleteMember = Delete
+manager.project.list.label.username = Username
+manager.project.list.label.role = Role

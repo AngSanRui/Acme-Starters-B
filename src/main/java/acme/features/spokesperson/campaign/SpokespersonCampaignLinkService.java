@@ -62,12 +62,23 @@ public class SpokespersonCampaignLinkService extends AbstractService<Spokesperso
 
 	@Override
 	public void unbind() {
-		SelectChoices choices;
+		//		SelectChoices choices;
+		//		Tuple tuple;
+		//
+		//		choices = SelectChoices.from(this.projects, "title", this.campaign.getProject());
+		//
+		//		tuple = super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		//		tuple.put("project", choices);
 		Tuple tuple;
+		SelectChoices choices = null;
 
-		choices = SelectChoices.from(this.projects, "title", this.campaign.getProject());
+		Project visible = null;
 
-		tuple = super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		if (this.campaign.getProject() != null)
+			visible = this.campaign.getProject();
+
+		choices = SelectChoices.from(this.projects, "title", visible);
+		tuple = super.unbindObject(this.campaign, "spokesperson", "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "monthsActive", "effort");
 		tuple.put("project", choices);
 	}
 
