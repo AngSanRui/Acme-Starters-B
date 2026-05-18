@@ -44,8 +44,8 @@ public class ProjectValidator extends AbstractValidator<ValidProject, Project> {
 						existingInventions = 0;
 
 					correctNumberOfInventions = existingInventions >= 1;
+					super.state(context, correctNumberOfInventions, "*", "acme.validation.numberOfInventions.message");
 				}
-				super.state(context, correctNumberOfInventions, "*", "acme.validation.numberOfInventions.message");
 			}
 			{
 				boolean correctDates = true;

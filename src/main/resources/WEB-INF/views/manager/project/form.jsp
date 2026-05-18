@@ -4,14 +4,13 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:form-textbox 	code="manager.project.form.label.ticker" path="ticker"/>
+	<acme:form-textbox 	code="manager.project.form.label.ticker" path="ticker" />
 	<acme:form-textbox 	code="manager.project.form.label.title" path="title"/>
 	<acme:form-textarea code="manager.project.form.label.description" path="description"/>
 	<acme:form-textarea code="manager.project.form.label.keyWords" path="keyWords"/>
 	<acme:form-moment 	code="manager.project.form.label.start-moment" path="startMoment"/>
 	<acme:form-moment 	code="manager.project.form.label.end-moment" path="endMoment"/>
 	<acme:form-url 		code="manager.project.form.label.more-info" path="moreInfo"/>
-	<acme:form-checkbox	code="manager.project.form.label.draft-mode" path="draftMode"/>
 
 	
 	<jstl:choose>	 
