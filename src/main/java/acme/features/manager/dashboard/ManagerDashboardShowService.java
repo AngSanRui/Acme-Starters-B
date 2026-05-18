@@ -92,7 +92,10 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 			acum += effort;
 		}
 
-		averageOfEffortOfProjectsByManager = acum / projects.size();
+		if (projects.size() > 0)
+			averageOfEffortOfProjectsByManager = acum / projects.size();
+		else
+			averageOfEffortOfProjectsByManager = 0.0;
 
 		this.dashboard = super.newObject(Dashboard.class);
 		this.dashboard.setTotalNumberOfProjects(numberOfMyProjects);

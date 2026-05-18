@@ -1,0 +1,17 @@
+administrator.advertisement.list.title = Listado de anuncios
+
+administrator.advertisement.list.label.slogan = Eslogan
+administrator.advertisement.list.label.picture = Imagen
+administrator.advertisement.list.label.target = Objetivo
+
+administrator.advertisement.list.button.create = Crear nuevo
+
+administrator.advertisement.form.title = Formulario de anuncio
+
+administrator.advertisement.form.label.slogan = Eslogan:
+administrator.advertisement.form.label.picture = Imagen:
+administrator.advertisement.form.label.target = Objetivo:
+
+administrator.advertisement.form.button.create = Crear
+administrator.advertisement.form.button.update = Actualizar
+administrator.advertisement.form.button.delete = Borrar
