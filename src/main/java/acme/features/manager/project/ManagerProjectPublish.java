@@ -37,7 +37,6 @@ public class ManagerProjectPublish extends AbstractService<Manager, Project> {
 	@Override
 	public void load() {
 		int id;
-
 		id = super.getRequest().getData("id", int.class);
 		this.project = this.repository.findProjectById(id);
 	}
@@ -45,13 +44,12 @@ public class ManagerProjectPublish extends AbstractService<Manager, Project> {
 	@Override
 	public void bind() {
 		super.bindObject(this.project, "ticker", "title", "description", "keyWords", "startMoment", "endMoment", "moreInfo");
-
 	}
 
 	@Override
 	public void validate() {
-		Project ee = this.project;
-		super.validateObject(ee);
+		this.project.setDraftMode(false);
+		super.validateObject(this.project);
 	}
 
 	@Override
@@ -97,6 +95,7 @@ public class ManagerProjectPublish extends AbstractService<Manager, Project> {
 
 	@Override
 	public void unbind() {
+		this.project.setDraftMode(true);
 		super.unbindObject(this.project, "ticker", "title", "description", "keyWords", "startMoment", "endMoment", "moreInfo", "draftMode");
 	}
 
