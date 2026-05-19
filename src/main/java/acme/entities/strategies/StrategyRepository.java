@@ -15,4 +15,6 @@ public interface StrategyRepository extends AbstractRepository {
 	@Query("select s from Strategy s where s.ticker = :ticker")
 	Strategy strategyByTicker(String ticker);
 
+	@Query("select count(t) from Tactic t where t.strategy.id = :strategyId")
+	Integer getNumTactics(int strategyId);
 }

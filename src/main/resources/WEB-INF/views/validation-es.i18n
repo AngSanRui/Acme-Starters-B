@@ -47,6 +47,7 @@ acme.validation.member-error = Valor inválido de miembro.
 
 acme.validation.true = Verdadero
 acme.validation.false = Falso
-
+manager.sponsorship.form.title = Formulario de Sponsorship
+acme.validation.invalidComposites.message = Algunos de los objetos asociados a este proyecto no pueden ser publicados por falta de componentes.
 acme.validation.duplicated-member = Este miembro ya trabaja en este projecto con este rol
 acme.validation.role-error = Este miembro no tiene este rol, por favor seleccione otro rol o miembro

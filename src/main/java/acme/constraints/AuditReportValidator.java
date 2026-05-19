@@ -41,7 +41,7 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 				if (auditReport.getDraftMode() != null) {
 					boolean publishedWithAuditSection;
 
-					publishedWithAuditSection = auditReport.getDraftMode() || this.repository.getAuditSections(auditReport.getId()).size() >= 1;
+					publishedWithAuditSection = auditReport.getDraftMode() || !this.repository.getAuditSections(auditReport.getId()).isEmpty();
 
 					super.state(context, publishedWithAuditSection, "*", "acme.validation.audit-report.published-without-audit-section.message");
 				}

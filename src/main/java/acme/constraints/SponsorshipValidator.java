@@ -41,7 +41,7 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 				if (sponsorship.getDraftMode() != null) {
 					boolean publishedWithDonation;
 
-					publishedWithDonation = sponsorship.getDraftMode() || this.repository.getDonations(sponsorship.getId()).size() >= 1;
+					publishedWithDonation = sponsorship.getDraftMode() || !this.repository.getDonations(sponsorship.getId()).isEmpty();
 
 					super.state(context, publishedWithDonation, "draftMode", "acme.validation.sponsorship.published-without-donation.message");
 				}

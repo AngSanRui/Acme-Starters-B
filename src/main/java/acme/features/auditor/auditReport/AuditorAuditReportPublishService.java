@@ -62,7 +62,7 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 		//cannot be published unless they have at least one audit section
 		{
 			boolean hasAnyAuditSections;
-			hasAnyAuditSections = this.repository.findAuditSectionsByAuditReportId(this.auditReport.getId()).size() > 0;
+			hasAnyAuditSections = !this.repository.findAuditSectionsByAuditReportId(this.auditReport.getId()).isEmpty();
 			super.state(hasAnyAuditSections, "*", "acme.validation.notAnyAuditSections.message");
 		}
 		// (esto realmente no hace falta porque de por sí las propiedades tienen ValidMoment(future))

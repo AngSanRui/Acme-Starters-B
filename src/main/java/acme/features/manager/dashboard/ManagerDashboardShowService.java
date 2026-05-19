@@ -92,7 +92,7 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 			acum += effort;
 		}
 
-		if (projects.size() > 0)
+		if (!projects.isEmpty())
 			averageOfEffortOfProjectsByManager = acum / projects.size();
 		else
 			averageOfEffortOfProjectsByManager = 0.0;

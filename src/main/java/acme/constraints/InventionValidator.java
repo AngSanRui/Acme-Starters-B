@@ -40,7 +40,7 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 				if (invention.getDraftMode() != null) {
 					boolean publishedWithPart;
 
-					publishedWithPart = invention.getDraftMode() || this.repository.getParts(invention.getId()).size() >= 1;
+					publishedWithPart = invention.getDraftMode() || !this.repository.getParts(invention.getId()).isEmpty();
 
 					super.state(context, publishedWithPart, "draftMode", "acme.validation.invention.published-without-part.message");
 				}

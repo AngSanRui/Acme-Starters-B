@@ -46,6 +46,7 @@ acme.validation.member-error = Invalid member value.
 
 acme.validation.true = True
 acme.validation.false = False
-
+manager.sponsorship.form.title = Sponsorship form
+acme.validation.invalidComposites.message = There are composites associated to this project that cannot be published because they don't have any components.
 acme.validation.duplicated-member = That member is already member in this project with this role
 acme.validation.role-error = This member not has that role, please select another role or member 

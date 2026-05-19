@@ -33,7 +33,7 @@ public class AnyMemberListService extends AbstractService<Any, Member> {
 		this.project = this.repository.findProjectById(super.getRequest().getData("projectId", int.class));
 
 		status = this.project != null && //
-			this.project.getDraftMode() == false;
+			!this.project.getDraftMode();
 
 		super.setAuthorised(status);
 	}
