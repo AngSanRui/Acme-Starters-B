@@ -29,6 +29,6 @@ public interface SpokespersonCampaignRepository extends AbstractRepository {
 	@Query("select count(milestone.campaign.id) from Milestone milestone where milestone.campaign.id = :campaignId")
 	Integer milestonesPerCampaign(int campaignId);
 
-	@Query("SELECT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
+	@Query("SELECT DISTINCT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
 	Collection<Project> findProjectsByUserAccountId(int userAccountId);
 }

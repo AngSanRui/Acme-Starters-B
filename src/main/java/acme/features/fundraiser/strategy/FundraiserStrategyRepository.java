@@ -40,7 +40,7 @@ public interface FundraiserStrategyRepository extends AbstractRepository {
 	@Query("select t from Tactic t where t.strategy.id = :strategyId")
 	Collection<Tactic> findAllTacticsByStrategyId(int strategyId);
 
-	@Query("SELECT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
+	@Query("SELECT DISTINCT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
 	Collection<Project> findProjectsByUserAccountId(int userAccountId);
 
 }

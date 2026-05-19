@@ -26,6 +26,6 @@ public interface InventorInventionRepository extends AbstractRepository {
 	@Query("select p from Part p where p.invention.id = :inventionId")
 	Collection<Part> findPartsByInventionId(int inventionId);
 
-	@Query("SELECT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
+	@Query("SELECT DISTINCT pm.project  FROM WorksIn pm  WHERE pm.member.userAccount.id = :userAccountId AND pm.project.draftMode = true")
 	Collection<Project> findProjectsByUserAccountId(int userAccountId);
 }
