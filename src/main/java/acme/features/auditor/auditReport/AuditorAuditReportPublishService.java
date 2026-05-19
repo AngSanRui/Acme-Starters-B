@@ -15,7 +15,6 @@ package acme.features.auditor.auditReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.auditReports.AuditReport;
 import acme.realms.auditors.Auditor;
@@ -68,16 +67,18 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 		}
 		// (esto realmente no hace falta porque de por sí las propiedades tienen ValidMoment(future))
 		// startMoment y endMoment tienen que ser futuro respecto al momento de publicación
-		{
-			boolean startMomentIsFuture;
-			startMomentIsFuture = MomentHelper.isAfter(this.auditReport.getStartMoment(), MomentHelper.getCurrentMoment());
-			super.state(startMomentIsFuture, "startMoment", "acme.validation.startMomentIsNotFuture.message");
-		}
-		{
-			boolean endMomentIsFuture;
-			endMomentIsFuture = MomentHelper.isAfter(this.auditReport.getEndMoment(), MomentHelper.getCurrentMoment());
-			super.state(endMomentIsFuture, "endMoment", "acme.validation.endMomentIsNotFuture.message");
-		}
+		/*
+		 * {
+		 * boolean startMomentIsFuture;
+		 * startMomentIsFuture = MomentHelper.isAfter(this.auditReport.getStartMoment(), MomentHelper.getCurrentMoment());
+		 * super.state(startMomentIsFuture, "startMoment", "acme.validation.startMomentIsNotFuture.message");
+		 * }
+		 * {
+		 * boolean endMomentIsFuture;
+		 * endMomentIsFuture = MomentHelper.isAfter(this.auditReport.getEndMoment(), MomentHelper.getCurrentMoment());
+		 * super.state(endMomentIsFuture, "endMoment", "acme.validation.endMomentIsNotFuture.message");
+		 * }
+		 */
 	}
 
 	@Override

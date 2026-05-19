@@ -10,7 +10,6 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorship.Donation;
 import acme.entities.sponsorship.DonationKind;
-import acme.realms.sponsorship.Sponsor;
 
 @Service
 public class AuthenticatedDonationShowService extends AbstractService<Authenticated, Donation> {
@@ -37,11 +36,7 @@ public class AuthenticatedDonationShowService extends AbstractService<Authentica
 	public void authorise() {
 		boolean status;
 
-		int sponsorId = this.repository.findSponsorByAccountId(super.getRequest().getPrincipal().getAccountId());
-
-		//status = this.donation != null && !this.donation.getSponsorship().getDraftMode();
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class) && this.donation.getSponsorship().getSponsor().getId() == sponsorId;
-
+		status = this.donation != null && !this.donation.getSponsorship().getDraftMode() && super.getRequest().getPrincipal().isAuthenticated();
 		super.setAuthorised(status);
 	}
 

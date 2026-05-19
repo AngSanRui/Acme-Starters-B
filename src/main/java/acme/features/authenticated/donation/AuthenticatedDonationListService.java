@@ -10,7 +10,6 @@ import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorship.Donation;
 import acme.entities.sponsorship.Sponsorship;
-import acme.realms.sponsorship.Sponsor;
 
 @Service
 public class AuthenticatedDonationListService extends AbstractService<Authenticated, Donation> {
@@ -30,11 +29,6 @@ public class AuthenticatedDonationListService extends AbstractService<Authentica
 	@Override
 	public void load() {
 		int sponsorshipId;
-		int userId;
-		@SuppressWarnings("unused")
-		int sponsorId;
-		userId = super.getRequest().getPrincipal().getAccountId();
-		sponsorId = this.repository.findSponsorByAccountId(userId);
 		sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
 		this.sponsorship = this.repository.findSponsorshipById(sponsorshipId);
 		this.donations = this.repository.findDonationsBySponsorshipId(sponsorshipId);
@@ -44,8 +38,7 @@ public class AuthenticatedDonationListService extends AbstractService<Authentica
 	public void authorise() {
 		boolean status;
 
-		//status = this.sponsorship != null && !this.sponsorship.getDraftMode();
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
+		status = this.sponsorship != null && !this.sponsorship.getDraftMode() && super.getRequest().getPrincipal().isAuthenticated();
 
 		super.setAuthorised(status);
 	}

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import acme.client.components.principals.Authenticated;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorship.Sponsorship;
-import acme.realms.sponsorship.Sponsor;
 
 @Service
 public class AuthenticatedSponsorshipListService extends AbstractService<Authenticated, Sponsorship> {
@@ -27,7 +26,7 @@ public class AuthenticatedSponsorshipListService extends AbstractService<Authent
 	@Override
 	public void authorise() {
 		boolean status;
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
+		status = this.getRequest().getPrincipal().isAuthenticated();
 		super.setAuthorised(status);
 	}
 
@@ -35,9 +34,7 @@ public class AuthenticatedSponsorshipListService extends AbstractService<Authent
 	@Override
 	public void load() {
 		int userId;
-		int sponsorId;
 		userId = super.getRequest().getPrincipal().getAccountId();
-		sponsorId = this.repository.findSponsorByAccountId(userId);
 		this.sponsorships = this.repository.findAllPublishedSponsorships();
 	}
 
